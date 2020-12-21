@@ -19,9 +19,42 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Umbraco.Web.PublishedModels
 {
+	// Mixin Content Type with alias "basicRegistrationControls"
+	/// <summary>Basic Registration Controls</summary>
+	public partial interface IBasicRegistrationControls : IPublishedContent
+	{
+		/// <summary>Age</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		string Age { get; }
+
+		/// <summary>Education</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		string Education { get; }
+
+		/// <summary>Email</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		string Email { get; }
+
+		/// <summary>Full name</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		string FullName { get; }
+
+		/// <summary>Gender</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		string Gender { get; }
+
+		/// <summary>Is UAE Citizen</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		string IsUaecitizen { get; }
+
+		/// <summary>Nationality</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		string Nationality { get; }
+	}
+
 	/// <summary>Basic Registration Controls</summary>
 	[PublishedModel("basicRegistrationControls")]
-	public partial class BasicRegistrationControls : PublishedContentModel
+	public partial class BasicRegistrationControls : PublishedContentModel, IBasicRegistrationControls
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -45,73 +78,80 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Age: Age
+		/// Age
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		[ImplementPropertyType("age")]
-		public int Age => this.Value<int>("age");
+		public string Age => GetAge(this);
 
-		///<summary>
-		/// BIO
-		///</summary>
+		/// <summary>Static getter for Age</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("bIO")]
-		public string BIO => this.Value<string>("bIO");
-
-		///<summary>
-		/// Current Location
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("currentLocation")]
-		public string CurrentLocation => this.Value<string>("currentLocation");
-
-		///<summary>
-		/// CV
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("cV")]
-		public string CV => this.Value<string>("cV");
+		public static string GetAge(IBasicRegistrationControls that) => that.Value<string>("age");
 
 		///<summary>
 		/// Education
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		[ImplementPropertyType("education")]
-		public string Education => this.Value<string>("education");
+		public string Education => GetEducation(this);
+
+		/// <summary>Static getter for Education</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		public static string GetEducation(IBasicRegistrationControls that) => that.Value<string>("education");
 
 		///<summary>
 		/// Email
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		[ImplementPropertyType("email")]
-		public string Email => this.Value<string>("email");
+		public string Email => GetEmail(this);
+
+		/// <summary>Static getter for Email</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		public static string GetEmail(IBasicRegistrationControls that) => that.Value<string>("email");
 
 		///<summary>
 		/// Full name
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		[ImplementPropertyType("fullName")]
-		public string FullName => this.Value<string>("fullName");
+		public string FullName => GetFullName(this);
+
+		/// <summary>Static getter for Full name</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		public static string GetFullName(IBasicRegistrationControls that) => that.Value<string>("fullName");
 
 		///<summary>
 		/// Gender
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		[ImplementPropertyType("gender")]
-		public string Gender => this.Value<string>("gender");
+		public string Gender => GetGender(this);
+
+		/// <summary>Static getter for Gender</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		public static string GetGender(IBasicRegistrationControls that) => that.Value<string>("gender");
+
+		///<summary>
+		/// Is UAE Citizen
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("isUAECitizen")]
+		public string IsUaecitizen => GetIsUaecitizen(this);
+
+		/// <summary>Static getter for Is UAE Citizen</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		public static string GetIsUaecitizen(IBasicRegistrationControls that) => that.Value<string>("isUAECitizen");
 
 		///<summary>
 		/// Nationality
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		[ImplementPropertyType("nationality")]
-		public string Nationality => this.Value<string>("nationality");
+		public string Nationality => GetNationality(this);
 
-		///<summary>
-		/// School
-		///</summary>
+		/// <summary>Static getter for Nationality</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("school")]
-		public string School => this.Value<string>("school");
+		public static string GetNationality(IBasicRegistrationControls that) => that.Value<string>("nationality");
 	}
 }

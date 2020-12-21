@@ -310,6 +310,7 @@
     <Content Include="js\jquery.stellar.min.js" />
     <Content Include="js\owl.carousel.min.js" />
     <Content Include="js\smoothscroll.js" />
+    <Content Include="Scripts\registration.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -322,6 +323,7 @@
     <Compile Include="App_Data\Models\Image.generated.cs" />
     <Compile Include="App_Data\Models\Member.generated.cs" />
     <Compile Include="App_Data\Models\Registraion.generated.cs" />
+    <Compile Include="App_Data\Models\SpectatorRegistration.generated.cs" />
     <Compile Include="App_Data\Models\Studient.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trees\BulkMemberActivites.cs" />
@@ -358,6 +360,8 @@
     <Content Include="Views\Master.cshtml" />
     <Content Include="Views\Registraion.cshtml" />
     <Content Include="Views\Home.cshtml" />
+    <Content Include="Views\SpectatorRegistration.cshtml" />
+    <Content Include="Views\Partials\Nationalities.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
