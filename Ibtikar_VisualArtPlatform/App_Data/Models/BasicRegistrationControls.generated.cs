@@ -50,6 +50,14 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Nationality</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		string Nationality { get; }
+
+		/// <summary>Password</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		string Password { get; }
+
+		/// <summary>World Countries List</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		global::System.Collections.Generic.IEnumerable<string> WorldCountriesList { get; }
 	}
 
 	/// <summary>Basic Registration Controls</summary>
@@ -153,5 +161,27 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Static getter for Nationality</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		public static string GetNationality(IBasicRegistrationControls that) => that.Value<string>("nationality");
+
+		///<summary>
+		/// Password
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("password")]
+		public string Password => GetPassword(this);
+
+		/// <summary>Static getter for Password</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		public static string GetPassword(IBasicRegistrationControls that) => that.Value<string>("password");
+
+		///<summary>
+		/// World Countries List
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("worldCountriesList")]
+		public global::System.Collections.Generic.IEnumerable<string> WorldCountriesList => GetWorldCountriesList(this);
+
+		/// <summary>Static getter for World Countries List</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		public static global::System.Collections.Generic.IEnumerable<string> GetWorldCountriesList(IBasicRegistrationControls that) => that.Value<global::System.Collections.Generic.IEnumerable<string>>("worldCountriesList");
 	}
 }

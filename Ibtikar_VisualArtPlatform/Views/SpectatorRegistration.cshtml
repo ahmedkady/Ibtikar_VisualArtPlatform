@@ -1,7 +1,9 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.SpectatorRegistration>
 @using ContentModels = Umbraco.Web.PublishedModels;
+
 @{
     Layout = "Master.cshtml";
+    var RegistraionVM = new Ibtikar_VisualArtPlatform.ViewModels.RegistraionViewModel();
 }
 
 <section id="about" data-stellar-background-ratio="0.5">
@@ -23,51 +25,50 @@
 
 
         </div>
-
-        <form>
+        @using (Html.BeginUmbracoForm("RegisterSpectator", "Registraion"))
+        {
+            if (TempData["InvalidModelState"] != null)
+            {
+                <label style="color:red;">Please make sure to enter al required fields</label>
+            }
             <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">@Model.FullName</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputEmail3" placeholder="@Model.FullName">
+                    <input type="text" class="form-control" name="Name" id="inputEmail3" value="@RegistraionVM.Name" placeholder="@Model.FullName">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">@Model.Age</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" id="" placeholder="@Model.Age">
+                    <input type="number" class="form-control" value="@RegistraionVM.Age" name="Age" id="" placeholder="@Model.Age">
                 </div>
             </div>
-            <fieldset class="form-group">
-                <div class="row">
-                    <label class="col-form-label col-sm-2 pt-0">@Model.Gender</label>
-                    <div class="col-sm-10">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="" value="option1" checked>
-                            <label class="form-check-label" for="gridRadios1">
-                                Male
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="" value="option2">
-                            <label class="form-check-label" for="gridRadios2">
-                                Female
-                            </label>
-                        </div>
-                    </div>
+            <div class="form-group row">
+                <div class="col-auto my-1">
+                    <label class="col-sm-2 col-form-label" for="inlineFormCustomSelect">@Model.Gender</label>
+                    <select name="Gender" class="form-control col-sm-2 col-form-label" id="inlineFormCustomSelect">
+                        <option selected value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
                 </div>
-            </fieldset>
+            </div>
             <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">@Model.Email</label>
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="@Model.Email">
+                    <input type="email" name="Email" value="@RegistraionVM.Email" class="form-control" id="inputEmail3" placeholder="@Model.Email">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">@Model.Password</label>
+                <div class="col-sm-10">
+                    <input type="password" name="Password" value="@RegistraionVM.Password" class="form-control" id="inputEmail3" placeholder="@Model.Email">
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-auto my-1">
                     <label class="col-sm-2 col-form-label" for="inlineFormCustomSelect">@Model.Education</label>
-                    <select class="form-control col-sm-2 col-form-label" id="inlineFormCustomSelect">
-                        <option selected>Choose...</option>
-                        <option value="1">One</option>
+                    <select name="Education" class="form-control col-sm-2 col-form-label" id="inlineFormCustomSelect">
+                        <option selected value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                     </select>
@@ -76,13 +77,13 @@
 
 
 
-            @Html.Partial("Nationalities",Model)
+            @Html.Partial("Nationalities", Model)
 
             <div class="form-group row">
                 <div class="col-sm-10">
-                    <button type="submit" class="btn btn-primary">Sign in</button>
+                    <button type="submit" class="btn btn-primary">Sign up</button>
                 </div>
             </div>
-        </form>
+        }
     </div>
 </section>

@@ -94,6 +94,20 @@ namespace Umbraco.Web.PublishedModels
 		public string Nationality => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetNationality(this);
 
 		///<summary>
+		/// Password
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("password")]
+		public string Password => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetPassword(this);
+
+		///<summary>
+		/// World Countries List
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("worldCountriesList")]
+		public global::System.Collections.Generic.IEnumerable<string> WorldCountriesList => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetWorldCountriesList(this);
+
+		///<summary>
 		/// Subtitle
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]

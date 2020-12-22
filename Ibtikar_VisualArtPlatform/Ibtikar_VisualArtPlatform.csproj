@@ -328,10 +328,12 @@
     <Compile Include="App_Data\Models\StudentRegistration.generated.cs" />
     <Compile Include="App_Data\Models\Studient.generated.cs" />
     <Compile Include="App_Data\Models\Teacher.generated.cs" />
-    <Compile Include="App_Data\Models\WorldCountry.generated.cs" />
     <Compile Include="App_Data\Models\WorldCountryControl.generated.cs" />
+    <Compile Include="Controllers\RegistraionController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trees\BulkMemberActivites.cs" />
+    <Compile Include="ViewModels\RegistraionViewModel.cs" />
+    <Compile Include="ViewModels\StudentRegistrationViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="config\imageprocessor\security.config" />
@@ -367,6 +369,7 @@
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\SpectatorRegistration.cshtml" />
     <Content Include="Views\Partials\Nationalities.cshtml" />
+    <Content Include="Views\StudentRegistration.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -376,10 +379,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Composers\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Infrastrutures\" />
     <Folder Include="Sections\" />
-    <Folder Include="ViewModels\" />
+    <Folder Include="Views\Registraion\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

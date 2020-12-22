@@ -1,10 +1,14 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.IBasicRegistrationControls>
 @using ContentModels = Umbraco.Web.PublishedModels;
 
+@{ 
+    var RegistraionVM = new Ibtikar_VisualArtPlatform.ViewModels.RegistraionViewModel();
+}
 <div class="form-group row">
     <div class="col-sm-10">
         <div class="form-check">
             <input onclick="isUAENationalityChecked(this)" class="form-check-input" type="checkbox" id="BasicRegistration-isUAE">
+            <input type="hidden"  name="IsUAE" value="false" id="registration-isUaeCheck" />
             <label class="form-check-label" for="gridCheck1">
                 @Model.IsUaecitizen
             </label>
@@ -14,15 +18,13 @@
 <div class="form-group row">
     <div class="col-auto my-1">
         <label class="col-sm-2 col-form-label" for="inlineFormCustomSelect">@Model.Nationality</label>
-        <select style="display:none;" class="form-control col-sm-2 col-form-label" id="BasicRegistration-EmiratesList">
-            <option selected>Choose...</option>
-            <option value="1">Dubai</option>
-            <option value="2">el sharka</option>
+        <select name="EmiratesNationality" style="display:none;" class="form-control col-sm-2 col-form-label" id="BasicRegistration-EmiratesList">
+            <option selected value="Dubai">Dubai</option>
+            <option value="sharka">el sharka</option>
         </select>
-        <select class="form-control col-sm-2 col-form-label" id="BasicRegistration-WorldList">
-            <option selected>Choose...</option>
-            <option value="1">Egypt</option>
-            <option value="2">USA</option>
+        <select name="WorldNationality" class="form-control col-sm-2 col-form-label" id="BasicRegistration-WorldList">
+            <option selected value="Egypt">Egypt</option>
+            <option value="USA">USA</option>
         </select>
     </div>
 </div>
