@@ -268,6 +268,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\bulkMemberActivities\backoffice\bulkMemberActivities\bulkMemberActivities.controller.js" />
+    <Content Include="App_Plugins\bulkMemberActivities\backoffice\bulkMemberActivities\bulkMemberActivities.service.js" />
+    <Content Include="App_Plugins\bulkMemberActivities\backoffice\bulkMemberActivities\overview.html" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
     <Content Include="config\Lang\da-DK.user.xml" />
@@ -352,6 +355,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="App_Plugins\bulkMemberActivities\package.manifest" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />

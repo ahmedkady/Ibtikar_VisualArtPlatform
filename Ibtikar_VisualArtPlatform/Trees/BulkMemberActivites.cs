@@ -16,8 +16,9 @@ using Umbraco.Web.Actions;
 
 namespace Ibtikar_VisualArtPlatform.Trees
 {
-    [Tree("member", "bulkMemberActivites", TreeTitle = "Bulk Member Activities", TreeGroup = "bulkMemberGroup")]
-    public class BulkMemberActivitesController : TreeController
+    [Tree("member", "bulkMemberActivities", TreeTitle = "Bulk Member Activities", IsSingleNodeTree = true)]
+    [PluginController("bulkMemberActivities")]
+    public class BulkMemberActivitiesController : TreeController
     {
         protected override TreeNodeCollection GetTreeNodes(string id, FormDataCollection queryStrings)
         {
@@ -25,7 +26,7 @@ namespace Ibtikar_VisualArtPlatform.Trees
             if (id == Constants.System.Root.ToInvariantString())
             {
                 var nodes = new TreeNodeCollection();
-                var node = CreateTreeNode("", "-1", queryStrings, "bulkMemberActivites", "icon -presentation", false);
+                var node = CreateTreeNode("bulkMemberActivities", "-1", queryStrings, "bulkMemberActivities", "icon -presentation", false);
                 nodes.Add(node);
                 return nodes;
             }
@@ -57,7 +58,7 @@ namespace Ibtikar_VisualArtPlatform.Trees
             var root = base.CreateRootNode(queryStrings);
 
             //optionally setting a routepath would allow you to load in a custom UI instead of the usual behaviour for a tree
-            root.RoutePath = string.Format("{0}/{1}/{2}", "member", "bulkMemberActivites", "overview");
+            root.RoutePath = string.Format("{0}/{1}/{2}", "member", "bulkMemberActivities", "overview");
             // set the icon
             root.Icon = "icon-presentation";
             // set to false for a custom tree with a single node.
