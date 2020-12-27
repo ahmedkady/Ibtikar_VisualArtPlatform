@@ -43,6 +43,10 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		string Gender { get; }
 
+		/// <summary>Gender List</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		global::System.Collections.Generic.IEnumerable<string> GenderList { get; }
+
 		/// <summary>Is UAE Citizen</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		string IsUaecitizen { get; }
@@ -50,6 +54,10 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Nationality</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		string Nationality { get; }
+
+		/// <summary>Password</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		string Password { get; }
 	}
 
 	/// <summary>Basic Registration Controls</summary>
@@ -133,6 +141,17 @@ namespace Umbraco.Web.PublishedModels
 		public static string GetGender(IBasicRegistrationControls that) => that.Value<string>("gender");
 
 		///<summary>
+		/// Gender List
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("genderList")]
+		public global::System.Collections.Generic.IEnumerable<string> GenderList => GetGenderList(this);
+
+		/// <summary>Static getter for Gender List</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		public static global::System.Collections.Generic.IEnumerable<string> GetGenderList(IBasicRegistrationControls that) => that.Value<global::System.Collections.Generic.IEnumerable<string>>("genderList");
+
+		///<summary>
 		/// Is UAE Citizen
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
@@ -153,5 +172,16 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Static getter for Nationality</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		public static string GetNationality(IBasicRegistrationControls that) => that.Value<string>("nationality");
+
+		///<summary>
+		/// Password
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("password")]
+		public string Password => GetPassword(this);
+
+		/// <summary>Static getter for Password</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		public static string GetPassword(IBasicRegistrationControls that) => that.Value<string>("password");
 	}
 }

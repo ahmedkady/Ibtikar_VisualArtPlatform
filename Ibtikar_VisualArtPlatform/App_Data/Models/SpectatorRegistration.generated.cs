@@ -45,6 +45,13 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// Qualifications List
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("qualificationsList")]
+		public global::System.Collections.Generic.IEnumerable<string> QualificationsList => this.Value<global::System.Collections.Generic.IEnumerable<string>>("qualificationsList");
+
+		///<summary>
 		/// Age
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
@@ -80,6 +87,13 @@ namespace Umbraco.Web.PublishedModels
 		public string Gender => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetGender(this);
 
 		///<summary>
+		/// Gender List
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("genderList")]
+		public global::System.Collections.Generic.IEnumerable<string> GenderList => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetGenderList(this);
+
+		///<summary>
 		/// Is UAE Citizen
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
@@ -92,6 +106,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		[ImplementPropertyType("nationality")]
 		public string Nationality => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetNationality(this);
+
+		///<summary>
+		/// Password
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("password")]
+		public string Password => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetPassword(this);
 
 		///<summary>
 		/// Subtitle

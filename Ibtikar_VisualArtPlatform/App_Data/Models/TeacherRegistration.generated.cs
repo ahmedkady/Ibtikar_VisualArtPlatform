@@ -19,58 +19,44 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Umbraco.Web.PublishedModels
 {
-	/// <summary>Teacher</summary>
-	[PublishedModel("teacher")]
-	public partial class Teacher : PublishedContentModel
+	/// <summary>Teacher Registration</summary>
+	[PublishedModel("teacherRegistration")]
+	public partial class TeacherRegistration : PublishedContentModel, IBasicRegistrationControls, IHeaderControls
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		public new const string ModelTypeAlias = "teacher";
+		public new const string ModelTypeAlias = "teacherRegistration";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		public new const PublishedItemType ModelItemType = PublishedItemType.Member;
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Teacher, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<TeacherRegistration, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Teacher(IPublishedContent content)
+		public TeacherRegistration(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Age
+		/// Current Location
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("age")]
-		public string Age => this.Value<string>("age");
+		[ImplementPropertyType("currentLocation")]
+		public string CurrentLocation => this.Value<string>("currentLocation");
 
 		///<summary>
-		/// CV
+		/// Resume
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("cV")]
-		public string CV => this.Value<string>("cV");
-
-		///<summary>
-		/// Gender
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("gender")]
-		public string Gender => this.Value<string>("gender");
-
-		///<summary>
-		/// Nationality
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("nationality")]
-		public string Nationality => this.Value<string>("nationality");
+		[ImplementPropertyType("resume")]
+		public string Resume => this.Value<string>("resume");
 
 		///<summary>
 		/// School
@@ -80,66 +66,80 @@ namespace Umbraco.Web.PublishedModels
 		public string School => this.Value<string>("school");
 
 		///<summary>
-		/// Is Approved
+		/// Age
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("umbracoMemberApproved")]
-		public bool UmbracoMemberApproved => this.Value<bool>("umbracoMemberApproved");
+		[ImplementPropertyType("age")]
+		public string Age => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetAge(this);
 
 		///<summary>
-		/// Comments
+		/// Education
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("umbracoMemberComments")]
-		public string UmbracoMemberComments => this.Value<string>("umbracoMemberComments");
+		[ImplementPropertyType("education")]
+		public string Education => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetEducation(this);
 
 		///<summary>
-		/// Failed Password Attempts
+		/// Email
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("umbracoMemberFailedPasswordAttempts")]
-		public int UmbracoMemberFailedPasswordAttempts => this.Value<int>("umbracoMemberFailedPasswordAttempts");
+		[ImplementPropertyType("email")]
+		public string Email => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetEmail(this);
 
 		///<summary>
-		/// Last Lockout Date
+		/// Full name
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("umbracoMemberLastLockoutDate")]
-		public global::System.DateTime UmbracoMemberLastLockoutDate => this.Value<global::System.DateTime>("umbracoMemberLastLockoutDate");
+		[ImplementPropertyType("fullName")]
+		public string FullName => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetFullName(this);
 
 		///<summary>
-		/// Last Login Date
+		/// Gender
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("umbracoMemberLastLogin")]
-		public global::System.DateTime UmbracoMemberLastLogin => this.Value<global::System.DateTime>("umbracoMemberLastLogin");
+		[ImplementPropertyType("gender")]
+		public string Gender => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetGender(this);
 
 		///<summary>
-		/// Last Password Change Date
+		/// Gender List
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("umbracoMemberLastPasswordChangeDate")]
-		public global::System.DateTime UmbracoMemberLastPasswordChangeDate => this.Value<global::System.DateTime>("umbracoMemberLastPasswordChangeDate");
+		[ImplementPropertyType("genderList")]
+		public global::System.Collections.Generic.IEnumerable<string> GenderList => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetGenderList(this);
 
 		///<summary>
-		/// Is Locked Out
+		/// Is UAE Citizen
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("umbracoMemberLockedOut")]
-		public bool UmbracoMemberLockedOut => this.Value<bool>("umbracoMemberLockedOut");
+		[ImplementPropertyType("isUAECitizen")]
+		public string IsUaecitizen => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetIsUaecitizen(this);
 
 		///<summary>
-		/// Password Answer
+		/// Nationality
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("umbracoMemberPasswordRetrievalAnswer")]
-		public string UmbracoMemberPasswordRetrievalAnswer => this.Value<string>("umbracoMemberPasswordRetrievalAnswer");
+		[ImplementPropertyType("nationality")]
+		public string Nationality => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetNationality(this);
 
 		///<summary>
-		/// Password Question
+		/// Password
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("umbracoMemberPasswordRetrievalQuestion")]
-		public string UmbracoMemberPasswordRetrievalQuestion => this.Value<string>("umbracoMemberPasswordRetrievalQuestion");
+		[ImplementPropertyType("password")]
+		public string Password => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetPassword(this);
+
+		///<summary>
+		/// Subtitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("subtitle")]
+		public string Subtitle => global::Umbraco.Web.PublishedModels.HeaderControls.GetSubtitle(this);
+
+		///<summary>
+		/// Title: Please Enter Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("title")]
+		public string Title => global::Umbraco.Web.PublishedModels.HeaderControls.GetTitle(this);
 	}
 }
