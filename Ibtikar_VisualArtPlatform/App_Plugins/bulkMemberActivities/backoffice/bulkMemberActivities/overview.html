@@ -1,9 +1,8 @@
 ﻿<div ng-controller="Umbraco.Members.BulkMemberActivities as vm">
     {{vm.testnew}}
-    <umb-table ng-if="vm.items"
-               items="vm.items"
+    <umb-table items="vm.items"
                item-properties="vm.options.includeProperties"
-               allow-select-all="vm.allowSelectAll"
+               allow-select-all="true"
                on-select="vm.selectItem"
                on-click="vm.clickItem"
                on-select-all="vm.selectAll"
@@ -11,6 +10,7 @@
                on-sorting-direction="vm.isSortDirection"
                on-sort="vm.sort">
     </umb-table>
+
 
 
 
