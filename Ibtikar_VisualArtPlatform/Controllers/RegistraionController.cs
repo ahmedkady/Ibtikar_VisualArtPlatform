@@ -18,6 +18,32 @@ namespace Ibtikar_VisualArtPlatform.Controllers
             _memberService = Services.MemberService;
         }
         [HttpPost]
+        public ActionResult RegisterTeacher(TeacherRegistrationViewModel command)
+        {
+            var member = _memberService.GetByEmail("teacher@itworxedu.com");
+            if (!ModelState.IsValid)
+            {
+                TempData["InvalidModelState"] = "Invalid";
+                return RedirectToCurrentUmbracoPage();
+            }
+            var newMember = _memberService.CreateMemberWithIdentity(command.Email, command.Email, command.Name, "teacher");
+            newMember.IsApproved = false;
+            newMember.SetValue("Gender", command.Gender);
+            newMember.SetValue("Age", command.Age);
+            newMember.SetValue("School", command.School);
+            if (command.IsUAE)
+            {
+                newMember.SetValue("Nationality", command.EmiratesNationality);
+            }
+            else
+            {
+                newMember.SetValue("Nationality", command.WorldNationality);
+            }
+            _memberService.Save(newMember);
+            _memberService.SavePassword(newMember, command.Password);
+            return RedirectToCurrentUmbracoPage();
+        }
+        [HttpPost]
         public ActionResult RegisterStudent(StudentRegistrationViewModel command)
         {
             if (!ModelState.IsValid)

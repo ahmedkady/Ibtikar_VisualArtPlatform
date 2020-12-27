@@ -328,15 +328,17 @@
     <Compile Include="App_Data\Models\Registraion.generated.cs" />
     <Compile Include="App_Data\Models\Spectator.generated.cs" />
     <Compile Include="App_Data\Models\SpectatorRegistration.generated.cs" />
+    <Compile Include="App_Data\Models\Student.generated.cs" />
     <Compile Include="App_Data\Models\StudentRegistration.generated.cs" />
-    <Compile Include="App_Data\Models\Studient.generated.cs" />
     <Compile Include="App_Data\Models\Teacher.generated.cs" />
+    <Compile Include="App_Data\Models\TeacherRegistration.generated.cs" />
     <Compile Include="App_Data\Models\WorldCountryControl.generated.cs" />
     <Compile Include="Controllers\RegistraionController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trees\BulkMemberActivites.cs" />
     <Compile Include="ViewModels\RegistraionViewModel.cs" />
     <Compile Include="ViewModels\StudentRegistrationViewModel.cs" />
+    <Compile Include="ViewModels\TeacherRegistrationViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="config\imageprocessor\security.config" />
@@ -374,6 +376,7 @@
     <Content Include="Views\SpectatorRegistration.cshtml" />
     <Content Include="Views\Partials\Nationalities.cshtml" />
     <Content Include="Views\StudentRegistration.cshtml" />
+    <Content Include="Views\TeacherRegistration.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
