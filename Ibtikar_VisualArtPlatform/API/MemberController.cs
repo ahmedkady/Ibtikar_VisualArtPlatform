@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Ibtikar_VisualArtPlatform.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Http;
 using Umbraco.Core.Services;
 using Umbraco.Web.Mvc;
 using Umbraco.Web.WebApi;
@@ -17,12 +19,67 @@ namespace Ibtikar_VisualArtPlatform.API
         {
             this.memberService = memberService;
         }
-        public IEnumerable<string> GetAllMembers()
-        {
 
+        [HttpGet]
+        public IEnumerable<MemberViewModel> GetAllMembers()
+        {
             var members = memberService.GetAllMembers();
 
-            return members.Select(x => x.Name + "-" + x.IsApproved.ToString());
+            return members.Select(x => new MemberViewModel()
+            {
+                Id = x.Id,
+                Email = x.Email,
+                IsApproved = x.IsApproved,
+                Name = x.Name
+            });
+        }
+
+
+        [HttpGet]
+        public bool ActivateMember(string email)
+        {
+            var member = memberService.GetByEmail(email);
+            member.IsApproved = true;
+            memberService.Save(member);
+            return true;
+        }
+
+        [HttpGet]
+        public bool DeactivateMember(string email)
+        {
+            var member = memberService.GetByEmail(email);
+            member.IsApproved = false;
+            memberService.Save(member);
+            return true;
+        }
+
+
+        [HttpGet]
+        public bool ActivateMembers(int[] ids)
+        {
+
+            var members = memberService.GetAllMembers(ids);
+            foreach (var member in members)
+            {
+                member.IsApproved = true;
+                memberService.Save(member);
+            }
+
+            return true;
+        }
+
+        [HttpGet]
+        public bool DeactivateMembers(int[] ids)
+        {
+
+            var members = memberService.GetAllMembers(ids);
+            foreach (var member in members)
+            {
+                member.IsApproved = false;
+                memberService.Save(member);
+            }
+
+            return true;
         }
     }
 }
