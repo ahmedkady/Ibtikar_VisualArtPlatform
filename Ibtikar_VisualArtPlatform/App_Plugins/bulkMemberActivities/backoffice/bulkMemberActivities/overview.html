@@ -1,6 +1,6 @@
 ﻿<div ng-controller="Umbraco.Members.BulkMemberActivities as vm">
     {{vm.testnew}}
-    <umb-table items="vm.items"
+    <!--<umb-table items="vm.items"
                item-properties="vm.options.includeProperties"
                allow-select-all="true"
                on-select="vm.selectItem"
@@ -9,33 +9,21 @@
                on-selected-all="vm.isSelectedAll"
                on-sorting-direction="vm.isSortDirection"
                on-sort="vm.sort">
+    </umb-table>-->
+
+
+    <umb-table items="vm.items"
+               item-properties="vm.options.includeProperties"
+               allow-select-all="vm.allowSelectAll"
+               on-select="vm.selectItem(item, $index, $event)"
+               on-click="vm.clickItem(item)"
+               on-select-all="vm.selectAll($event)"
+               on-selected-all="vm.isSelectedAll()"
+               on-sorting-direction="vm.isSortDirection(col, direction)"
+               on-sort="vm.sort(field, allow, isSystem)">
     </umb-table>
 
-
-
-
-
-    <!--<form name="mySectionForm" novalidate>
-
-        <umb-editor-view>
-
-            <umb-editor-header name="vm.content.name"
-                               hide-alias="true"
-                               hide-description="true"
-                               hide-icon="true">
-            </umb-editor-header>
-
-            <umb-editor-container>
-                // main content here
-            </umb-editor-container>
-
-            <umb-editor-footer>
-                // footer content here
-            </umb-editor-footer>
-
-        </umb-editor-view>
-
-    </form>-->
+     
 
 </div>
  
