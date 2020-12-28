@@ -282,6 +282,7 @@
     <Content Include="assets\css\owl.carousel.min.css" />
     <Content Include="assets\css\owl.theme.default.min.css" />
     <Content Include="assets\css\responsive.css" />
+    <Content Include="assets\css\rtl.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\img\achieve-shape\achieve-shape-1.png" />
     <Content Include="assets\img\achieve-shape\achieve-shape-2.png" />
@@ -476,28 +477,8 @@
     <Content Include="config\Lang\sv-SE.user.xml" />
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="config\logviewer.searches.config.js" />
-    <Content Include="css\bootstrap.min.css" />
-    <Content Include="css\font-awesome.min.css" />
-    <Content Include="css\owl.carousel.css" />
-    <Content Include="css\owl.theme.default.min.css" />
-    <Content Include="css\tooplate-style.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
-    <Content Include="images\feature-mockup.png" />
-    <Content Include="images\home-bg.jpg" />
-    <Content Include="images\team-image1.jpg" />
-    <Content Include="images\team-image2.jpg" />
-    <Content Include="images\team-image3.jpg" />
-    <Content Include="images\testimonial-image.jpg" />
-    <Content Include="images\tst-image1.jpg" />
-    <Content Include="images\tst-image2.jpg" />
-    <Content Include="images\tst-image3.jpg" />
-    <Content Include="js\bootstrap.min.js" />
-    <Content Include="js\custom.js" />
-    <Content Include="js\jquery.js" />
-    <Content Include="js\jquery.stellar.min.js" />
-    <Content Include="js\owl.carousel.min.js" />
-    <Content Include="js\smoothscroll.js" />
     <Content Include="Scripts\registration.js" />
     <Content Include="Umbraco\assets\css\canvasdesigner.css" />
     <Content Include="Umbraco\assets\css\installer.css" />
@@ -2958,6 +2939,8 @@
     <Content Include="App_Plugins\bulkMemberActivities\package.manifest" />
     <Content Include="assets\css\responsive.css.map" />
     <Content Include="assets\css\responsive.scss" />
+    <Content Include="assets\css\rtl.css.map" />
+    <Content Include="assets\css\rtl.scss" />
     <Content Include="assets\css\style.css.map" />
     <Content Include="assets\css\style.scss" />
     <Content Include="assets\fonts\._boxicons.eot" />
@@ -3093,6 +3076,9 @@
     <Content Include="Umbraco\Views\Default.cshtml" />
     <Content Include="Umbraco\Views\Preview\Index.cshtml" />
     <Content Include="Umbraco\Views\web.config" />
+    <Content Include="Views\BasicRegistrationControls.cshtml" />
+    <Content Include="Views\StudentRegistration.cshtml" />
+    <Content Include="Views\TeacherRegistration.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
