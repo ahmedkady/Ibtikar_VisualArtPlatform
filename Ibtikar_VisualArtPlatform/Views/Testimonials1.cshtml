@@ -1,0 +1,35 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Testimonials>
+@using ContentModels = Umbraco.Web.PublishedModels;
+
+
+@* the fun starts here *@
+
+@{
+    var testimonials = Model.Children<ContentModels.Testimonial>();
+}
+
+<!-- Start Testimonials Area -->
+<section class="feedback-area f5f6fa-bg-color ptb-100">
+    <div class="container">
+        <div class="section-title">
+            <span>Testimonials</span>
+            <h2>What students say</h2>
+        </div>
+        <div class="feedback-slider owl-theme owl-carousel">
+            @foreach (var testimonial in testimonials)
+            {
+                <div class="feedback-item">
+                    <i class="flaticon-quotation"></i>
+                    <p>@testimonial.Description</p>
+
+                    <div class="feedback-title">
+                        <img src="assets/img/feedback-img/feedback-img-1.jpg" alt="Image">
+                        <h3>@testimonial.AuthorName</h3>
+                        <span>@testimonial.AuthorJob</span>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- End Testimonials Area -->
