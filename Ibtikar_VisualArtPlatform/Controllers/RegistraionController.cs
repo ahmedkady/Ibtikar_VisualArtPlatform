@@ -15,7 +15,7 @@ namespace Ibtikar_VisualArtPlatform.Controllers
         private IMemberService _memberService;
         public RegistraionController()
         {
-            _memberService = Services.MemberService;
+            _memberService = Services.MemberService; 
         }
         [HttpPost]
         public ActionResult RegisterTeacher(TeacherRegistrationViewModel command)
