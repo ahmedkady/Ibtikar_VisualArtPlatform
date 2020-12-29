@@ -1,0 +1,17 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using ContentModels = Umbraco.Web.PublishedModels;
+
+@{
+    var homepage = Model.AncestorOrSelf<ContentModels.Home>();
+    var QualificationsContent = homepage.Children<ContentModels.Qualifications>().FirstOrDefault();
+    var Qualifications = QualificationsContent.Children<ContentModels.Qualification>();
+}
+
+    <select name="Education" class="form-control" id="">
+        @{
+            foreach (var qualification in Qualifications)
+            {
+                <option value="@qualification.QualificationValue">@qualification.QualificationName</option>
+            }
+        }
+    </select>

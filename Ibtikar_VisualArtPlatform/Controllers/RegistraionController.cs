@@ -29,16 +29,12 @@ namespace Ibtikar_VisualArtPlatform.Controllers
             if (Request.Files.Count > 0)
             {
                 var CV = Request.Files[0];
-                string FileName = Guid.NewGuid().ToString();
-                // id to config
-                IMedia media = Services.MediaService.CreateMediaWithIdentity(CV.FileName, 1105, Constants.Conventions.MediaTypes.File);
-                media.SetValue(Services.ContentTypeBaseServices, Constants.Conventions.Media.File, CV.FileName, CV.InputStream);
+                string FileName = Guid.NewGuid().ToString() + CV.FileName;
+                IMedia media = Services.MediaService.CreateMediaWithIdentity(FileName, 1105, Constants.Conventions.MediaTypes.File);
+                media.SetValue(Services.ContentTypeBaseServices, Constants.Conventions.Media.File, FileName, CV.InputStream);
                 Services.MediaService.Save(media);
                 IMedia SavedFile = Services.MediaService.GetById(media.Id);
                 ResumePath = SavedFile.GetValue<string>(Constants.Conventions.Media.File);
-                //var path = Server.MapPath(umbracoFilePath);
-
-
             }
             var newMember = _memberService.CreateMemberWithIdentity(command.Email, command.Email, command.Name, "teacher");
             newMember.IsApproved = false;

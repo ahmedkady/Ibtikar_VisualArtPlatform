@@ -1,0 +1,19 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using ContentModels = Umbraco.Web.PublishedModels;
+
+@{
+    var homepage = Model.AncestorOrSelf<ContentModels.Home>();
+    var SchoolsContent = homepage.Children<ContentModels.Schools>().FirstOrDefault();
+    var Schools = SchoolsContent.Children<ContentModels.School>();
+}
+
+    <select name="School" class="form-control" id="BasicRegistration-SchoolsList">
+        @*<option selected value="s1">school 1</option>
+        <option value="s2">school 2</option>*@
+        @{
+            foreach (var school in Schools)
+            {
+                <option value="@school.SchoolValue">@school.SchoolName</option>
+            }
+        }
+    </select>

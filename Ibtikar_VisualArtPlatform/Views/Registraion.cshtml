@@ -1,7 +1,9 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Registraion>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
+    string Culture = UmbracoContext.VariationContextAccessor.VariationContext.Culture;
+    string LandRoute = Culture.ToLower().Contains("ar") ? "ar" : "en";
 }
     <section id="about" data-stellar-background-ratio="0.5">
         <div class="container">
@@ -23,9 +25,9 @@
 
             </div>
             <div class="col-sm-12 text-center">
-                <button class="btn btn-primary btn-lg">@Model.Student</button>
-                <button class="btn btn-danger btn-lg">@Model.Teacher</button>
-                <button onclick="location.href='/en/spectator-registration/'" class="btn btn-warning btn-lg">@Model.Spectator</button>
+                <button onclick="location.href='/@LandRoute/Student-registration/'" class="btn btn-primary btn-lg">@Model.Student</button>
+                <button onclick="location.href='/@LandRoute/Teacher-registration/'" class="btn btn-danger btn-lg">@Model.Teacher</button>
+                <button onclick="location.href='/@LandRoute/spectator-registration/'" class="btn btn-warning btn-lg">@Model.Spectator</button>
             </div>
         </div>
     </section>
