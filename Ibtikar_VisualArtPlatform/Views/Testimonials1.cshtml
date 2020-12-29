@@ -1,11 +1,13 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Testimonials>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @using ContentModels = Umbraco.Web.PublishedModels;
 
 
 @* the fun starts here *@
 
 @{
-    var testimonials = Model.Children<ContentModels.Testimonial>();
+    var homepage = Model.AncestorOrSelf<ContentModels.Home>();
+    var TestimonialsContent = homepage.Children<ContentModels.Testimonials>().FirstOrDefault();
+    var testimonials = TestimonialsContent.Children<ContentModels.Testimonial>();
 }
 
 <!-- Start Testimonials Area -->
