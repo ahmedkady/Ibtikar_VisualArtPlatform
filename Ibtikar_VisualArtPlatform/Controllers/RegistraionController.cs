@@ -20,14 +20,30 @@ namespace Ibtikar_VisualArtPlatform.Controllers
         [HttpPost]
         public ActionResult RegisterTeacher(TeacherRegistrationViewModel command)
         {
-            var member = _memberService.GetByEmail("teacher@itworxedu.com");
+            string ResumePath = string.Empty;
             if (!ModelState.IsValid)
             {
                 TempData["InvalidModelState"] = "Invalid";
                 return RedirectToCurrentUmbracoPage();
             }
+            if (Request.Files.Count > 0)
+            {
+                var CV = Request.Files[0];
+                string FileName = Guid.NewGuid().ToString();
+                // id to config
+                IMedia media = Services.MediaService.CreateMediaWithIdentity(CV.FileName, 1105, Constants.Conventions.MediaTypes.File);
+                media.SetValue(Services.ContentTypeBaseServices, Constants.Conventions.Media.File, CV.FileName, CV.InputStream);
+                Services.MediaService.Save(media);
+                IMedia SavedFile = Services.MediaService.GetById(media.Id);
+                ResumePath = SavedFile.GetValue<string>(Constants.Conventions.Media.File);
+                //var path = Server.MapPath(umbracoFilePath);
+
+
+            }
             var newMember = _memberService.CreateMemberWithIdentity(command.Email, command.Email, command.Name, "teacher");
             newMember.IsApproved = false;
+            newMember.SetValue("CV", ResumePath);
+
             newMember.SetValue("Gender", command.Gender);
             newMember.SetValue("Age", command.Age);
             newMember.SetValue("School", command.School);
