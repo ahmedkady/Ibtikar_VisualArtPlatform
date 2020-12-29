@@ -129,6 +129,13 @@ namespace Umbraco.Web.PublishedModels
 		public string Password => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetPassword(this);
 
 		///<summary>
+		/// Register Button
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("registerButton")]
+		public string RegisterButton => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetRegisterButton(this);
+
+		///<summary>
 		/// Subtitle
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]

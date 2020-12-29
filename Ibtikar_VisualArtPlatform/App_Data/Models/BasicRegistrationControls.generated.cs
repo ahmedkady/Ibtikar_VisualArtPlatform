@@ -58,6 +58,10 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Password</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		string Password { get; }
+
+		/// <summary>Register Button</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		string RegisterButton { get; }
 	}
 
 	/// <summary>Basic Registration Controls</summary>
@@ -183,5 +187,16 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Static getter for Password</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		public static string GetPassword(IBasicRegistrationControls that) => that.Value<string>("password");
+
+		///<summary>
+		/// Register Button
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("registerButton")]
+		public string RegisterButton => GetRegisterButton(this);
+
+		/// <summary>Static getter for Register Button</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		public static string GetRegisterButton(IBasicRegistrationControls that) => that.Value<string>("registerButton");
 	}
 }
