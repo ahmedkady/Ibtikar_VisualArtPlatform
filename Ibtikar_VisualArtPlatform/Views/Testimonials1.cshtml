@@ -4,9 +4,8 @@
 
 @* the fun starts here *@
 
-@{
-    var homepage = Model.AncestorOrSelf<ContentModels.Home>();
-    var TestimonialsContent = homepage.Children<ContentModels.Testimonials>().FirstOrDefault();
+@{ 
+    var TestimonialsContent = Model.Children<ContentModels.Testimonials>().FirstOrDefault();
     var testimonials = TestimonialsContent.Children<ContentModels.Testimonial>();
 }
 
@@ -25,7 +24,7 @@
                     <p>@testimonial.Description</p>
 
                     <div class="feedback-title">
-                        <img src="assets/img/feedback-img/feedback-img-1.jpg" alt="Image">
+                        <img src="@testimonial.AuthorPicture" alt="Image">
                         <h3>@testimonial.AuthorName</h3>
                         <span>@testimonial.AuthorJob</span>
                     </div>

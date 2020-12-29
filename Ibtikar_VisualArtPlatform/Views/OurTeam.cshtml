@@ -1,0 +1,50 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using ContentModels = Umbraco.Web.PublishedModels;
+
+@{
+    Layout = "Master.cshtml"; 
+    var Teams = Model.Children<ContentModels.Team>();
+}
+
+@* the fun starts here *@
+
+<!-- Start Teachers Area -->
+<section class="teachers-area-style pb-70">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Team</h2>
+        </div>
+
+        <div class="row">
+            @foreach (var team in Teams)
+            {
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-teachers">
+                        <img src="@team.TeamPicture" alt="Image">
+
+                        <div class="teachers-content">
+                            @*<ul>
+                                <li>
+                                    <a href="#"><i class="bx bxl-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="bx bxl-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+                                </li>
+                            </ul>*@
+
+                            <h3>@team.TeamName</h3>
+                            <span>@team.TeamTitle</span>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+            
+        </div>
+    </div>
+</section>
+<!-- End Teachers Area -->
