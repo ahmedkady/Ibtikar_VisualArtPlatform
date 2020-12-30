@@ -1,47 +1,57 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
     Layout = null;
+    var isEnglish = UmbracoContext.VariationContextAccessor?.VariationContext?.Culture == "en-US";
+
 }
 
 @* the fun starts here *@
 
 <!doctype html>
 <html lang="zxx">
-    <head>
-		<!-- Required meta tags -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<!-- Bootstrap CSS --> 
-		<link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
-		<!-- Owl Theme Default CSS --> 
-		<link rel="stylesheet" href="~/assets/css/owl.theme.default.min.css">
-		<!-- Owl Carousel CSS --> 
-		<link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
-		<!-- Owl Magnific CSS --> 
-		<link rel="stylesheet" href="~/assets/css/magnific-popup.css">
-		<!-- Animate CSS --> 
-		<link rel="stylesheet" href="~/assets/css/animate.css">
-		<!-- Boxicons CSS --> 
-		<link rel="stylesheet" href="~/assets/css/boxicons.min.css"> 
-		<!-- Flaticon CSS --> 
-		<link rel="stylesheet" href="~/assets/css/flaticon.css">
-		<!-- Meanmenu CSS -->
-		<link rel="stylesheet" href="~/assets/css/meanmenu.css">
-		<!-- Nice Select CSS -->
-		<link rel="stylesheet" href="~/assets/css/nice-select.css">
-		<!-- Odometer CSS-->
-		<link rel="stylesheet" href="~/assets/css/odometer.css">
-		<!-- Style CSS -->
-		<link rel="stylesheet" href="~/assets/css/style.css">
-		<!-- Responsive CSS -->
-		<link rel="stylesheet" href="~/assets/css/responsive.css">
-		
-		<!-- Favicon -->
-		<link rel="icon" type="image/png" href="~/assets/img/favicon.png">
-		<!-- Title -->
-		<title>Eduon - Education Online Courses & Training HTML Template</title>
-    </head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <!-- Owl Theme Default CSS -->
+    <link rel="stylesheet" href="~/assets/css/owl.theme.default.min.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
+    <!-- Owl Magnific CSS -->
+    <link rel="stylesheet" href="~/assets/css/magnific-popup.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="~/assets/css/animate.css">
+    <!-- Boxicons CSS -->
+    <link rel="stylesheet" href="~/assets/css/boxicons.min.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="~/assets/css/flaticon.css">
+    <!-- Meanmenu CSS -->
+    <link rel="stylesheet" href="~/assets/css/meanmenu.css">
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="~/assets/css/nice-select.css">
+    <!-- Odometer CSS-->
+    <link rel="stylesheet" href="~/assets/css/odometer.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/assets/css/responsive.css">
+
+    @if (!isEnglish)
+    {
+        <!-- RTL CSS -->
+        <link rel="stylesheet" href="~/assets/css/rtl.css">
+    }
+
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="~/assets/img/favicon.png">
+
+    <!-- Title -->
+    <title>Eduon - Education Online Courses & Training HTML Template</title>
+</head>
 
     <body>
         <!-- Start Preloader Area -->
@@ -76,7 +86,7 @@
                         <div class="collapse navbar-collapse mean-menu">
                             <ul class="navbar-nav m-auto">
                                 <li class="nav-item">
-                                    <a href="/" class="nav-link active">
+                                    <a href="@(isEnglish ? "/en" : "/ar")/" class="nav-link active">
                                         Home
                                         <i class="bx bx-chevron-down"></i>
                                     </a>
@@ -92,31 +102,32 @@
                                             <a href="/announcement" class="nav-link">Announcements</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="/testimonials" class="nav-link">Testimonials</a>
+                                            <a href="@(isEnglish ? "/en" : "/ar")/testimonials" class="nav-link">Testimonials</a>
                                         </li>
                                     </ul>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="/events" class="nav-link">
+                                    <a href="@(isEnglish ? "/en" : "/ar")/events" class="nav-link">
                                         Events
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="/news" class="nav-link">
+                                    <a href="@(isEnglish ? "/en" : "/ar")/news" class="nav-link">
                                         News
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="/team" class="nav-link">
+
+                                    <a href="@(isEnglish ? "/en" : "/ar")/team" class="nav-link">
                                         Our Team
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="/contact" class="nav-link">Contact Us</a>
+                                    <a href="@(isEnglish ? "/en" : "/ar")/contact" class="nav-link">Contact Us</a>
                                 </li>
                             </ul>
 

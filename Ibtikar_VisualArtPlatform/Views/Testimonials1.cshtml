@@ -5,16 +5,16 @@
 @* the fun starts here *@
 
 @{ 
-    var TestimonialsContent = Model.Children<ContentModels.Testimonials>().FirstOrDefault();
-    var testimonials = TestimonialsContent.Children<ContentModels.Testimonial>();
+    var testimonialsContent = Model.Children<ContentModels.Testimonials>().FirstOrDefault();
+    var testimonials = testimonialsContent.Children<ContentModels.Testimonial>();
 }
 
 <!-- Start Testimonials Area -->
 <section class="feedback-area f5f6fa-bg-color ptb-100">
     <div class="container">
         <div class="section-title">
-            <span>Testimonials</span>
-            <h2>What students say</h2>
+            <span>@testimonialsContent.TestimonailsTitle</span>
+            <h2>@testimonialsContent.TestimonialsSubTitle</h2>
         </div>
         <div class="feedback-slider owl-theme owl-carousel">
             @foreach (var testimonial in testimonials)

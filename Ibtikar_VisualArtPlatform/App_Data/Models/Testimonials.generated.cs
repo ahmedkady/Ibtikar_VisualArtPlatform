@@ -43,5 +43,19 @@ namespace Umbraco.Web.PublishedModels
 		{ }
 
 		// properties
+
+		///<summary>
+		/// TestimonialsTitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("testimonailsTitle")]
+		public string TestimonailsTitle => this.Value<string>("testimonailsTitle");
+
+		///<summary>
+		/// TestimonialsSubTitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("testimonialsSubTitle")]
+		public string TestimonialsSubTitle => this.Value<string>("testimonialsSubTitle");
 	}
 }
