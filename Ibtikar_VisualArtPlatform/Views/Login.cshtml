@@ -1,0 +1,52 @@
+﻿
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Login>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "Master.cshtml";
+    string Culture = UmbracoContext.VariationContextAccessor.VariationContext.Culture;
+    string LandRoute = Culture.ToLower().Contains("ar") ? "ar" : "en";
+}
+
+<section class="user-area-style ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-title">
+                    <h2>Log In</h2>
+                </div>
+
+                <div class="contact-form-action mb-50">
+                    @{Html.RenderAction("RenderLogin", "Member"); }
+
+
+
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="section-title">
+                    <h2>Registration</h2>
+                </div>
+
+                <div class="contact-form-action">
+                    <div class="col-12">
+                        <button onclick="location.href='/@LandRoute/Student-registration/'" class="default-btn" type="submit">
+                            @Model.Student
+                        </button>
+                    </div>
+                    <div class="col-12">
+                        <button onclick="location.href='/@LandRoute/teacher-registration/'" class="default-btn" type="submit">
+                            @Model.Teacher
+                        </button>
+                    </div>
+                    <div class="col-12">
+                        <button onclick="location.href='/@LandRoute/spectator-registration/'" class="default-btn" type="submit">
+                            @Model.Student
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
