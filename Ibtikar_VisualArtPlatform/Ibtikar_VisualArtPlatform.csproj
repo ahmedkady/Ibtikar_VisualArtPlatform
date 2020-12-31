@@ -2902,6 +2902,8 @@
     <Compile Include="App_Data\Models\BasicRegistrationControls.generated.cs" />
     <Compile Include="App_Data\Models\ContactUs.generated.cs" />
     <Compile Include="App_Data\Models\EditProfile.generated.cs" />
+    <Compile Include="App_Data\Models\Event.generated.cs" />
+    <Compile Include="App_Data\Models\Events.generated.cs" />
     <Compile Include="App_Data\Models\FAQ.generated.cs" />
     <Compile Include="App_Data\Models\FAqs.generated.cs" />
     <Compile Include="App_Data\Models\File.generated.cs" />
@@ -3115,6 +3117,8 @@
     <Content Include="Views\FAQs.cshtml" />
     <Content Include="Views\EditProfile.cshtml" />
     <Content Include="Views\Partials\_EditProfileSpectator.cshtml" />
+    <Content Include="Views\Event.cshtml" />
+    <Content Include="Views\Events.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

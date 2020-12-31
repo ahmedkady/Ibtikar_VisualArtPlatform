@@ -1,0 +1,56 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Events>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+    var homepage = Model.AncestorOrSelf<ContentModels.Home>();
+    var EventsContent = homepage.Children<ContentModels.Events>().FirstOrDefault();
+    var Events = EventsContent.Children<ContentModels.Event>();
+}
+<section class="event-area-style pt-100 pb-70">
+    <div class="container">
+        <div class="section-title">
+            <span>@Model.Title</span>
+            <h2>@Model.Subtitle</h2>
+        </div>
+
+        <div class="row">
+            @foreach (var Event in Events)
+            {
+                <div class="col-lg-6 col-sm-6">
+                    <div class="single-event">
+                        <a href="@Event.Url">
+                            <img src="@Event.Picture" alt="Image">
+                        </a>
+
+                        <div class="event-content">
+                            <ul>
+                                <li>
+                                    <i class="bx bx-calendar"></i>
+                                    @*Aug 13, 2020*@
+                                    @Event.EventDate
+                                </li>
+                                <li>
+                                    <i class="bx bx-time"></i>
+                                    @*Monday 3:00AM - 5:00PM*@
+                                    @Event.EventDate
+                                </li>
+                            </ul>
+
+                            <a href="single-event.html">
+                                <h3>@Event.Title</h3>
+                            </a>
+
+                            <span>
+                                <i class="bx bxs-location-plus"></i>
+                                @Event.Location
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+
+        </div>
+    </div>
+</section>
