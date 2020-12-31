@@ -66,6 +66,13 @@ namespace Umbraco.Web.PublishedModels
 		public string Gender => this.Value<string>("gender");
 
 		///<summary>
+		/// Is UAE citizen
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("isUAECitizen")]
+		public bool IsUaecitizen => this.Value<bool>("isUAECitizen");
+
+		///<summary>
 		/// Nationality
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]

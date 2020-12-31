@@ -9,9 +9,11 @@
         var myUser = System.Web.Security.Membership.GetUser();
         if (myUser != null)
         {
-            <p><strong>Logged in as</strong> <span>@myUser.UserName</span></p>
+            <p><strong>Logged in as</strong> <span>@myUser.Email</span></p>
             <button name="login" type="submit"><span>logout</span> <i class="fa fa-arrow-right"></i></button>
         }
     }
 }
+
+ var profileModel = Members.GetCurrentMemberProfileModel();
 

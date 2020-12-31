@@ -3,35 +3,34 @@
 @{
     Layout = null;
     var homepage = Model.AncestorOrSelf<ContentModels.Home>();
-    @*var announcements = homepage.Children<ContentModels.HomeBanner>().FirstOrDefault();*@
-
+    var announcementsContent = homepage.Children<ContentModels.Announcements>().FirstOrDefault();
+    var announcements = announcementsContent.Children<ContentModels.Announce>();
 }
 
 <!-- Start Announcements Area -->
 <section class="news-area f5f6fa-bg-color pt-100 pb-70">
     <div class="container text-center">
         <div class="section-title">
-            <span>Announcements</span>
-            <h2>Explore Recent Announcements</h2>
+            <span>@announcementsContent.SmallTitle</span>
+            <h2>@announcementsContent.MainTitle</h2>
         </div>
 
         <div class="row">
             <div class="col-lg-6">
                 <div class="single-news">
                     <a href="single-blog.html">
-                        <img src="assets/img/news-img/news-img-1.jpg" alt="Image">
+                        <img src="@(announcements.ElementAt(0)?.Image)" alt="Image">
                     </a>
 
                     <div class="news-content">
-                        <span class="tag">Development</span>
+                        <span class="tag">@(announcements.ElementAt(0)?.Group)</span>
 
                         <a href="single-blog.html">
-                            <h3>What is lifelong learning and how could it help your learning?</h3>
+                            <h3>@(announcements.ElementAt(0)?.Title)</h3>
                         </a>
 
                         <ul class="lessons">
-                            <li>By: <a href="#">Admin</a></li>
-                            <li class="float">Posted aon 13/07/2020</li>
+                            <li class="float">Posted on @(announcements.ElementAt(0)?.CreateDate.ToString("dd/MM/yyyy"))</li>
                         </ul>
                     </div>
                 </div>
@@ -45,15 +44,14 @@
 
                     <div class="col-lg-8 col-sm-8 pl-0">
                         <div class="news-listing-content">
-                            <span class="tag">Market Trends</span>
+                            <span class="tag">@(announcements.ElementAt(1)?.Group)</span>
 
                             <a href="single-blog.html">
-                                <h3>All aspire students are now student card eligible!</h3>
+                                <h3>@(announcements.ElementAt(1)?.Title)</h3>
                             </a>
 
                             <ul class="lessons">
-                                <li>By: <a href="#">Admin</a></li>
-                                <li class="float">Posted on 12/07/2020</li>
+                                <li class="float">Posted on @(announcements.ElementAt(1)?.CreateDate.ToString("dd/MM/yyyy"))</li>
                             </ul>
                         </div>
                     </div>
@@ -66,15 +64,14 @@
 
                     <div class="col-lg-8 col-sm-8 pl-0">
                         <div class="news-listing-content">
-                            <span class="tag">Research</span>
+                            <span class="tag">@(announcements.ElementAt(2)?.Group)</span>
 
                             <a href="single-blog.html">
-                                <h3>Determining the true goal of a good education is difficult.</h3>
+                                <h3>@(announcements.ElementAt(2)?.Title)</h3>
                             </a>
 
                             <ul class="lessons">
-                                <li>By: <a href="#">Admin</a></li>
-                                <li class="float">Posted on 11/07/2020</li>
+                                <li class="float">Posted on @(announcements.ElementAt(2)?.CreateDate.ToString("dd/MM/yyyy"))</li>
                             </ul>
                         </div>
                     </div>
@@ -87,15 +84,14 @@
 
                     <div class="col-lg-8 col-sm-8 pl-0">
                         <div class="news-listing-content">
-                            <span class="tag">Career Advice</span>
+                            <span class="tag">@(announcements.ElementAt(3)?.Group)</span>
 
                             <a href="single-blog.html">
-                                <h3>Leading the way with lifelong learning</h3>
+                                <h3>@(announcements.ElementAt(3)?.Title)</h3>
                             </a>
 
                             <ul class="lessons">
-                                <li>By: <a href="#">Admin</a></li>
-                                <li class="float">Posted on 10/07/2020</li>
+                                <li class="float">Posted on @(announcements.ElementAt(3)?.CreateDate.ToString("dd/MM/yyyy"))</li>
                             </ul>
                         </div>
                     </div>
