@@ -3104,6 +3104,10 @@
     <Content Include="Views\Partials\_LogOut.cshtml" />
     <Content Include="Views\HomeBanner.cshtml" />
     <Content Include="Views\WhoAreWe.cshtml" />
+    <Content Include="Views\Announce.cshtml" />
+    <Content Include="Views\Announcements.cshtml" />
+    <Content Include="Views\FAQ.cshtml" />
+    <Content Include="Views\FAQs.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
