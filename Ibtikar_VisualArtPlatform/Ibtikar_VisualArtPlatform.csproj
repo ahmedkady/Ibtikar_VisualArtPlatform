@@ -3113,6 +3113,7 @@
     <Content Include="Views\Announcements.cshtml" />
     <Content Include="Views\FAQ.cshtml" />
     <Content Include="Views\FAQs.cshtml" />
+    <Content Include="Views\EditProfile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
