@@ -2898,10 +2898,12 @@
     <Compile Include="API\MemberController.cs" />
     <Compile Include="App_Data\Models\AboutUs.generated.cs" />
     <Compile Include="App_Data\Models\BasicRegistrationControls.generated.cs" />
+    <Compile Include="App_Data\Models\FAQ.generated.cs" />
     <Compile Include="App_Data\Models\File.generated.cs" />
     <Compile Include="App_Data\Models\Folder.generated.cs" />
     <Compile Include="App_Data\Models\HeaderControls.generated.cs" />
     <Compile Include="App_Data\Models\Home.generated.cs" />
+    <Compile Include="App_Data\Models\HomeBanner.generated.cs" />
     <Compile Include="App_Data\Models\Image.generated.cs" />
     <Compile Include="App_Data\Models\Member.generated.cs" />
     <Compile Include="App_Data\Models\Registraion.generated.cs" />
@@ -2911,6 +2913,9 @@
     <Compile Include="App_Data\Models\StudentRegistration.generated.cs" />
     <Compile Include="App_Data\Models\Teacher.generated.cs" />
     <Compile Include="App_Data\Models\TeacherRegistration.generated.cs" />
+    <Compile Include="App_Data\Models\Testimonial.generated.cs" />
+    <Compile Include="App_Data\Models\Testimonials.generated.cs" />
+    <Compile Include="App_Data\Models\WhoAreWe.generated.cs" />
     <Compile Include="App_Data\Models\WorldCountryControl.generated.cs" />
     <Compile Include="Controllers\RegistraionController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -3080,6 +3085,8 @@
     <Content Include="Views\BasicRegistrationControls.cshtml" />
     <Content Include="Views\StudentRegistration.cshtml" />
     <Content Include="Views\TeacherRegistration.cshtml" />
+    <Content Include="Views\HomeBanner.cshtml" />
+    <Content Include="Views\WhoAreWe.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

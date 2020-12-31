@@ -19,121 +19,86 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Umbraco.Web.PublishedModels
 {
-	/// <summary>Teacher Registration</summary>
-	[PublishedModel("teacherRegistration")]
-	public partial class TeacherRegistration : PublishedContentModel, IBasicRegistrationControls, IHeaderControls
+	/// <summary>Login</summary>
+	[PublishedModel("Login")]
+	public partial class Login : PublishedContentModel, IHeaderControls
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		public new const string ModelTypeAlias = "teacherRegistration";
+		public new const string ModelTypeAlias = "Login";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<TeacherRegistration, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Login, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public TeacherRegistration(IPublishedContent content)
+		public Login(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Current Location
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("currentLocation")]
-		public string CurrentLocation => this.Value<string>("currentLocation");
-
-		///<summary>
-		/// Resume
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("resume")]
-		public string Resume => this.Value<string>("resume");
-
-		///<summary>
-		/// School
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("school")]
-		public string School => this.Value<string>("school");
-
-		///<summary>
-		/// Age
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("age")]
-		public string Age => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetAge(this);
-
-		///<summary>
-		/// Education
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("education")]
-		public string Education => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetEducation(this);
-
-		///<summary>
 		/// Email
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		[ImplementPropertyType("email")]
-		public string Email => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetEmail(this);
+		public string Email => this.Value<string>("email");
 
 		///<summary>
-		/// Full name
+		/// Forget Password
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("fullName")]
-		public string FullName => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetFullName(this);
+		[ImplementPropertyType("forgetPassword")]
+		public string ForgetPassword => this.Value<string>("forgetPassword");
 
 		///<summary>
-		/// Gender
+		/// Login Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("gender")]
-		public string Gender => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetGender(this);
-
-		///<summary>
-		/// Gender List
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("genderList")]
-		public global::System.Collections.Generic.IEnumerable<string> GenderList => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetGenderList(this);
-
-		///<summary>
-		/// Is UAE Citizen
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("isUAECitizen")]
-		public string IsUaecitizen => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetIsUaecitizen(this);
-
-		///<summary>
-		/// Nationality
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("nationality")]
-		public string Nationality => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetNationality(this);
+		[ImplementPropertyType("LoginTitle")]
+		public string LoginTitle => this.Value<string>("LoginTitle");
 
 		///<summary>
 		/// Password
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		[ImplementPropertyType("password")]
-		public string Password => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetPassword(this);
+		public string Password => this.Value<string>("password");
 
 		///<summary>
-		/// Register Button
+		/// Register Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("registerButton")]
-		public string RegisterButton => global::Umbraco.Web.PublishedModels.BasicRegistrationControls.GetRegisterButton(this);
+		[ImplementPropertyType("RegisterTitle")]
+		public string RegisterTitle => this.Value<string>("RegisterTitle");
+
+		///<summary>
+		/// Spectator: Spectator Role label
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("spectator")]
+		public string Spectator => this.Value<string>("spectator");
+
+		///<summary>
+		/// Student: Student Role label
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("student")]
+		public string Student => this.Value<string>("student");
+
+		///<summary>
+		/// Teacher: TeacherRoleLabel
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("teacher")]
+		public string Teacher => this.Value<string>("teacher");
 
 		///<summary>
 		/// Subtitle

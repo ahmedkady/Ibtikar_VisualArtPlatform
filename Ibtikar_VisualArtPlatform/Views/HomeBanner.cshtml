@@ -1,0 +1,59 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Home>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = null;
+    var homepage = Model.AncestorOrSelf<ContentModels.Home>();
+    var homebanner = homepage.Children<ContentModels.HomeBanner>().FirstOrDefault();
+}
+<!-- Start Banner Area -->
+<section class="banner-area f5f6fa-bg-color">
+    <div class="container-fluid social">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="banner-content">
+                    <h1 class="wow fadeInLeft" data-wow-delay="0.3s">@homebanner.Title</h1>
+                    <p class="wow fadeInLeft" data-wow-delay="0.6s">@homebanner.Subtitle</p>
+
+                    <a href="courses.html" class="default-btn wow fadeInLeft" data-wow-delay="0.9s">
+                        View Courses
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="banner-img wow fadeInRight" data-wow-delay="0.3s">
+                    <img src="@homebanner.BackgroundImage" alt="Image">
+                </div>
+            </div>
+        </div>
+
+        <!-- Start Social Wrap -->
+        <ul class="social-wrap">
+            <li class="follow-us">
+                Follow Us:
+            </li>
+            <li>
+                <a href="#" target="_blank">
+                    <i class="bx bxl-twitter"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" target="_blank">
+                    <i class="bx bxl-instagram"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" target="_blank">
+                    <i class="bx bxl-facebook"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" target="_blank">
+                    <i class="bx bxl-linkedin"></i>
+                </a>
+            </li>
+        </ul>
+        <!-- End Social Wrap -->
+    </div>
+</section>
+<!-- End Banner Area -->

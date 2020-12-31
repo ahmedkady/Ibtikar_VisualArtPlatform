@@ -19,64 +19,64 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Umbraco.Web.PublishedModels
 {
-	/// <summary>Registraion</summary>
-	[PublishedModel("registraion")]
-	public partial class Registraion : PublishedContentModel, IHeaderControls
+	/// <summary>Team</summary>
+	[PublishedModel("team")]
+	public partial class Team : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		public new const string ModelTypeAlias = "registraion";
+		public new const string ModelTypeAlias = "team";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Registraion, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Team, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Registraion(IPublishedContent content)
+		public Team(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Spectator: Spectator Role label
+		/// Team Category
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("spectator")]
-		public string Spectator => this.Value<string>("spectator");
+		[ImplementPropertyType("teamCategory")]
+		public string TeamCategory => this.Value<string>("teamCategory");
 
 		///<summary>
-		/// Student: Student Role label
+		/// Team Name
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("student")]
-		public string Student => this.Value<string>("student");
+		[ImplementPropertyType("teamName")]
+		public string TeamName => this.Value<string>("teamName");
 
 		///<summary>
-		/// Teacher: TeacherRoleLabel
+		/// Team Organization
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("teacher")]
-		public string Teacher => this.Value<string>("teacher");
+		[ImplementPropertyType("teamOrganization")]
+		public string TeamOrganization => this.Value<string>("teamOrganization");
 
 		///<summary>
-		/// Subtitle
+		/// Team Picture
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("subtitle")]
-		public string Subtitle => global::Umbraco.Web.PublishedModels.HeaderControls.GetSubtitle(this);
+		[ImplementPropertyType("teamPicture")]
+		public string TeamPicture => this.Value<string>("teamPicture");
 
 		///<summary>
-		/// Title: Please Enter Title
+		/// Team Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("title")]
-		public string Title => global::Umbraco.Web.PublishedModels.HeaderControls.GetTitle(this);
+		[ImplementPropertyType("teamTitle")]
+		public string TeamTitle => this.Value<string>("teamTitle");
 	}
 }
