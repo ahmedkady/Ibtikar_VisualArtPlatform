@@ -2905,21 +2905,31 @@
     <Compile Include="App_Data\Models\Home.generated.cs" />
     <Compile Include="App_Data\Models\HomeBanner.generated.cs" />
     <Compile Include="App_Data\Models\Image.generated.cs" />
+    <Compile Include="App_Data\Models\Login.generated.cs" />
     <Compile Include="App_Data\Models\Member.generated.cs" />
-    <Compile Include="App_Data\Models\Registraion.generated.cs" />
+    <Compile Include="App_Data\Models\Qualification.generated.cs" />
+    <Compile Include="App_Data\Models\Qualifications.generated.cs" />
+    <Compile Include="App_Data\Models\OurTeam.generated.cs" />
+    <Compile Include="App_Data\Models\School.generated.cs" />
+    <Compile Include="App_Data\Models\Schools.generated.cs" />
     <Compile Include="App_Data\Models\Spectator.generated.cs" />
     <Compile Include="App_Data\Models\SpectatorRegistration.generated.cs" />
     <Compile Include="App_Data\Models\Student.generated.cs" />
     <Compile Include="App_Data\Models\StudentRegistration.generated.cs" />
     <Compile Include="App_Data\Models\Teacher.generated.cs" />
     <Compile Include="App_Data\Models\TeacherRegistration.generated.cs" />
+    <Compile Include="App_Data\Models\Team.generated.cs" />
     <Compile Include="App_Data\Models\Testimonial.generated.cs" />
     <Compile Include="App_Data\Models\Testimonials.generated.cs" />
+    <Compile Include="App_Data\Models\WorldCountries.generated.cs" />
+    <Compile Include="App_Data\Models\WorldCountry.generated.cs" />
     <Compile Include="App_Data\Models\WhoAreWe.generated.cs" />
     <Compile Include="App_Data\Models\WorldCountryControl.generated.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\RegistraionController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trees\BulkMemberActivites.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MemberViewModel.cs" />
     <Compile Include="ViewModels\RegistraionViewModel.cs" />
     <Compile Include="ViewModels\StudentRegistrationViewModel.cs" />
@@ -2974,7 +2984,6 @@
     <Content Include="Views\Partials\BlockList\Default.cshtml" />
     <Content Include="Views\AboutUs.cshtml" />
     <Content Include="Views\Master.cshtml" />
-    <Content Include="Views\Registraion.cshtml" />
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\SpectatorRegistration.cshtml" />
     <Content Include="Views\Partials\Nationalities.cshtml" />
@@ -3085,6 +3094,14 @@
     <Content Include="Views\BasicRegistrationControls.cshtml" />
     <Content Include="Views\StudentRegistration.cshtml" />
     <Content Include="Views\TeacherRegistration.cshtml" />
+    <Content Include="Views\Testimonials1.cshtml" />
+    <Content Include="Views\OurTeam.cshtml" />
+    <Content Include="Views\SchoolsList.cshtml" />
+    <Content Include="Views\Qualifications.cshtml" />
+    <Content Include="Views\WorldCountries.cshtml" />
+    <Content Include="Views\Login.cshtml" />
+    <Content Include="Views\Partials\_Login.cshtml" />
+    <Content Include="Views\Partials\_LogOut.cshtml" />
     <Content Include="Views\HomeBanner.cshtml" />
     <Content Include="Views\WhoAreWe.cshtml" />
     <None Include="Web.Debug.config">
@@ -3098,6 +3115,7 @@
     <Folder Include="Composers\" />
     <Folder Include="Infrastrutures\" />
     <Folder Include="Sections\" />
+    <Folder Include="Views\Member\" />
     <Folder Include="Views\Registraion\" />
   </ItemGroup>
   <PropertyGroup>

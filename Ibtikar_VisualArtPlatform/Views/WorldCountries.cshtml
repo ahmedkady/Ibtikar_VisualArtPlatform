@@ -1,0 +1,29 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using ContentModels = Umbraco.Web.PublishedModels;
+
+@{
+    var homepage = Model.AncestorOrSelf<ContentModels.Home>();
+    var CountriesContent = homepage.Children<ContentModels.WorldCountries>().FirstOrDefault();
+    var Countries = CountriesContent.Children<ContentModels.WorldCountry>();
+}
+<div id="BasicRegistration-EmiratesList" style="display:none;">
+    <select name="EmiratesNationality" class="form-control">
+        @{
+            foreach (var country in Countries.Where(x => x.IsInEmirates))
+            {
+                <option value="@country.CountryValue">@country.CountryName</option>
+            }
+        }
+    </select>
+</div>
+
+<div id="BasicRegistration-WorldList">
+    <select name="WorldNationality" class="form-control">
+        @{
+            foreach (var country in Countries)
+            {
+                <option value="@country.CountryValue">@country.CountryName</option>
+            }
+        }
+    </select>
+</div>
