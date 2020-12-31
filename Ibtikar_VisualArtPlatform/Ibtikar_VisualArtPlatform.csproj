@@ -2897,8 +2897,13 @@
   <ItemGroup>
     <Compile Include="API\MemberController.cs" />
     <Compile Include="App_Data\Models\AboutUs.generated.cs" />
+    <Compile Include="App_Data\Models\Announce.generated.cs" />
+    <Compile Include="App_Data\Models\Announcements.generated.cs" />
     <Compile Include="App_Data\Models\BasicRegistrationControls.generated.cs" />
+    <Compile Include="App_Data\Models\ContactUs.generated.cs" />
+    <Compile Include="App_Data\Models\EditProfile.generated.cs" />
     <Compile Include="App_Data\Models\FAQ.generated.cs" />
+    <Compile Include="App_Data\Models\FAqs.generated.cs" />
     <Compile Include="App_Data\Models\File.generated.cs" />
     <Compile Include="App_Data\Models\Folder.generated.cs" />
     <Compile Include="App_Data\Models\HeaderControls.generated.cs" />
