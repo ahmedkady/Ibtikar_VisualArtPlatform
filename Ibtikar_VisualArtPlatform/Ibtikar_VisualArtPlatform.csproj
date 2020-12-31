@@ -3110,6 +3110,7 @@
     <Content Include="Views\FAQ.cshtml" />
     <Content Include="Views\FAQs.cshtml" />
     <Content Include="Views\EditProfile.cshtml" />
+    <Content Include="Views\Partials\_EditProfileSpectator.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
