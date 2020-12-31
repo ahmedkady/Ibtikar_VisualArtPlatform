@@ -2898,6 +2898,7 @@
     <Compile Include="API\MemberController.cs" />
     <Compile Include="App_Data\Models\AboutUs.generated.cs" />
     <Compile Include="App_Data\Models\BasicRegistrationControls.generated.cs" />
+    <Compile Include="App_Data\Models\EditProfile.generated.cs" />
     <Compile Include="App_Data\Models\File.generated.cs" />
     <Compile Include="App_Data\Models\Folder.generated.cs" />
     <Compile Include="App_Data\Models\HeaderControls.generated.cs" />
@@ -3099,6 +3100,7 @@
     <Content Include="Views\Login.cshtml" />
     <Content Include="Views\Partials\_Login.cshtml" />
     <Content Include="Views\Partials\_LogOut.cshtml" />
+    <Content Include="Views\EditProfile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

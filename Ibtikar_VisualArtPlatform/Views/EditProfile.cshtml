@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.EditProfile>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = null;
+    var profileModel = Members.GetCurrentMemberProfileModel();
+}
+@for (var i = 0; i < profileModel.MemberProperties.Count; i++)
+{
+    @Html.LabelFor(m => profileModel.MemberProperties[i].Value, profileModel.MemberProperties[i].Name)
+
+    @Html.EditorFor(m => profileModel.MemberProperties[i].Value)
+    @Html.LabelFor(m => profileModel.MemberProperties[i].Alias)
+
+    <br />
+
+}
