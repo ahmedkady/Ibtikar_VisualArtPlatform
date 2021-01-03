@@ -2,28 +2,21 @@
 @{
     Layout = null;
     var isEnglish = UmbracoContext.VariationContextAccessor?.VariationContext?.Culture == "en-US";
-    var CurrentUrl = Request.Url.AbsoluteUri;
+    var CurrentPage = Umbraco.AssignedContentItem;
+    //var x = CurrentPage.Url();
+    var ArabicLink = CurrentPage.Url("ar");
+    var EnglishUrl = CurrentPage.Url("en-US");
+    //var yx = page1.UrlSegment;
     var SwitchLanguageUrl = string.Empty;
-    if (CurrentUrl.Contains("/ar/"))
+    if (isEnglish)
     {
-        SwitchLanguageUrl = CurrentUrl.Replace("/ar/", "/en/");
-    }
-    else if (CurrentUrl.Contains("/en/"))
-    {
-        SwitchLanguageUrl = CurrentUrl.Replace("/en/", "/ar/");
-
+        SwitchLanguageUrl = ArabicLink;
     }
     else
     {
-        if (isEnglish)
-        {
-            SwitchLanguageUrl = CurrentUrl + "/ar/";
-        }
-        else
-        {
-            SwitchLanguageUrl = CurrentUrl + "/en/";
-        }
+        SwitchLanguageUrl = EnglishUrl;
     }
+
     System.Web.Security.MembershipUser myuser = null;
     if (Umbraco.MemberIsLoggedOn())
     {
