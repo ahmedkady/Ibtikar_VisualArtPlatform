@@ -3,10 +3,12 @@
     Layout = null;
     var isEnglish = UmbracoContext.VariationContextAccessor?.VariationContext?.Culture == "en-US";
     var CurrentPage = Umbraco.AssignedContentItem;
-    //var x = CurrentPage.Url();
+
+    var home = CurrentPage.AncestorOrSelf(1);
+    var Navitems = home.Children().Where(x => !x.IsVisible()).ToList();
+
     var ArabicLink = CurrentPage.Url("ar");
     var EnglishUrl = CurrentPage.Url("en-US");
-    //var yx = page1.UrlSegment;
     var SwitchLanguageUrl = string.Empty;
     if (isEnglish)
     {
@@ -104,49 +106,18 @@
                         <div class="collapse navbar-collapse mean-menu">
                             <ul class="navbar-nav m-auto">
                                 <li class="nav-item">
-                                    <a href="@(isEnglish ? "/en" : "/ar")/" class="nav-link active">
-                                        Home
-                                        <i class="bx bx-chevron-down"></i>
-                                    </a>
-
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="/about" class="nav-link">Who Are We?</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="/faq" class="nav-link">FAQs</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="/announcement" class="nav-link">Announcements</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="@(isEnglish ? "/en" : "/ar")/testimonials" class="nav-link">Testimonials</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="@(isEnglish ? "/en" : "/ar")/events" class="nav-link">
-                                        Events
+                                    <a href="@home.Url()" class="nav-link">
+                                        @home.Name
                                     </a>
                                 </li>
-
-                                <li class="nav-item">
-                                    <a href="@(isEnglish ? "/en" : "/ar")/news" class="nav-link">
-                                        News
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-
-                                    <a href="@(isEnglish ? "/en" : "/ar")/team" class="nav-link">
-                                        Our Team
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="@(isEnglish ? "/en" : "/ar")/contact" class="nav-link">Contact Us</a>
-                                </li>
+                                @foreach (var item in Navitems)
+                                {
+                                    <li class="nav-item">
+                                        <a href="@item.Url()" class="nav-link">
+                                            @item.Name
+                                        </a>
+                                    </li>
+                                }
                             </ul>
 
                             <!-- Start Other Option -->

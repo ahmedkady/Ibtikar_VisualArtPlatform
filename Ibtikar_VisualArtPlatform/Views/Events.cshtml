@@ -6,6 +6,23 @@
     var EventsContent = homepage.Children<ContentModels.Events>().FirstOrDefault();
     var Events = EventsContent.Children<ContentModels.Event>();
 }
+<!-- Start Page Title Area -->
+<div class="page-title-area bg-24">
+    <div class="container">
+        <div class="page-title-content">
+            <h2>@Umbraco.AssignedContentItem.Name</h2>
+            <ul>
+                <li>
+                    <a href="@Umbraco.AssignedContentItem.Parent.Url()">
+                        @Umbraco.AssignedContentItem.Parent.Name
+                    </a>
+                </li>
+                <li class="active">@Umbraco.AssignedContentItem.Name</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 <section class="event-area-style pt-100 pb-70">
     <div class="container">
         <div class="section-title">
@@ -18,8 +35,8 @@
             {
                 <div class="col-lg-6 col-sm-6">
                     <div class="single-event">
-                        <a href="@Event.Url">
-                            <img src="@Event.Picture" alt="Image">
+                        <a href="@Event.Url()">
+                            <img src="@Event.Thumbnail" alt="Image">
                         </a>
 
                         <div class="event-content">
@@ -27,16 +44,16 @@
                                 <li>
                                     <i class="bx bx-calendar"></i>
                                     @*Aug 13, 2020*@
-                                    @Event.EventDate
+                                    @Event.EventDate.ToString("dddd, dd MMMM yyyy") 
                                 </li>
                                 <li>
                                     <i class="bx bx-time"></i>
                                     @*Monday 3:00AM - 5:00PM*@
-                                    @Event.EventDate
+                                    @Event.EventDate.ToString("hh:mm tt")
                                 </li>
                             </ul>
 
-                            <a href="single-event.html">
+                            <a href="@Event.Url()">
                                 <h3>@Event.Title</h3>
                             </a>
 

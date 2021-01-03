@@ -30,6 +30,10 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Title</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		string Title { get; }
+
+		/// <summary>Show in navigation bar</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		bool UmbracoNaviHide { get; }
 	}
 
 	/// <summary>Header Controls</summary>
@@ -78,5 +82,16 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Static getter for Title</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		public static string GetTitle(IHeaderControls that) => that.Value<string>("title");
+
+		///<summary>
+		/// Show in navigation bar
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide => GetUmbracoNaviHide(this);
+
+		/// <summary>Static getter for Show in navigation bar</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		public static bool GetUmbracoNaviHide(IHeaderControls that) => that.Value<bool>("umbracoNaviHide");
 	}
 }
