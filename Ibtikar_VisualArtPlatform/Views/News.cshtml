@@ -1,0 +1,55 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.News>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+    var homepage = Model.AncestorOrSelf<ContentModels.Home>();
+    var NewsContent = homepage.Children<ContentModels.News>().FirstOrDefault();
+    var News = NewsContent.Children<ContentModels.SingleNews>();
+}
+<!-- Start Page Title Area -->
+<div class="page-title-area bg-24">
+    <div class="container">
+        <div class="page-title-content">
+            <h2>@Umbraco.AssignedContentItem.Name</h2>
+            <ul>
+                <li>
+                    <a href="@Umbraco.AssignedContentItem.Parent.Url()">
+                        @Umbraco.AssignedContentItem.Parent.Name
+                    </a>
+                </li>
+                <li class="active">@Umbraco.AssignedContentItem.Name</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<section class="event-area-style pt-100 pb-70">
+    <div class="container">
+        <div class="section-title">
+            <span>@Model.Title</span>
+            <h2>@Model.Subtitle</h2>
+        </div>
+
+        <div class="row">
+            @foreach (var Event in News.Where(x => x.IsActive))
+            {
+                <div class="col-lg-6 col-sm-6">
+                    <div class="single-event">
+                        <a href="@Event.Url()">
+                            <img src="@Event.Thumbnail" alt="Image">
+                        </a>
+
+                        <div class="event-content">
+                            <a href="@Event.Url()">
+                                <h3>@Event.Title</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+
+        </div>
+    </div>
+</section>
