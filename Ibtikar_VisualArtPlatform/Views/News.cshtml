@@ -1,10 +1,10 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Events>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.News>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
     Layout = "master.cshtml";
     var homepage = Model.AncestorOrSelf<ContentModels.Home>();
-    var EventsContent = homepage.Children<ContentModels.Events>().FirstOrDefault();
-    var Events = EventsContent.Children<ContentModels.Event>();
+    var NewsContent = homepage.Children<ContentModels.News>().FirstOrDefault();
+    var News = NewsContent.Children<ContentModels.SingleNews>();
 }
 <!-- Start Page Title Area -->
 <div class="page-title-area bg-24">
@@ -31,7 +31,7 @@
         </div>
 
         <div class="row">
-            @foreach (var Event in Events)
+            @foreach (var Event in News.Where(x => x.IsActive))
             {
                 <div class="col-lg-6 col-sm-6">
                     <div class="single-event">
@@ -40,27 +40,9 @@
                         </a>
 
                         <div class="event-content">
-                            <ul>
-                                <li>
-                                    <i class="bx bx-calendar"></i>
-                                    @*Aug 13, 2020*@
-                                    @Event.EventDate.ToString("dddd, dd MMMM yyyy") 
-                                </li>
-                                <li>
-                                    <i class="bx bx-time"></i>
-                                    @*Monday 3:00AM - 5:00PM*@
-                                    @Event.EventDate.ToString("hh:mm tt")
-                                </li>
-                            </ul>
-
                             <a href="@Event.Url()">
                                 <h3>@Event.Title</h3>
                             </a>
-
-                            <span>
-                                <i class="bx bxs-location-plus"></i>
-                                @Event.Location
-                            </span>
                         </div>
                     </div>
                 </div>

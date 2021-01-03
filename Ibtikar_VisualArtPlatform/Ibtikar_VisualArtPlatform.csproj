@@ -3135,6 +3135,8 @@
     <Content Include="Views\Partials\_EditProfileSpectator.cshtml" />
     <Content Include="Views\Event.cshtml" />
     <Content Include="Views\Events.cshtml" />
+    <Content Include="Views\News.cshtml" />
+    <Content Include="Views\SingleNews.cshtml" />
     <Content Include="Views\ContactUs.cshtml" />
     <Content Include="Views\DropDownsLookUps.cshtml" />
     <Content Include="site.webmanifest" />

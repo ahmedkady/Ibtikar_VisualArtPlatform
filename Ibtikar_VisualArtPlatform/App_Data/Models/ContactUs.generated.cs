@@ -115,6 +115,13 @@ namespace Umbraco.Web.PublishedModels
 		public string Title => this.Value<string>("title");
 
 		///<summary>
+		/// Title Background
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("titleBackground")]
+		public string TitleBackground => this.Value<string>("titleBackground");
+
+		///<summary>
 		/// Twitter Url
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]

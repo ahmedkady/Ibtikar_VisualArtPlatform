@@ -1,8 +1,9 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Event>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.SingleNews>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-    Layout = "master.cshtml";
+    Layout = "Master.cshtml";
 }
+
 <div class="page-title-area bg-25">
     <div class="container">
         <div class="page-title-content">
@@ -45,7 +46,7 @@
 
                     <img src="@Model.Picture" alt="Image">
 
-                    <h3 class="mb-2">Even description</h3>
+                    <h3 class="mb-2">description</h3>
 
                     <p>@Model.Description</p>
                 </div>
@@ -59,39 +60,6 @@
                     <p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>*@
             </div>
 
-            <div class="col-lg-4">
-                <div class="account-wrap">
-                    <ul>
-                        @*<li>
-            Price: <span class="bold">$29.00</span>
-        </li>
-        <li>
-            Start: <span>Sep 01, 2020</span>
-        </li>*@
-                        <li>
-                            Date: <span>@Model.EventDate.ToString("dddd, dd MMMM yyyy")</span>
-                        </li>
-                        <li>
-                            Time: <span>@Model.EventDate.ToString("hh:mm tt")</span>
-                        </li>
-                        @*<li>
-                            Event category: <span>Education</span>
-                        </li>
-                        <li>
-                            Total slot: <span>100</span>
-                        </li>
-                        <li>
-                            Booked slot: <span>00</span>
-                        </li>
-                        <li>
-                            Website: <a href="#">www.eduon.com</a>
-                        </li>*@
-                    </ul>
-
-                    @*<a href="#" class="default-btn">Book now</a>
-                    <p>You must <a href="log-in.html">login</a> before register event.</p>*@
-                </div>
-            </div>
         </div>
     </div>
 </section>
