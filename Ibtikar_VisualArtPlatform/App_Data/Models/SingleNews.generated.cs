@@ -19,106 +19,78 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Umbraco.Web.PublishedModels
 {
-	/// <summary>Contact Us</summary>
-	[PublishedModel("contactUs")]
-	public partial class ContactUs : PublishedContentModel
+	/// <summary>Single news</summary>
+	[PublishedModel("singleNews")]
+	public partial class SingleNews : PublishedContentModel, IHeaderControls
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		public new const string ModelTypeAlias = "contactUs";
+		public new const string ModelTypeAlias = "singleNews";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContactUs, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SingleNews, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public ContactUs(IPublishedContent content)
+		public SingleNews(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Address
+		/// Description
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("address")]
-		public string Address => this.Value<string>("address");
+		[ImplementPropertyType("description")]
+		public string Description => this.Value<string>("description");
 
 		///<summary>
-		/// Email
+		/// Is active
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("email")]
-		public string Email => this.Value<string>("email");
+		[ImplementPropertyType("isActive")]
+		public bool IsActive => this.Value<bool>("isActive");
 
 		///<summary>
-		/// Facebook Url
+		/// Picture
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("facebookUrl")]
-		public string FacebookUrl => this.Value<string>("facebookUrl");
+		[ImplementPropertyType("picture")]
+		public string Picture => this.Value<string>("picture");
 
 		///<summary>
-		/// Footer
+		/// Thumbnail
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("footer")]
-		public string Footer => this.Value<string>("footer");
+		[ImplementPropertyType("thumbnail")]
+		public string Thumbnail => this.Value<string>("thumbnail");
 
 		///<summary>
-		/// Instagram Url
+		/// Subtitle
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("instagramUrl")]
-		public string InstagramUrl => this.Value<string>("instagramUrl");
+		[ImplementPropertyType("subtitle")]
+		public string Subtitle => global::Umbraco.Web.PublishedModels.HeaderControls.GetSubtitle(this);
 
 		///<summary>
-		/// Logo
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("logo")]
-		public string Logo => this.Value<string>("logo");
-
-		///<summary>
-		/// Map Embed
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("mapEmbed")]
-		public global::System.Web.IHtmlString MapEmbed => this.Value<global::System.Web.IHtmlString>("mapEmbed");
-
-		///<summary>
-		/// Phone
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("phone")]
-		public string Phone => this.Value<string>("phone");
-
-		///<summary>
-		/// Sub Title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("subTitle")]
-		public string SubTitle => this.Value<string>("subTitle");
-
-		///<summary>
-		/// Title
+		/// Title: Please Enter Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		[ImplementPropertyType("title")]
-		public string Title => this.Value<string>("title");
+		public string Title => global::Umbraco.Web.PublishedModels.HeaderControls.GetTitle(this);
 
 		///<summary>
-		/// Twitter Url
+		/// Show in navigation bar
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
-		[ImplementPropertyType("twitterUrl")]
-		public string TwitterUrl => this.Value<string>("twitterUrl");
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide => global::Umbraco.Web.PublishedModels.HeaderControls.GetUmbracoNaviHide(this);
 	}
 }

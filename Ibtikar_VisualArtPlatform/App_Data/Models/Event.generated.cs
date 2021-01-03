@@ -73,6 +73,13 @@ namespace Umbraco.Web.PublishedModels
 		public string Picture => this.Value<string>("picture");
 
 		///<summary>
+		/// Thumbnail
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("thumbnail")]
+		public string Thumbnail => this.Value<string>("thumbnail");
+
+		///<summary>
 		/// Subtitle
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
@@ -85,5 +92,12 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		[ImplementPropertyType("title")]
 		public string Title => global::Umbraco.Web.PublishedModels.HeaderControls.GetTitle(this);
+
+		///<summary>
+		/// Show in navigation bar
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide => global::Umbraco.Web.PublishedModels.HeaderControls.GetUmbracoNaviHide(this);
 	}
 }

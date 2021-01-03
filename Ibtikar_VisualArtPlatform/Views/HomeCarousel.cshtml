@@ -1,0 +1,27 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Home>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = null;
+
+    var homepage = Model.AncestorOrSelf<ContentModels.Home>();
+    var homecarousels = homepage.Children<ContentModels.HomeCarousels>().FirstOrDefault();
+    var homecarousel = homecarousels.Children<ContentModels.HomeCarousel>();
+
+}
+
+<!-- Start Partner Area -->
+<div class="partner-area f5f6fa-bg-color ptb-100">
+    <div class="container">
+        <div class="partner-wrap owl-theme owl-carousel">
+            @foreach (var item in homecarousel)
+            {
+                <div class="partner-item">
+                    <a href="@item.LinkUrl">
+                        <img src="@item.Image" alt="Image">
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- End Partner Area -->

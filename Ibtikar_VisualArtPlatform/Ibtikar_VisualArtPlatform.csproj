@@ -268,6 +268,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="android-chrome-192x192.png" />
+    <Content Include="android-chrome-256x256.png" />
+    <Content Include="apple-touch-icon.png" />
     <Content Include="App_Plugins\bulkMemberActivities\backoffice\bulkMemberActivities\bulkMemberActivities.controller.js" />
     <Content Include="App_Plugins\bulkMemberActivities\backoffice\bulkMemberActivities\bulkMemberActivities.service.js" />
     <Content Include="App_Plugins\bulkMemberActivities\backoffice\bulkMemberActivities\overview.html" />
@@ -409,6 +412,9 @@
     <Content Include="assets\img\partner-logo\partner-logo-4.png" />
     <Content Include="assets\img\partner-logo\partner-logo-5.png" />
     <Content Include="assets\img\privacy-policy-img.jpg" />
+    <Content Include="assets\img\registration\spectator.png" />
+    <Content Include="assets\img\registration\student.png" />
+    <Content Include="assets\img\registration\teacher.png" />
     <Content Include="assets\img\section-title-shape.png" />
     <Content Include="assets\img\shop\shop-img-1.jpg" />
     <Content Include="assets\img\shop\shop-img-2.jpg" />
@@ -457,6 +463,7 @@
     <Content Include="assets\js\popper.min.js" />
     <Content Include="assets\js\wow.min.js" />
     <Content Include="assets\php\form-process.php" />
+    <Content Include="browserconfig.xml" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
     <Content Include="config\Lang\da-DK.user.xml" />
@@ -477,8 +484,13 @@
     <Content Include="config\Lang\sv-SE.user.xml" />
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="config\logviewer.searches.config.js" />
+    <Content Include="favicon-16x16.png" />
+    <Content Include="favicon-32x32.png" />
+    <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
+    <Content Include="mstile-150x150.png" />
+    <Content Include="safari-pinned-tab.svg" />
     <Content Include="Scripts\registration.js" />
     <Content Include="Umbraco\assets\css\canvasdesigner.css" />
     <Content Include="Umbraco\assets\css\installer.css" />
@@ -2911,14 +2923,18 @@
     <Compile Include="App_Data\Models\HeaderControls.generated.cs" />
     <Compile Include="App_Data\Models\Home.generated.cs" />
     <Compile Include="App_Data\Models\HomeBanner.generated.cs" />
+    <Compile Include="App_Data\Models\HomeCarousel.generated.cs" />
+    <Compile Include="App_Data\Models\HomeCarousels.generated.cs" />
     <Compile Include="App_Data\Models\Image.generated.cs" />
     <Compile Include="App_Data\Models\Login.generated.cs" />
     <Compile Include="App_Data\Models\Member.generated.cs" />
+    <Compile Include="App_Data\Models\News.generated.cs" />
     <Compile Include="App_Data\Models\Qualification.generated.cs" />
     <Compile Include="App_Data\Models\Qualifications.generated.cs" />
     <Compile Include="App_Data\Models\OurTeam.generated.cs" />
     <Compile Include="App_Data\Models\School.generated.cs" />
     <Compile Include="App_Data\Models\Schools.generated.cs" />
+    <Compile Include="App_Data\Models\SingleNews.generated.cs" />
     <Compile Include="App_Data\Models\Spectator.generated.cs" />
     <Compile Include="App_Data\Models\SpectatorRegistration.generated.cs" />
     <Compile Include="App_Data\Models\Student.generated.cs" />
@@ -3119,6 +3135,10 @@
     <Content Include="Views\Partials\_EditProfileSpectator.cshtml" />
     <Content Include="Views\Event.cshtml" />
     <Content Include="Views\Events.cshtml" />
+    <Content Include="Views\ContactUs.cshtml" />
+    <Content Include="Views\DropDownsLookUps.cshtml" />
+    <Content Include="site.webmanifest" />
+    <Content Include="Views\HomeCarousel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

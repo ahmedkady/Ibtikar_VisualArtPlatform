@@ -1,4 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using ContentModels = Umbraco.Web.PublishedModels;
 @{
     Layout = null;
     var isEnglish = UmbracoContext.VariationContextAccessor?.VariationContext?.Culture == "en-US";
@@ -22,409 +23,415 @@
     {
         myuser = System.Web.Security.Membership.GetUser();
     }
+
+    var homepage = Model.AncestorOrSelf<ContentModels.Home>();
+    var contactInformation = homepage.Children<ContentModels.ContactUs>().FirstOrDefault();
+
 }
-    @* the fun starts here *@
+@* the fun starts here *@
 
-    <!doctype html>
-    <html lang="zxx">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!doctype html>
+<html lang="zxx">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <!-- Owl Theme Default CSS -->
+    <link rel="stylesheet" href="~/assets/css/owl.theme.default.min.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
+    <!-- Owl Magnific CSS -->
+    <link rel="stylesheet" href="~/assets/css/magnific-popup.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="~/assets/css/animate.css">
+    <!-- Boxicons CSS -->
+    <link rel="stylesheet" href="~/assets/css/boxicons.min.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="~/assets/css/flaticon.css">
+    <!-- Meanmenu CSS -->
+    <link rel="stylesheet" href="~/assets/css/meanmenu.css">
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="~/assets/css/nice-select.css">
+    <!-- Odometer CSS-->
+    <link rel="stylesheet" href="~/assets/css/odometer.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/assets/css/responsive.css">
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
-        <!-- Owl Theme Default CSS -->
-        <link rel="stylesheet" href="~/assets/css/owl.theme.default.min.css">
-        <!-- Owl Carousel CSS -->
-        <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
-        <!-- Owl Magnific CSS -->
-        <link rel="stylesheet" href="~/assets/css/magnific-popup.css">
-        <!-- Animate CSS -->
-        <link rel="stylesheet" href="~/assets/css/animate.css">
-        <!-- Boxicons CSS -->
-        <link rel="stylesheet" href="~/assets/css/boxicons.min.css">
-        <!-- Flaticon CSS -->
-        <link rel="stylesheet" href="~/assets/css/flaticon.css">
-        <!-- Meanmenu CSS -->
-        <link rel="stylesheet" href="~/assets/css/meanmenu.css">
-        <!-- Nice Select CSS -->
-        <link rel="stylesheet" href="~/assets/css/nice-select.css">
-        <!-- Odometer CSS-->
-        <link rel="stylesheet" href="~/assets/css/odometer.css">
-        <!-- Style CSS -->
-        <link rel="stylesheet" href="~/assets/css/style.css">
-        <!-- Responsive CSS -->
-        <link rel="stylesheet" href="~/assets/css/responsive.css">
+    @if (!isEnglish)
+    {
+        <!-- RTL CSS -->
+        <link rel="stylesheet" href="~/assets/css/rtl.css">
+    }
 
-        @if (!isEnglish)
-        {
-            <!-- RTL CSS -->
-            <link rel="stylesheet" href="~/assets/css/rtl.css">
-        }
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#bf4747">
+    <meta name="theme-color" content="#ffffff">
 
+    <!-- Title -->
+    <title>@CurrentPage.Name | @Umbraco.GetDictionaryValue("Ibtikar") </title>
+</head>
 
-        <!-- Favicon -->
-        <link rel="icon" type="image/png" href="~/assets/img/favicon.png">
-
-        <!-- Title -->
-        <title>Eduon - Education Online Courses & Training HTML Template</title>
-    </head>
-
-    <body>
-        <!-- Start Preloader Area -->
-        <div class="loader-wrapper">
-            <div class="loader">
-                <div class="dot-wrap">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
+<body>
+    <!-- Start Preloader Area -->
+    <div class="loader-wrapper">
+        <div class="loader">
+            <div class="dot-wrap">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
             </div>
         </div>
-        <!-- End Preloader Area -->
-        <!-- Start Navbar Area -->
-        <div class="navbar-area">
-            <!-- Menu For Mobile Device -->
-            <div class="mobile-nav">
-                <a href="index.html" class="logo">
-                    <img src="~/assets/img/logo.png" alt="Logo">
-                </a>
-            </div>
+    </div>
+    <!-- End Preloader Area -->
+    <!-- Start Navbar Area -->
+    <div class="navbar-area">
+        <!-- Menu For Mobile Device -->
+        <div class="mobile-nav">
+            <a href="@(isEnglish ? "/en" : "/ar")/" class="logo">
+                <img src="@contactInformation.Logo" alt="Logo">
+            </a>
+        </div>
 
-            <!-- Menu For Desktop Device -->
-            <div class="main-nav">
-                <div class="container-fluid">
-                    <nav class="navbar navbar-expand-md">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="~/assets/img/logo.png" alt="Logo">
-                        </a>
+        <!-- Menu For Desktop Device -->
+        <div class="main-nav">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand" href="@(isEnglish ? "/en" : "/ar")/">
+                        <img src="@contactInformation.Logo" alt="Logo">
+                    </a>
 
-                        <div class="collapse navbar-collapse mean-menu">
-                            <ul class="navbar-nav m-auto">
-                                <li class="nav-item">
-                                    <a href="@(isEnglish ? "/en" : "/ar")/" class="nav-link active">
-                                        Home
-                                        <i class="bx bx-chevron-down"></i>
-                                    </a>
+                    <div class="collapse navbar-collapse mean-menu">
+                        <ul class="navbar-nav m-auto">
+                            <li class="nav-item">
+                                <a href="@(isEnglish ? "/en" : "/ar")/" class="nav-link active">
+                                    Home
+                                    <i class="bx bx-chevron-down"></i>
+                                </a>
 
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="/about" class="nav-link">Who Are We?</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="/faq" class="nav-link">FAQs</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="/announcement" class="nav-link">Announcements</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="@(isEnglish ? "/en" : "/ar")/testimonials" class="nav-link">Testimonials</a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a href="/about" class="nav-link">Who Are We?</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/faq" class="nav-link">FAQs</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/announcement" class="nav-link">Announcements</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="@(isEnglish ? "/en" : "/ar")/testimonials" class="nav-link">Testimonials</a>
+                                    </li>
+                                </ul>
+                            </li>
 
-                                <li class="nav-item">
-                                    <a href="@(isEnglish ? "/en" : "/ar")/events" class="nav-link">
-                                        Events
-                                    </a>
-                                </li>
+                            <li class="nav-item">
+                                <a href="@(isEnglish ? "/en" : "/ar")/events" class="nav-link">
+                                    Events
+                                </a>
+                            </li>
 
-                                <li class="nav-item">
-                                    <a href="@(isEnglish ? "/en" : "/ar")/news" class="nav-link">
-                                        News
-                                    </a>
-                                </li>
+                            <li class="nav-item">
+                                <a href="@(isEnglish ? "/en" : "/ar")/news" class="nav-link">
+                                    News
+                                </a>
+                            </li>
 
-                                <li class="nav-item">
+                            <li class="nav-item">
 
-                                    <a href="@(isEnglish ? "/en" : "/ar")/team" class="nav-link">
-                                        Our Team
-                                    </a>
-                                </li>
+                                <a href="@(isEnglish ? "/en" : "/ar")/team" class="nav-link">
+                                    Our Team
+                                </a>
+                            </li>
 
-                                <li class="nav-item">
-                                    <a href="@(isEnglish ? "/en" : "/ar")/contact" class="nav-link">Contact Us</a>
-                                </li>
-                            </ul>
+                            <li class="nav-item">
+                                <a href="@(isEnglish ? "/en" : "/ar")/contact" class="nav-link">Contact Us</a>
+                            </li>
+                        </ul>
 
-                            <!-- Start Other Option -->
-                            <div class="others-option">
-                                @if (myuser != null)
+                        <!-- Start Other Option -->
+                        <div class="others-option">
+                            @if (myuser != null)
+                            {
+                                <p><strong>Welcome</strong> <span>@myuser.UserName</span></p>
+                            }
+                            <div class="option-item">
+                                <i class="search-btn bx bx-search"></i>
+                                <i class="close-btn bx bx-x"></i>
+                                <div class="search-overlay search-popup">
+                                    <div class='search-box'>
+                                        <form class="search-form">
+                                            <input class="search-input" name="search" placeholder="@Umbraco.GetDictionaryValue("Search")" type="text">
+
+                                            <button class="search-button" type="submit"><i class="bx bx-search"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            @{
+                                if (Umbraco.MemberIsLoggedOn())
                                 {
-                                    <p><strong>Welcome</strong> <span>@myuser.UserName</span></p>
-                                }
-                                <div class="option-item">
-                                    <i class="search-btn bx bx-search"></i>
-                                    <i class="close-btn bx bx-x"></i>
-                                    <div class="search-overlay search-popup">
-                                        <div class='search-box'>
-                                            <form class="search-form">
-                                                <input class="search-input" name="search" placeholder="Search" type="text">
+                                    <div class="register">
 
-                                                <button class="search-button" type="submit"><i class="bx bx-search"></i></button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                @{
-                                    if (Umbraco.MemberIsLoggedOn())
-                                    {
-                                        <div class="register">
-
-                                            @using (Html.BeginUmbracoForm("SubmitLogout", "Member", System.Web.Mvc.FormMethod.Post, new { id = "logout" }))
+                                        @using (Html.BeginUmbracoForm("SubmitLogout", "Member", System.Web.Mvc.FormMethod.Post, new { id = "logout" }))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            if (myuser != null)
                                             {
-                                                @Html.AntiForgeryToken()
-                                                if (myuser != null)
-                                                {
-                                                    <button class="default-btn" name="login" type="submit">Log Out</button>
-                                                }
-
+                                                <button class="default-btn" name="login" type="submit">Log Out</button>
                                             }
-                                        </div>
 
-                                    }
-                                    else
-                                    {
-                                        <div class="register">
-                                            <a href="@(isEnglish ? "/en" : "/ar")/login" class="default-btn">
-                                                Login / Register
-                                            </a>
-                                        </div>
-                                    }
+                                        }
+                                    </div>
+
                                 }
-
-                                @{
-                                    if (isEnglish)
-                                    {
-                                        <div class="register">
-                                            <a href="@SwitchLanguageUrl" class="default-btn">
-                                                العربية
-                                            </a>
-                                        </div>
-                                    }
-                                    else
-                                    {
-                                        <div class="register">
-                                            <a href="@SwitchLanguageUrl" class="default-btn">
-                                                English
-                                            </a>
-                                        </div>
-                                    }
+                                else
+                                {
+                                    <div class="register">
+                                        <a href="@(isEnglish ? "/en" : "/ar")/login" class="default-btn">
+                                            Login / Register
+                                        </a>
+                                    </div>
                                 }
+                            }
+
+                            @{
+                                if (isEnglish)
+                                {
+                                    <div class="register">
+                                        <a href="@SwitchLanguageUrl" class="default-btn">
+                                            العربية
+                                        </a>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="register">
+                                        <a href="@SwitchLanguageUrl" class="default-btn">
+                                            English
+                                        </a>
+                                    </div>
+                                }
+                            }
 
 
-                            </div>
-                            <!-- End Other Option -->
                         </div>
-                    </nav>
-                </div>
-            </div>
-
-            <!-- Start Others Option For Responsive -->
-            <div class="others-option-for-responsive">
-                <div class="container">
-                    <div class="dot-menu">
-                        <div class="inner">
-                            <div class="circle circle-one"></div>
-                            <div class="circle circle-two"></div>
-                            <div class="circle circle-three"></div>
-                        </div>
+                        <!-- End Other Option -->
                     </div>
+                </nav>
+            </div>
+        </div>
 
-                    <div class="container">
-                        <div class="option-inner">
-                            <div class="others-option justify-content-center d-flex align-items-center">
-                                <div class="option-item">
-                                    <i class="search-btn bx bx-search"></i>
-                                    <i class="close-btn bx bx-x"></i>
+        <!-- Start Others Option For Responsive -->
+        <div class="others-option-for-responsive">
+            <div class="container">
+                <div class="dot-menu">
+                    <div class="inner">
+                        <div class="circle circle-one"></div>
+                        <div class="circle circle-two"></div>
+                        <div class="circle circle-three"></div>
+                    </div>
+                </div>
 
-                                    <div class="search-overlay search-popup">
-                                        <div class='search-box'>
-                                            <form class="search-form">
-                                                <input class="search-input" name="search" placeholder="Search" type="text">
+                <div class="container">
+                    <div class="option-inner">
+                        <div class="others-option justify-content-center d-flex align-items-center">
+                            <div class="option-item">
+                                <i class="search-btn bx bx-search"></i>
+                                <i class="close-btn bx bx-x"></i>
 
-                                                <button class="search-button" type="submit"><i class="bx bx-search"></i></button>
-                                            </form>
-                                        </div>
+                                <div class="search-overlay search-popup">
+                                    <div class='search-box'>
+                                        <form class="search-form">
+                                            <input class="search-input" name="search" placeholder="Search" type="text">
+
+                                            <button class="search-button" type="submit"><i class="bx bx-search"></i></button>
+                                        </form>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="cart-icon">
-                                    <a href="cart.html">
-                                        <i class="flaticon-shopping-cart"></i>
-                                        <span>0</span>
-                                    </a>
-                                </div>
+                            <div class="cart-icon">
+                                <a href="cart.html">
+                                    <i class="flaticon-shopping-cart"></i>
+                                    <span>0</span>
+                                </a>
+                            </div>
 
-                                <div class="register">
-                                    <a href="my-account.html" class="default-btn">
-                                        Login / Register
-                                    </a>
-                                </div>
+                            <div class="register">
+                                <a href="my-account.html" class="default-btn">
+                                    Login / Register
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- End Others Option For Responsive -->
         </div>
-        <!-- End Navbar Area -->
+        <!-- End Others Option For Responsive -->
+    </div>
+    <!-- End Navbar Area -->
 
-        @RenderBody();
+    @RenderBody();
 
-        <!-- Start Footer Top Area -->
-        <footer class="footer-top-area pt-100 pb-70">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-widget">
-                            <h3>Find Us</h3>
+    <!-- Start Footer Top Area -->
+    <footer class="footer-top-area pt-100 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="footer-widget">
+                        <h3>@contactInformation.Title</h3>
 
-                            <ul class="address">
-                                <li class="location">
-                                    <i class="bx bxs-location-plus"></i>
-                                    6890 Blvd, The Bronx, NY 1058 New York, USA
-                                </li>
+                        <ul class="address">
+                            <li class="location">
+                                <i class="bx bxs-location-plus"></i>
+                                @contactInformation.Address
+                            </li>
 
-                                <li>
-                                    <i class="bx bxs-envelope"></i>
-                                    <a href="mailto:hello@eduon.com">hello@eduon.com</a>
-                                    <a href="mailto:public@eduon.com">public@eduon.com</a>
-                                </li>
+                            <li>
+                                <i class="bx bxs-envelope"></i>
+                                <a href="mailto:@contactInformation.Email">@contactInformation.Email</a>
+                            </li>
 
-                                <li>
-                                    <i class="bx bxs-phone-call"></i>
-                                    <a href="tel:+1(514)312-5678">+1 (514) 312-5678</a>
-                                    <a href="tel:+1(514)312-6688">+1 (514) 312-6688</a>
-                                </li>
-                            </ul>
-                        </div>
+                            <li>
+                                <i class="bx bxs-phone-call"></i>
+                                <a href="tel:@contactInformation.Phone">@contactInformation.Phone</a>
+                            </li>
+                        </ul>
                     </div>
+                </div>
 
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-widget">
-                            <h3>Useful links</h3>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="footer-widget">
+                        <h3>Useful links</h3>
 
-                            <ul class="link">
-                                <li>
-                                    <a href="courses.html">All Courses</a>
-                                </li>
-                                <li>
-                                    <a href="about.html">About us</a>
-                                </li>
-                                <li>
-                                    <a href="faq.html">Help (FAQ)</a>
-                                </li>
-                                <li>
-                                    <a href="terms-conditions.html">Terms & Conditions</a>
-                                </li>
-                                <li>
-                                    <a href="privacy-policy.html">Privacy Policy</a>
-                                </li>
-                            </ul>
-                        </div>
+                        <ul class="link">
+                            <li>
+                                <a href="courses.html">All Courses</a>
+                            </li>
+                            <li>
+                                <a href="about.html">About us</a>
+                            </li>
+                            <li>
+                                <a href="faq.html">Help (FAQ)</a>
+                            </li>
+                            <li>
+                                <a href="terms-conditions.html">Terms & Conditions</a>
+                            </li>
+                            <li>
+                                <a href="privacy-policy.html">Privacy Policy</a>
+                            </li>
+                        </ul>
                     </div>
+                </div>
 
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-widget">
-                            <h3>Top online courses</h3>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="footer-widget">
+                        <h3>Top online courses</h3>
 
-                            <ul class="link">
-                                <li>
-                                    <a href="#">AI for everyone</a>
-                                </li>
-                                <li>
-                                    <a href="#">Networks and deep learning</a>
-                                </li>
-                                <li>
-                                    <a href="#">Learning with python</a>
-                                </li>
-                                <li>
-                                    <a href="#">Financial markets</a>
-                                </li>
-                                <li>
-                                    <a href="#">Speak English professionally</a>
-                                </li>
-                            </ul>
-                        </div>
+                        <ul class="link">
+                            <li>
+                                <a href="#">AI for everyone</a>
+                            </li>
+                            <li>
+                                <a href="#">Networks and deep learning</a>
+                            </li>
+                            <li>
+                                <a href="#">Learning with python</a>
+                            </li>
+                            <li>
+                                <a href="#">Financial markets</a>
+                            </li>
+                            <li>
+                                <a href="#">Speak English professionally</a>
+                            </li>
+                        </ul>
                     </div>
+                </div>
 
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-widget">
-                            <h3>Popular subjects</h3>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="footer-widget">
+                        <h3>Popular subjects</h3>
 
-                            <ul class="link">
-                                <li>
-                                    <a href="#">Data science</a>
-                                </li>
-                                <li>
-                                    <a href="#">Computer science</a>
-                                </li>
-                                <li>
-                                    <a href="#">Business and Management</a>
-                                </li>
-                                <li>
-                                    <a href="#">Business and Management</a>
-                                </li>
-                                <li>
-                                    <a href="#">Nature & Environment</a>
-                                </li>
-                            </ul>
-                        </div>
+                        <ul class="link">
+                            <li>
+                                <a href="#">Data science</a>
+                            </li>
+                            <li>
+                                <a href="#">Computer science</a>
+                            </li>
+                            <li>
+                                <a href="#">Business and Management</a>
+                            </li>
+                            <li>
+                                <a href="#">Business and Management</a>
+                            </li>
+                            <li>
+                                <a href="#">Nature & Environment</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- End Footer Top Area -->
-        <!-- Start Footer Bottom Area -->
-        <footer class="footer-bottom-area">
-            <div class="container">
-                <div class="copyright-wrap">
-                    <p>Copyright @@2020 Eduon. Designed By <a href="https://hibootstrap.com/" target="blank">HiBootstrap.com</a></p>
-                </div>
-            </div>
-        </footer>
-        <!-- End Footer Bottom Area -->
-        <!-- Start Go Top Area -->
-        <div class="go-top">
-            <i class='bx bx-chevrons-up'></i>
-            <i class='bx bx-chevrons-up'></i>
         </div>
-        <!-- End Go Top Area -->
-        <!-- Jquery-3.5.1.Slim.Min.JS -->
-        <script src="~/assets/js/jquery-3.5.1.slim.min.js"></script>
-        <!-- Popper JS -->
-        <script src="~/assets/js/popper.min.js"></script>
-        <!-- Bootstrap JS -->
-        <script src="~/assets/js/bootstrap.min.js"></script>
-        <!-- Meanmenu JS -->
-        <script src="~/assets/js/jquery.meanmenu.js"></script>
-        <!-- Wow JS -->
-        <script src="~/assets/js/wow.min.js"></script>
-        <!-- Owl Carousel JS -->
-        <script src="~/assets/js/owl.carousel.js"></script>
-        <!-- Owl Magnific JS -->
-        <script src="~/assets/js/jquery.magnific-popup.min.js"></script>
-        <!-- Nice Select JS -->
-        <script src="~/assets/js/jquery.nice-select.min.js"></script>
-        <!-- Parallax JS -->
-        <script src="~/assets/js/parallax.min.js"></script>
-        <!-- Appear JS -->
-        <script src="~/assets/js/jquery.appear.js"></script>
-        <!-- Odometer JS -->
-        <script src="~/assets/js/odometer.min.js"></script>
-        <!-- Form Validator JS -->
-        <script src="~/assets/js/form-validator.min.js"></script>
-        <!-- Contact JS -->
-        <script src="~/assets/js/contact-form-script.js"></script>
-        <!-- Ajaxchimp JS -->
-        <script src="~/assets/js/jquery.ajaxchimp.min.js"></script>
-        <!-- Custom JS -->
-        <script src="~/assets/js/custom.js"></script>
+    </footer>
+    <!-- End Footer Top Area -->
+    <!-- Start Footer Bottom Area -->
+    <footer class="footer-bottom-area">
+        <div class="container">
+            <div class="copyright-wrap">
+                <p>@contactInformation.Footer</p>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer Bottom Area -->
+    <!-- Start Go Top Area -->
+    <div class="go-top">
+        <i class='bx bx-chevrons-up'></i>
+        <i class='bx bx-chevrons-up'></i>
+    </div>
+    <!-- End Go Top Area -->
+    <!-- Jquery-3.5.1.Slim.Min.JS -->
+    <script src="~/assets/js/jquery-3.5.1.slim.min.js"></script>
+    <!-- Popper JS -->
+    <script src="~/assets/js/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <!-- Meanmenu JS -->
+    <script src="~/assets/js/jquery.meanmenu.js"></script>
+    <!-- Wow JS -->
+    <script src="~/assets/js/wow.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="~/assets/js/owl.carousel.js"></script>
+    <!-- Owl Magnific JS -->
+    <script src="~/assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- Nice Select JS -->
+    <script src="~/assets/js/jquery.nice-select.min.js"></script>
+    <!-- Parallax JS -->
+    <script src="~/assets/js/parallax.min.js"></script>
+    <!-- Appear JS -->
+    <script src="~/assets/js/jquery.appear.js"></script>
+    <!-- Odometer JS -->
+    <script src="~/assets/js/odometer.min.js"></script>
+    <!-- Form Validator JS -->
+    <script src="~/assets/js/form-validator.min.js"></script>
+    <!-- Contact JS -->
+    <script src="~/assets/js/contact-form-script.js"></script>
+    <!-- Ajaxchimp JS -->
+    <script src="~/assets/js/jquery.ajaxchimp.min.js"></script>
+    <!-- Custom JS -->
+    <script src="~/assets/js/custom.js"></script>
 
-        <script src="~/Scripts/registration.js"></script>
+    <script src="~/Scripts/registration.js"></script>
 
-    </body>
+</body>
 </html>

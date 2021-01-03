@@ -4,6 +4,8 @@
     Layout = null;
     var homepage = Model.AncestorOrSelf<ContentModels.Home>();
     var homebanner = homepage.Children<ContentModels.HomeBanner>().FirstOrDefault();
+    var contactinfo = homepage.Children<ContentModels.ContactUs>().FirstOrDefault();
+
 }
 <!-- Start Banner Area -->
 <section class="banner-area f5f6fa-bg-color">
@@ -14,7 +16,7 @@
                     <h1 class="wow fadeInLeft" data-wow-delay="0.3s">@homebanner.Title</h1>
                     <p class="wow fadeInLeft" data-wow-delay="0.6s">@homebanner.Subtitle</p>
 
-                    <a href="courses.html" class="default-btn wow fadeInLeft" data-wow-delay="0.9s">
+                    <a href="#" class="default-btn wow fadeInLeft" data-wow-delay="0.9s">
                         View Courses
                     </a>
                 </div>
@@ -30,28 +32,32 @@
         <!-- Start Social Wrap -->
         <ul class="social-wrap">
             <li class="follow-us">
-                Follow Us:
+                @Umbraco.GetDictionaryValue("FollowUs"):
             </li>
-            <li>
-                <a href="#" target="_blank">
-                    <i class="bx bxl-twitter"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#" target="_blank">
-                    <i class="bx bxl-instagram"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#" target="_blank">
-                    <i class="bx bxl-facebook"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#" target="_blank">
-                    <i class="bx bxl-linkedin"></i>
-                </a>
-            </li>
+            @if (!string.IsNullOrEmpty(contactinfo.TwitterUrl))
+            {
+                <li>
+                    <a href="@contactinfo.TwitterUrl" target="_blank">
+                        <i class="bx bxl-twitter"></i>
+                    </a>
+                </li>
+            }
+            @if (!string.IsNullOrEmpty(contactinfo.InstagramUrl))
+            {
+                <li>
+                    <a href="@contactinfo.InstagramUrl" target="_blank">
+                        <i class="bx bxl-instagram"></i>
+                    </a>
+                </li>
+            }
+            @if (!string.IsNullOrEmpty(contactinfo.FacebookUrl))
+            {
+                <li>
+                    <a href="@contactinfo.FacebookUrl" target="_blank">
+                        <i class="bx bxl-facebook"></i>
+                    </a>
+                </li>
+            }
         </ul>
         <!-- End Social Wrap -->
     </div>

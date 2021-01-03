@@ -10,39 +10,41 @@
 <section class="user-area-style ptb-100">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="section-title">
                     <h2>Log In</h2>
                 </div>
 
                 <div class="contact-form-action mb-50">
                     @{Html.RenderAction("RenderLogin", "Member"); }
-
-
-
                 </div>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-8">
                 <div class="section-title">
                     <h2>Registration</h2>
                 </div>
 
                 <div class="contact-form-action">
-                    <div class="col-12">
-                        <button onclick="location.href='/@LandRoute/Student-registration/'" class="default-btn" type="submit">
-                            @Model.Student
-                        </button>
-                    </div>
-                    <div class="col-12">
-                        <button onclick="location.href='/@LandRoute/teacher-registration/'" class="default-btn" type="submit">
-                            @Model.Teacher
-                        </button>
-                    </div>
-                    <div class="col-12">
-                        <button onclick="location.href='/@LandRoute/spectator-registration/'" class="default-btn" type="submit">
-                            @Model.Student
-                        </button>
+                    <div class="row">
+                        <div class="col-4">
+                            <button onclick="location.href='/@LandRoute/Student-registration/'" class="default-btn register-outline" type="submit">
+                                <img src="~/assets/img/registration/student.png" class="mb-2" />
+                                @Model.Student
+                            </button>
+                        </div>
+                        <div class="col-4">
+                            <button onclick="location.href='/@LandRoute/teacher-registration/'" class="default-btn register-outline" type="submit">
+                                <img src="~/assets/img/registration/teacher.png" class="mb-2" />
+                                @Model.Teacher
+                            </button>
+                        </div>
+                        <div class="col-4">
+                            <button onclick="location.href='/@LandRoute/spectator-registration/'" class="default-btn register-outline" type="submit">
+                                <img src="~/assets/img/registration/spectator.png" class="mb-2" />
+                                @Model.Spectator
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
