@@ -1,7 +1,12 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Home>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
     Layout = null;
+    if (Model.ContentType.Alias == "fAQs")
+    {
+        Layout = "Master.cshtml"; 
+    }
+
     var homepage = Model.AncestorOrSelf<ContentModels.Home>();
     var faqContent = homepage.Children<ContentModels.FAqs>().FirstOrDefault();
     var faqs = faqContent.Children<ContentModels.FAQ>();
