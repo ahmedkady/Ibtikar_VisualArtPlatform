@@ -1,4 +1,4 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.OurTeam>
 @using ContentModels = Umbraco.Web.PublishedModels;
 
 @{
@@ -8,11 +8,28 @@
 
 @* the fun starts here *@
 
-<!-- Start Teachers Area -->
-<section class="teachers-area-style pb-70">
+<div class="page-title-area bg-24">
     <div class="container">
-        <div class="section-title">
-            <h2>Our Team</h2>
+        <div class="page-title-content">
+            <h2>@Umbraco.AssignedContentItem.Name</h2>
+            <ul>
+                <li>
+                    <a href="@Umbraco.AssignedContentItem.Parent.Url()">
+                        @Umbraco.AssignedContentItem.Parent.Name
+                    </a>
+                </li>
+                <li class="active">@Umbraco.AssignedContentItem.Name</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<!-- Start Teachers Area -->
+<section class="teachers-area-style pt-100 pb-70">
+    <div class="container">
+        <div class="section-title"> 
+            <span>@Model.Title</span>
+            <h2>@Model.Subtitle</h2>
         </div>
 
         <div class="row">
