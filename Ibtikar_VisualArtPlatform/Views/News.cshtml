@@ -5,51 +5,165 @@
     var homepage = Model.AncestorOrSelf<ContentModels.Home>();
     var NewsContent = homepage.Children<ContentModels.News>().FirstOrDefault();
     var News = NewsContent.Children<ContentModels.SingleNews>();
+
+    bool DateInside(DateTime checkDate, DateTime fromDate, DateTime? lastDate = null)
+    {
+        DateTime toDate = lastDate != null ? lastDate.Value : fromDate.AddDays(6d);
+        return checkDate >= fromDate && checkDate <= toDate;
+    }
+    DateTime PreviousSaturday = DateTime.Now;
+    while (PreviousSaturday.DayOfWeek != DayOfWeek.Saturday)
+    {
+        PreviousSaturday = PreviousSaturday.AddDays(-1);
+    }
+    string neewsFilters = string.Empty;
 }
-<!-- Start Page Title Area -->
-<div class="page-title-area bg-24">
-    <div class="container">
-        <div class="page-title-content">
-            <h2>@Umbraco.AssignedContentItem.Name</h2>
-            <ul>
-                <li>
-                    <a href="@Umbraco.AssignedContentItem.Parent.Url()">
-                        @Umbraco.AssignedContentItem.Parent.Name
-                    </a>
-                </li>
-                <li class="active">@Umbraco.AssignedContentItem.Name</li>
-            </ul>
+    <!-- Start Page Title Area -->
+    <div class="page-title-area bg-24">
+        <div class="container">
+            <div class="page-title-content">
+                <h2>@Umbraco.AssignedContentItem.Name</h2>
+                <ul>
+                    <li>
+                        <a href="@Umbraco.AssignedContentItem.Parent.Url()">
+                            @Umbraco.AssignedContentItem.Parent.Name
+                        </a>
+                    </li>
+                    <li class="active">@Umbraco.AssignedContentItem.Name</li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 
-<section class="event-area-style pt-100 pb-70">
-    <div class="container">
-        <div class="section-title">
-            <span>@Model.Title</span>
-            <h2>@Model.Subtitle</h2>
-        </div>
+    <section class="event-area-style pt-100 pb-70">
+        <div class="container">
+            <div class="section-title">
+                <span>@Model.Title</span>
+                <h2>@Model.Subtitle</h2>
+            </div>
+            <!-- pagination control -->
+            <div class="controls">
 
-        <div class="row">
-            @foreach (var Event in News.Where(x => x.IsActive))
-            {
-                <div class="col-lg-6 col-sm-6">
-                    <div class="single-event">
-                        <a href="@Event.Url()">
-                            <img src="@Event.Thumbnail" alt="Image">
-                        </a>
+                <!-- pagination control -->
+                <div data-jplist-control="pagination"
+                     data-group="data-group-1"
+                     data-items-per-page="5"
+                     data-current-page="0"
+                     data-name="pagination1">
 
-                        <div class="event-content">
-                            <a href="@Event.Url()">
-                                <h3>@Event.Title</h3>
-                            </a>
+                    <div class="row mb-3">
+
+                        <button type="button" data-type="first">«</button>
+                        <button type="button" data-type="prev">‹</button>
+
+                        <div class="jplist-holder" data-type="pages">
+                            <button type="button" data-type="page">{pageNumber}</button>
                         </div>
+
+                        <button type="button" data-type="next">›</button>
+                        <button type="button" data-type="last">»</button>
+
+                    </div>
+
+                    <div class="row">
+
+                        <!-- items per page select -->
+                        <select data-type="items-per-page">
+                            <option value="3"> 3 per page </option>
+                            <option value="5"> 5 per page </option>
+                            <option value="10"> 10 per page </option>
+                            <option value="0"> view all </option>
+                        </select>
+
+                        <span data-type="info">
+                            Page {pageNumber} of {pagesNumber}
+                        </span>
                     </div>
                 </div>
 
-            }
+            </div>
 
+
+
+            <div class="buttons">
+
+                <button class="default-btn" data-jplist-control="buttons-path-filter"
+                        data-path=""
+                        data-group="data-group-1"
+                        data-mode="radio"
+                        data-selected="true"
+                        name="name1">
+                    All
+                </button>
+
+                <button class="default-btn" data-jplist-control="buttons-path-filter"
+                        data-path=".week"
+                        data-group="data-group-1"
+                        data-mode="radio"
+                        name="name1">
+                    This week's news'
+                </button>
+
+                <button class="default-btn" data-jplist-control="buttons-path-filter"
+                        data-path=".month"
+                        data-group="data-group-1"
+                        data-mode="radio"
+                        name="name1">
+                    this month's news
+                </button>
+                <button class="default-btn" data-jplist-control="buttons-path-filter"
+                        data-path=".year"
+                        data-group="data-group-1"
+                        data-mode="radio"
+                        name="name1">
+                    this year's news
+                </button>
+
+            </div>
+
+            <!-- content to filter -->
+
+
+
+
+            <div data-jplist-group="data-group-1" class="row">
+                @foreach (var Event in News.Where(x => x.IsActive))
+                {
+                    neewsFilters = string.Empty;
+                    if (DateInside(Event.CreateDate, PreviousSaturday))
+                    {
+                        neewsFilters = neewsFilters + " " + "week";
+                    }
+                    if (Event.CreateDate.Month == DateTime.Now.Month)
+                    {
+                        neewsFilters = neewsFilters + " " + "month";
+                    }
+                    if (Event.CreateDate.Year == DateTime.Now.Year)
+                    {
+                        neewsFilters = neewsFilters + " " + "year";
+                    }
+                    <div data-jplist-item>
+                        <div class="@neewsFilters">
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="single-event">
+                                    <a href="@Event.Url()">
+                                        <img src="@Event.Thumbnail" alt="Image">
+                                    </a>
+
+                                    <div class="event-content">
+                                        <a href="@Event.Url()">
+                                            <h3>@Event.Title</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+
+            </div>
 
         </div>
-    </div>
-</section>
+    </section>

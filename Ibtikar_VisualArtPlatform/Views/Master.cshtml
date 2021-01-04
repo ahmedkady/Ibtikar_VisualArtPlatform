@@ -62,12 +62,14 @@
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="~/assets/css/responsive.css">
 
+
     @if (!isEnglish)
     {
         <!-- RTL CSS -->
         <link rel="stylesheet" href="~/assets/css/rtl.css">
     }
-
+    <!-- jPList CSS -->
+    <link rel="stylesheet" href="~/assets/JPList/JPList.style.css">
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -111,22 +113,22 @@
                         <img src="@contactInformation.Logo" alt="Logo">
                     </a>
 
-                        <div class="collapse navbar-collapse mean-menu">
-                            <ul class="navbar-nav m-auto">
+                    <div class="collapse navbar-collapse mean-menu">
+                        <ul class="navbar-nav m-auto">
+                            <li class="nav-item">
+                                <a href="@home.Url()" class="nav-link">
+                                    @home.Name
+                                </a>
+                            </li>
+                            @foreach (var item in Navitems)
+                            {
                                 <li class="nav-item">
-                                    <a href="@home.Url()" class="nav-link">
-                                        @home.Name
+                                    <a href="@item.Url()" class="nav-link">
+                                        @item.Name
                                     </a>
                                 </li>
-                                @foreach (var item in Navitems)
-                                {
-                                    <li class="nav-item">
-                                        <a href="@item.Url()" class="nav-link">
-                                            @item.Name
-                                        </a>
-                                    </li>
-                                }
-                            </ul>
+                            }
+                        </ul>
 
                         <!-- Start Other Option -->
                         <div class="others-option">
@@ -402,6 +404,13 @@
     <script src="~/assets/js/custom.js"></script>
 
     <script src="~/Scripts/registration.js"></script>
+    <script src="~/assets/JPList/JPList.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            jplist.init();
+
+        });
+    </script>
 
 </body>
 </html>
