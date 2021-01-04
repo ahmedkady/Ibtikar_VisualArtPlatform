@@ -2934,6 +2934,7 @@
     <Compile Include="App_Data\Models\OurTeam.generated.cs" />
     <Compile Include="App_Data\Models\School.generated.cs" />
     <Compile Include="App_Data\Models\Schools.generated.cs" />
+    <Compile Include="App_Data\Models\Search.generated.cs" />
     <Compile Include="App_Data\Models\SingleNews.generated.cs" />
     <Compile Include="App_Data\Models\Spectator.generated.cs" />
     <Compile Include="App_Data\Models\SpectatorRegistration.generated.cs" />
@@ -3141,6 +3142,7 @@
     <Content Include="Views\DropDownsLookUps.cshtml" />
     <Content Include="site.webmanifest" />
     <Content Include="Views\HomeCarousel.cshtml" />
+    <Content Include="Views\Search.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
