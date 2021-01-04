@@ -623,4 +623,12 @@ body {
     padding-right: 0;
   }
 }
+
+.education-content {
+    margin-right: 80px;
+}
+
+.enroll-area {
+    background-image: url(../../assets/img/enroll-bg-ar.jpg);
+}
 /*# sourceMappingURL=rtl.css.map */
