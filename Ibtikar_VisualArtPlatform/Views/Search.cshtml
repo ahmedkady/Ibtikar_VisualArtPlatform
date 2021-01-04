@@ -1,7 +1,76 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Search>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@using Current = Umbraco.Web.Composing.Current;
+
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
+    var homepage = Model.AncestorOrSelf<ContentModels.Home>();
+    //var searchContent = homepage.Children<ContentModels.Search>().FirstOrDefault();
+    var searchQuery = Request.QueryString["search"]; 
+
+    var results = Umbraco.ContentQuery.Search(searchQuery);
+
+    var searchResults = Current.PublishedContentQuery.Search(searchQuery);
+
 }
 
 @* the fun starts here *@
 
+
+<div class="page-title-area bg-24">
+    <div class="container">
+        <div class="page-title-content">
+            <h2>@Umbraco.AssignedContentItem.Name</h2>
+            <ul>
+                <li>
+                    <a href="@Umbraco.AssignedContentItem.Parent.Url()">
+                        @Umbraco.AssignedContentItem.Parent.Name
+                    </a>
+                </li>
+                <li class="active">@Umbraco.AssignedContentItem.Name</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<section class="teachers-area-style pt-100 pb-70">
+    <div class="container">
+        <div class="section-title">
+            <span>@Model.Title</span>
+            <h2>@Model.Subtitle</h2>
+        </div>
+
+        <div class="row">
+            <form id="contactForm">
+                <div class="row">
+
+                    <ul>
+                        @foreach (var result in results)
+                        {
+                            <li>
+                                <div>@result.Content.Name</div>
+                                <h3><a href="@result.Content.Url">@result.Content.Name</a></h3>
+                            </li>
+                        }
+                    </ul>
+
+                    <ul>
+                        @foreach (var result in searchResults)
+                        {
+                            <li>
+                                <div>@result.Content.Name</div>
+                                <h3><a href="@result.Content.Url()">@result.Content.Name</a></h3>
+                            </li>
+                        }
+                    </ul>
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
