@@ -9,9 +9,19 @@
 		<!-- Start Page Title Area -->
 		<div class="page-title-area bg-5">
 			<div class="container">
-				<div class="page-title-content">
-					<h2>@contactus.Name</h2>
-				</div>
+                <div class="page-title-content">
+                    <h2>@contactus.Name</h2>
+                    <ul>
+                        <li>
+                            <a href="@Umbraco.AssignedContentItem.Parent.Url()">
+                                @Umbraco.AssignedContentItem.Parent.Name
+                            </a>
+                        </li>
+
+                        <li class="active">@Umbraco.AssignedContentItem.Name</li>
+                    </ul>
+
+                </div>
 			</div>
 		</div>
 		<!-- End Page Title Area -->
@@ -56,48 +66,48 @@
 						<div class="contact-wrap contact-pages mb-0">
 							<div class="contact-form">
 								<div class="section-title">
-									<h2>Drop us a message for any query</h2>
-									<p>For more information about our courses, get in touch <br> with eduon contacts</p>
+                                    <h2>@contactus.Title</h2>
+                                    <p>@contactus.SubTitle</p>
 										
 								</div>
 								<form id="contactForm">
 									<div class="row">
 										<div class="col-lg-6 col-sm-6">
 											<div class="form-group">
-												<label>Name</label>
-												<input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name">
+                                                <label>@Umbraco.GetDictionaryValue("YourName")</label>
+												<input type="text" name="name" id="name" class="form-control" required data-error="">
 												<div class="help-block with-errors"></div>
 											</div>
 										</div>
 			
 										<div class="col-lg-6 col-sm-6">
 											<div class="form-group">
-												<label>Email Address</label>
-												<input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email">
+                                                <label>@Umbraco.GetDictionaryValue("YourEmail")</label>
+												<input type="email" name="email" id="email" class="form-control" required data-error="">
 												<div class="help-block with-errors"></div>
 											</div>
 										</div>
 			
 										<div class="col-12">
 											<div class="form-group">
-												<label>Subject</label>
-												<input type="text" name="msg_subject" id="msg_subject" class="form-control" required data-error="Please enter your subject">
+                                                <label>@Umbraco.GetDictionaryValue("PhoneNumber")</label>
+												<input type="text" name="msg_subject" id="msg_subject" class="form-control" required data-error="">
 												<div class="help-block with-errors"></div>
 											</div>
 										</div>
 			
 										<div class="col-12">
 											<div class="form-group">
-												<label>Message</label>
-												<textarea name="message" class="form-control" id="message" cols="30" rows="10" required data-error="Write your message"></textarea>
+                                                <label>@Umbraco.GetDictionaryValue("YourQuestion")</label>
+												<textarea name="message" class="form-control" id="message" cols="30" rows="10" required data-error=""></textarea>
 												<div class="help-block with-errors"></div>
 											</div>
 										</div>
 			
 										<div class="col-lg-12 col-md-12">
-											<button type="submit" class="default-btn btn-two">
-												Send Message
-											</button>
+                                            <button type="submit" class="default-btn btn-two">
+                                                @Umbraco.GetDictionaryValue("Submit")
+                                            </button>
 											<div id="msgSubmit" class="h3 text-center hidden"></div>
 											<div class="clearfix"></div>
 										</div>
@@ -113,5 +123,5 @@
 
 		<!-- Start Map Area -->
 		<div class="map-area">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.4266322799504!2d31.3220504154509!3d30.02461592646318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583ec6ccf0580f%3A0xc27042668a1d7ff8!2sEmtedad%20Ramses%2C%20Cairo%20Governorate!5e0!3m2!1sen!2seg!4v1609680243903!5m2!1sen!2seg" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            @contactus.MapEmbed
 		</div>

@@ -27,35 +27,27 @@
             <div class="col-lg-5">
                 <div class="enroll-wrap">
                     <form class="courses-form">
-                        <span>Any Questions?</span>
-                        <h3>Contact Us Now</h3>
+                        <span>@Umbraco.GetDictionaryValue("AnyQuestions")</span>
+                        <h3>@Umbraco.GetDictionaryValue("ContactUsNow")</h3>
 
                         <div class="form-group">
-                            <input type="text" class="form-control" id="Name" placeholder="Your name">
+                            <input type="text" class="form-control" id="Name" placeholder="@Umbraco.GetDictionaryValue("YourName")">
                         </div>
 
                         <div class="form-group">
-                            <input type="email" class="form-control" id="email" placeholder="Your email">
+                            <input type="email" class="form-control" id="email" placeholder="@Umbraco.GetDictionaryValue("YourEmail")">
                         </div>
 
                         <div class="form-group">
-                            <input type="text" class="form-control" id="Number" placeholder="Phone Number">
+                            <input type="text" class="form-control" id="Number" placeholder="@Umbraco.GetDictionaryValue("PhoneNumber")">
                         </div>
 
                         <div class="form-group">
-                            <select>
-                                <option value="">Courses Type</option>
-                                <option value="">Courses Type 1</option>
-                                <option value="">Courses Type 2</option>
-                                <option value="">Courses Type 3</option>
-                                <option value="">Courses Type 4</option>
-                                <option value="">Courses Type 5</option>
-                                <option value="">Courses Type 6</option>
-                            </select>
+                            <textarea type="text" class="form-control" id="Number" rows="3" placeholder="@Umbraco.GetDictionaryValue("YourQuestion")"></textarea>
                         </div>
 
                         <button type="submit" class="default-btn">
-                            Submit
+                            @Umbraco.GetDictionaryValue("Submit")
                         </button>
                     </form>
                 </div>

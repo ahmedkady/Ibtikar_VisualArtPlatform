@@ -4,6 +4,7 @@
     Layout = null;
     var homepage = Model.AncestorOrSelf<ContentModels.Home>();
     var whoarewe = homepage.Children<ContentModels.WhoAreWe>().FirstOrDefault();
+    var isEnglish = UmbracoContext.VariationContextAccessor?.VariationContext?.Culture == "en-US";
 
 }
 
@@ -23,8 +24,8 @@
                     <h2>@whoarewe.MainTitle</h2>
                     <p>@whoarewe.Description</p>
 
-                    <a href="/about" class="default-btn">
-                        Read More
+                    <a href="@(isEnglish ? "/en" : "/ar")/about-us" class="default-btn">
+                        @Umbraco.GetDictionaryValue("ReadMore")
                     </a>
                 </div>
             </div>
