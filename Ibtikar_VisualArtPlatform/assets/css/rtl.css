@@ -1,3 +1,7 @@
+* {
+    font-family: 'Cairo', sans-serif;
+}
+
 body {
   direction: rtl;
   text-align: right;
@@ -60,7 +64,7 @@ body {
 
 .banner-area .social .social-wrap li.follow-us::before {
   left: unset;
-  right: 85px;
+  right: 55px;
 }
 
 .banner-area-two .banner-img .banner-shape-1 {

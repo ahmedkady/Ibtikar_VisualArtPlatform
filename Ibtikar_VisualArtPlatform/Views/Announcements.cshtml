@@ -24,19 +24,19 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="single-news">
-                    <a href="single-blog.html">
-                        <img src="@(announcements.ElementAt(0)?.Image)" alt="Image">
+                    <a href="#">
+                        <img src="@(announcements.ElementAt(0)?.Image)" style="height: 385px; object-fit: cover; object-position: right;" alt="Image">
                     </a>
 
                     <div class="news-content">
                         <span class="tag">@(announcements.ElementAt(0)?.Group)</span>
 
-                        <a href="single-blog.html">
+                        <a href="#">
                             <h3>@(announcements.ElementAt(0)?.Title)</h3>
                         </a>
 
                         <ul class="lessons">
-                            <li class="float">Posted on @(announcements.ElementAt(0)?.CreateDate.ToString("dd/MM/yyyy"))</li>
+                            <li class="">@(announcements.ElementAt(0)?.CreateDate.ToString("MMMM dd, yyyy"))</li>
                         </ul>
                     </div>
                 </div>
@@ -45,19 +45,21 @@
             <div class="col-lg-6">
                 <div class="row mb-30">
                     <div class="col-lg-4 col-sm-4 pr-0">
-                        <div class="news-img bg-2"></div>
+                        <div class="news-img">
+                            <img style="height:165px;width:190px;object-fit:cover;object-position:right" src="@(announcements.ElementAt(1)?.Image)" alt="Image">
+                        </div>
                     </div>
 
                     <div class="col-lg-8 col-sm-8 pl-0">
                         <div class="news-listing-content">
                             <span class="tag">@(announcements.ElementAt(1)?.Group)</span>
 
-                            <a href="single-blog.html">
+                            <a href="#">
                                 <h3>@(announcements.ElementAt(1)?.Title)</h3>
                             </a>
 
                             <ul class="lessons">
-                                <li class="float">Posted on @(announcements.ElementAt(1)?.CreateDate.ToString("dd/MM/yyyy"))</li>
+                                <li class="">@(announcements.ElementAt(1)?.CreateDate.ToString("MMMM dd, yyyy"))</li>
                             </ul>
                         </div>
                     </div>
@@ -65,19 +67,21 @@
 
                 <div class="row mb-30">
                     <div class="col-lg-4 col-sm-4 pr-0">
-                        <div class="news-img bg-3"></div>
+                        <div class="news-img">
+                            <img style="height:165px;width:190px;object-fit:cover;" src="@(announcements.ElementAt(2)?.Image)" alt="Image">
+                        </div>
                     </div>
 
                     <div class="col-lg-8 col-sm-8 pl-0">
                         <div class="news-listing-content">
                             <span class="tag">@(announcements.ElementAt(2)?.Group)</span>
 
-                            <a href="single-blog.html">
+                            <a href="#">
                                 <h3>@(announcements.ElementAt(2)?.Title)</h3>
                             </a>
 
                             <ul class="lessons">
-                                <li class="float">Posted on @(announcements.ElementAt(2)?.CreateDate.ToString("dd/MM/yyyy"))</li>
+                                <li class="">@(announcements.ElementAt(2)?.CreateDate.ToString("MMMM dd, yyyy"))</li>
                             </ul>
                         </div>
                     </div>
@@ -85,19 +89,21 @@
 
                 <div class="row r-p-mb">
                     <div class="col-lg-4 col-sm-4 pr-0">
-                        <div class="news-img bg-4"></div>
+                        <div class="news-img">
+                            <img style="height:165px;width:190px;object-fit:cover;" src="@(announcements.ElementAt(3)?.Image)" alt="Image">
+                        </div>
                     </div>
 
                     <div class="col-lg-8 col-sm-8 pl-0">
                         <div class="news-listing-content">
                             <span class="tag">@(announcements.ElementAt(3)?.Group)</span>
 
-                            <a href="single-blog.html">
+                            <a href="#">
                                 <h3>@(announcements.ElementAt(3)?.Title)</h3>
                             </a>
 
                             <ul class="lessons">
-                                <li class="float">Posted on @(announcements.ElementAt(3)?.CreateDate.ToString("dd/MM/yyyy"))</li>
+                                <li class="">@(announcements.ElementAt(3)?.CreateDate.ToString("MMMM dd, yyyy"))</li>
                             </ul>
                         </div>
                     </div>
@@ -107,7 +113,7 @@
         @if (Model.ContentType.Alias != "announcements")
         {
             <a href="@(isEnglish ? "/en" : "/ar")/announcements" class="default-btn">
-                Read More
+                @Umbraco.GetDictionaryValue("ReadMore")
             </a>
         }
     </div>

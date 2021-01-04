@@ -26,12 +26,12 @@
                 @foreach (var faq in faqs)
                 {
                     <li class="accordion-item">
-                        <a class="accordion-title active" href="javascript:void(0)">
+                        <a class="accordion-title" href="javascript:void(0)">
                             <i class="bx bx-plus"></i>
                             @faq.Question
                         </a>
 
-                        <div class="accordion-content show">
+                        <div class="accordion-content">
                             <p>@faq.Answer</p>
                         </div>
                     </li>
@@ -43,7 +43,7 @@
     {
         <div class="container text-center pt-4">
             <a href="@(isEnglish ? "/en" : "/ar")/faqs" class="default-btn">
-                Read More
+                @Umbraco.GetDictionaryValue("ReadMore")
             </a>
         </div>
     }

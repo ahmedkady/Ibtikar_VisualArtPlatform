@@ -5,6 +5,7 @@
     var homepage = Model.AncestorOrSelf<ContentModels.Home>();
     var homebanner = homepage.Children<ContentModels.HomeBanner>().FirstOrDefault();
     var contactinfo = homepage.Children<ContentModels.ContactUs>().FirstOrDefault();
+    var isEnglish = UmbracoContext.VariationContextAccessor?.VariationContext?.Culture == "en-US";
 
 }
 <!-- Start Banner Area -->
@@ -16,8 +17,8 @@
                     <h1 class="wow fadeInLeft" data-wow-delay="0.3s">@homebanner.Title</h1>
                     <p class="wow fadeInLeft" data-wow-delay="0.6s">@homebanner.Subtitle</p>
 
-                    <a href="#" class="default-btn wow fadeInLeft" data-wow-delay="0.9s">
-                        View Courses
+                    <a href="@(isEnglish ? "/en" : "/ar")/about-us" class="default-btn wow fadeInLeft" data-wow-delay="0.9s">
+                        @Umbraco.GetDictionaryValue("ReadMore")
                     </a>
                 </div>
             </div>

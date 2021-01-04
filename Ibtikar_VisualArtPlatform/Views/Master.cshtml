@@ -66,6 +66,8 @@
     @if (!isEnglish)
     {
         <!-- RTL CSS -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="~/assets/css/rtl.css">
     }
     <!-- jPList CSS -->
@@ -134,7 +136,7 @@
                         <div class="others-option">
                             @if (myuser != null)
                             {
-                                <p><strong>Welcome</strong> <span>@myuser.UserName</span></p>
+                                <p><strong>@Umbraco.GetDictionaryValue("Welcome"),</strong> <span>@myuser.UserName</span></p>
                             }
                             <div class="option-item">
                                 <i class="search-btn bx bx-search"></i>
@@ -143,7 +145,6 @@
                                     <div class='search-box'>
                                         <form class="search-form">
                                             <input class="search-input" name="search" placeholder="@Umbraco.GetDictionaryValue("Search")" type="text">
-
                                             <button class="search-button" type="submit"><i class="bx bx-search"></i></button>
                                         </form>
                                     </div>
@@ -248,7 +249,7 @@
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
                     <div class="footer-widget">
-                        <h3>@contactInformation.Title</h3>
+                        <h3>@Umbraco.GetDictionaryValue("ContactUs")</h3>
 
                         <ul class="address">
                             <li class="location">
@@ -273,19 +274,19 @@
 
                         <ul class="link">
                             <li>
-                                <a href="courses.html">All Courses</a>
+                                <a href="@(isEnglish ? "/en" : "/ar")/contact">@Umbraco.GetDictionaryValue("ContactUs")</a>
                             </li>
                             <li>
-                                <a href="about.html">About us</a>
+                                <a href="@(isEnglish ? "/en" : "/ar")/about-us">@Umbraco.GetDictionaryValue("AboutUs")</a>
                             </li>
                             <li>
-                                <a href="faq.html">Help (FAQ)</a>
+                                <a href="@(isEnglish ? "/en" : "/ar")/faqs">@Umbraco.GetDictionaryValue("HelpFAQ")</a>
                             </li>
                             <li>
-                                <a href="terms-conditions.html">Terms & Conditions</a>
+                                <a href="#">@Umbraco.GetDictionaryValue("TermsConditions")</a>
                             </li>
                             <li>
-                                <a href="privacy-policy.html">Privacy Policy</a>
+                                <a href="#">@Umbraco.GetDictionaryValue("PrivacyPolicy")</a>
                             </li>
                         </ul>
                     </div>

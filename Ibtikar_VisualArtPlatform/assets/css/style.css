@@ -1236,6 +1236,7 @@ Partner Area Style
 ======================================================*/
 .partner-area {
   border-bottom: 1px solid #dcdde1;
+  direction: ltr;
 }
 
 .partner-area .owl-carousel .owl-item img {
@@ -2637,7 +2638,7 @@ News Area Style
 .news-listing-content a h3 {
   -webkit-transition: var(--transition);
   transition: var(--transition);
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .news-listing-content a:hover h3 {
@@ -2657,7 +2658,7 @@ News Area Style
 }
 
 .news-img {
-  background-image: url(../../assets/img/news-img/news-img-2.jpg);
+/*  background-image: url(../../assets/img/news-img/news-img-2.jpg);*/
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
