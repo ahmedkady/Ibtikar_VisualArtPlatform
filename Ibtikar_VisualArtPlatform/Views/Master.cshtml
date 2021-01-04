@@ -28,6 +28,7 @@
     var homepage = Model.AncestorOrSelf<ContentModels.Home>();
     var contactInformation = homepage.Children<ContentModels.ContactUs>().FirstOrDefault();
 
+
 }
 @* the fun starts here *@
 
@@ -176,22 +177,11 @@
                             }
 
                             @{
-                                if (isEnglish)
-                                {
-                                    <div class="register">
-                                        <a href="@SwitchLanguageUrl" class="default-btn">
-                                            العربية
-                                        </a>
-                                    </div>
-                                }
-                                else
-                                {
-                                    <div class="register">
-                                        <a href="@SwitchLanguageUrl" class="default-btn">
-                                            English
-                                        </a>
-                                    </div>
-                                }
+                                <div class="register">
+                                    <a href="@SwitchLanguageUrl" class="default-btn">
+                                        @Umbraco.GetDictionaryValue("Language")
+                                    </a>
+                                </div> 
                             }
 
                         </div>
