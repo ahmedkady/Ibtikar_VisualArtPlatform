@@ -6,8 +6,7 @@
     var CurrentPage = Umbraco.AssignedContentItem;
 
     var home = CurrentPage.AncestorOrSelf(1);
-    var Navitems = home.Children().Where(x => !x.IsVisible()).ToList();
-
+    var Navitems = home.Children().Where(x => !x.IsVisible()).OrderBy(x=>x.SortOrder).ToList(); 
     var ArabicLink = CurrentPage.Url("ar");
     var EnglishUrl = CurrentPage.Url("en-US");
     var SwitchLanguageUrl = string.Empty;
