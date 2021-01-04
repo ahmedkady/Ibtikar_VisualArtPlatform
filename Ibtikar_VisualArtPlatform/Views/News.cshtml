@@ -41,10 +41,10 @@
                 <span>@Model.Title</span>
                 <h2>@Model.Subtitle</h2>
             </div>
-            <!-- pagination control -->
-            <div class="controls">
 
-                <!-- pagination control -->
+            <!-- pagination control -->
+            @*<div class="controls">
+
                 <div data-jplist-control="pagination"
                      data-group="data-group-1"
                      data-items-per-page="5"
@@ -67,7 +67,6 @@
 
                     <div class="row">
 
-                        <!-- items per page select -->
                         <select data-type="items-per-page">
                             <option value="3"> 3 per page </option>
                             <option value="5"> 5 per page </option>
@@ -81,11 +80,11 @@
                     </div>
                 </div>
 
-            </div>
+            </div>*@
 
 
 
-            <div class="buttons">
+            @*<div class="buttons">
 
                 <button class="default-btn" data-jplist-control="buttons-path-filter"
                         data-path=""
@@ -119,7 +118,7 @@
                     this year's news
                 </button>
 
-            </div>
+            </div>*@
 
             <!-- content to filter -->
 
@@ -142,8 +141,8 @@
                     {
                         neewsFilters = neewsFilters + " " + "year";
                     }
-                    <div data-jplist-item>
-                        <div class="@neewsFilters">
+                    @*<div data-jplist-item>
+                        <div class="@neewsFilters">*@
                             <div class="col-lg-6 col-sm-6">
                                 <div class="single-event">
                                     <a href="@Event.Url()">
@@ -151,14 +150,22 @@
                                     </a>
 
                                     <div class="event-content">
+                                        <ul>
+                                            <li>
+                                                <i class="bx bx-calendar"></i>
+                                                @*Aug 13, 2020*@
+                                                @Event.CreateDate.ToString("dddd, dd MMMM yyyy")
+                                            </li>
+                                  
+                                        </ul>
                                         <a href="@Event.Url()">
                                             <h3>@Event.Title</h3>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        @*</div>
+                    </div>*@
 
                 }
 
