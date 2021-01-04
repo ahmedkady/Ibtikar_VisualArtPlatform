@@ -3145,6 +3145,7 @@
     <Content Include="site.webmanifest" />
     <Content Include="Views\HomeCarousel.cshtml" />
     <Content Include="Views\Search.cshtml" />
+    <Content Include="Views\Partials\_Breadcrumb.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
