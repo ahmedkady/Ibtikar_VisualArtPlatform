@@ -1311,7 +1311,7 @@ Education Area Style
 }
 
 .education-img {
-  background-image: url(../../assets/img/education-img.png);
+/*  background-image: url(../../assets/img/education-img.png);*/
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -6,7 +6,7 @@
     var CurrentPage = Umbraco.AssignedContentItem;
 
     var home = CurrentPage.AncestorOrSelf(1);
-    var Navitems = home.Children().Where(x => !x.IsVisible()).OrderBy(x=>x.SortOrder).ToList(); 
+    var Navitems = home.Children().Where(x => !x.IsVisible()).OrderBy(x => x.SortOrder).ToList();
     var ArabicLink = CurrentPage.Url("ar");
     var EnglishUrl = CurrentPage.Url("en-US");
     var SwitchLanguageUrl = string.Empty;
@@ -110,23 +110,22 @@
                     <a class="navbar-brand" href="@(isEnglish ? "/en" : "/ar")/">
                         <img src="@contactInformation.Logo" alt="Logo">
                     </a>
-
-                        <div class="collapse navbar-collapse mean-menu">
-                            <ul class="navbar-nav m-auto">
+                    <div class="collapse navbar-collapse mean-menu">
+                        <ul class="navbar-nav m-auto">
+                            <li class="nav-item">
+                                <a href="@home.Url()" class="nav-link">
+                                    @home.Name
+                                </a>
+                            </li>
+                            @foreach (var item in Navitems)
+                            {
                                 <li class="nav-item">
-                                    <a href="@home.Url()" class="nav-link">
-                                        @home.Name
+                                    <a href="@item.Url()" class="nav-link">
+                                        @item.Name
                                     </a>
                                 </li>
-                                @foreach (var item in Navitems)
-                                {
-                                    <li class="nav-item">
-                                        <a href="@item.Url()" class="nav-link">
-                                            @item.Name
-                                        </a>
-                                    </li>
-                                }
-                            </ul>
+                            }
+                        </ul>
 
                         <!-- Start Other Option -->
                         <div class="others-option">
@@ -157,18 +156,16 @@
                                             @Html.AntiForgeryToken()
                                             if (myuser != null)
                                             {
-                                                <button class="default-btn" name="login" type="submit">Log Out</button>
+                                                <button class="default-btn" name="login" type="submit">@Umbraco.GetDictionaryValue("LogOut")</button>
                                             }
-
                                         }
                                     </div>
-
                                 }
                                 else
                                 {
                                     <div class="register">
                                         <a href="@(isEnglish ? "/en" : "/ar")/login" class="default-btn">
-                                            Login / Register
+                                            @Umbraco.GetDictionaryValue("LoginRegister")
                                         </a>
                                     </div>
                                 }
@@ -192,7 +189,6 @@
                                     </div>
                                 }
                             }
-
 
                         </div>
                         <!-- End Other Option -->
@@ -230,16 +226,9 @@
                                 </div>
                             </div>
 
-                            <div class="cart-icon">
-                                <a href="cart.html">
-                                    <i class="flaticon-shopping-cart"></i>
-                                    <span>0</span>
-                                </a>
-                            </div>
-
                             <div class="register">
-                                <a href="my-account.html" class="default-btn">
-                                    Login / Register
+                                <a href="@(isEnglish ? "/en" : "/ar")/login" class="default-btn">
+                                    @Umbraco.GetDictionaryValue("LoginRegister")
                                 </a>
                             </div>
                         </div>
@@ -247,13 +236,10 @@
                 </div>
             </div>
         </div>
-        <!-- End Others Option For Responsive -->
     </div>
-    <!-- End Navbar Area -->
 
     @RenderBody();
 
-    <!-- Start Footer Top Area -->
     <footer class="footer-top-area pt-100 pb-70">
         <div class="container">
             <div class="row">
@@ -266,12 +252,10 @@
                                 <i class="bx bxs-location-plus"></i>
                                 @contactInformation.Address
                             </li>
-
                             <li>
                                 <i class="bx bxs-envelope"></i>
                                 <a href="mailto:@contactInformation.Email">@contactInformation.Email</a>
                             </li>
-
                             <li>
                                 <i class="bx bxs-phone-call"></i>
                                 <a href="tel:@contactInformation.Phone">@contactInformation.Phone</a>
@@ -282,7 +266,7 @@
 
                 <div class="col-lg-3 col-sm-6">
                     <div class="footer-widget">
-                        <h3>Useful links</h3>
+                        <h3>@Umbraco.GetDictionaryValue("UsefulLinks")</h3>
 
                         <ul class="link">
                             <li>
