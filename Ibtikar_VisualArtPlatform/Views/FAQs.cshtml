@@ -4,8 +4,9 @@
     Layout = null;
     if (Model.ContentType.Alias == "fAQs")
     {
-        Layout = "Master.cshtml"; 
+        Layout = "Master.cshtml";
     }
+    var isEnglish = UmbracoContext.VariationContextAccessor?.VariationContext?.Culture == "en-US";
 
     var homepage = Model.AncestorOrSelf<ContentModels.Home>();
     var faqContent = homepage.Children<ContentModels.FAqs>().FirstOrDefault();
@@ -38,10 +39,14 @@
             </ul>
         </div>
     </div>
-    <div class="container text-center pt-4">
-        <a href="/faq" class="default-btn">
-            Read More
-        </a>
-    </div>
+    @if (Model.ContentType.Alias != "fAQs")
+    {
+        <div class="container text-center pt-4">
+            <a href="@(isEnglish ? "/en" : "/ar")/faqs" class="default-btn">
+                Read More
+            </a>
+        </div>
+    }
+
 </section>
 <!-- End FAQ Area -->

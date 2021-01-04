@@ -1,7 +1,13 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Home>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
     Layout = null;
+    if (Model.ContentType.Alias == "announcements")
+    {
+        Layout = "Master.cshtml";
+    }
+    var isEnglish = UmbracoContext.VariationContextAccessor?.VariationContext?.Culture == "en-US";
+
     var homepage = Model.AncestorOrSelf<ContentModels.Home>();
     var announcementsContent = homepage.Children<ContentModels.Announcements>().FirstOrDefault();
     var announcements = announcementsContent.Children<ContentModels.Announce>();
@@ -98,9 +104,12 @@
                 </div>
             </div>
         </div>
-        <a href="/announcements" class="default-btn">
-            Read More
-        </a>
+        @if (Model.ContentType.Alias != "announcements")
+        {
+            <a href="@(isEnglish ? "/en" : "/ar")/announcements" class="default-btn">
+                Read More
+            </a>
+        }
     </div>
 </section>
 <!-- End Announcements Area -->
