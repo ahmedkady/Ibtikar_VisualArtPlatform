@@ -2079,6 +2079,9 @@ Event Area Style
 .single-event img {
   position: relative;
   z-index: 1;
+  width: 200px;
+  object-fit: cover;
+  border-radius:3px;
 }
 
 .single-event .event-content {
