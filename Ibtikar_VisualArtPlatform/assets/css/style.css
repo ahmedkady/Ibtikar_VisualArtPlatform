@@ -6722,3 +6722,14 @@ product-view-one
         .default-btn.register-outline:hover img {
             filter: brightness(0) invert(1);
         }
+
+
+::-moz-selection {
+    color: white;
+    background: #c0403e;
+}
+
+::selection {
+    color: white;
+    background: #c0403e;
+}
