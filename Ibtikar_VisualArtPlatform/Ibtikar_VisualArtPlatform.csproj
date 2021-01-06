@@ -518,6 +518,7 @@
     <Content Include="Umbraco\assets\css\nonodes.style.min.css" />
     <Content Include="Umbraco\assets\css\rte-content.css" />
     <Content Include="Umbraco\assets\css\umbraco.css" />
+    <Content Include="Umbraco\assets\css\umbraco-rtl.css" />
     <Content Include="Umbraco\assets\fonts\helveticons\helveticons.svg" />
     <Content Include="Umbraco\assets\icons\icon-activity.svg" />
     <Content Include="Umbraco\assets\icons\icon-add.svg" />
@@ -1154,6 +1155,7 @@
     <Content Include="Umbraco\Config\Lang\da.xml" />
     <Content Include="Umbraco\Config\Lang\de.xml" />
     <Content Include="Umbraco\Config\Lang\en.xml" />
+    <Content Include="Umbraco\Config\Lang\ar.xml" />
     <Content Include="Umbraco\Config\Lang\en_us.xml" />
     <Content Include="Umbraco\Config\Lang\es.xml" />
     <Content Include="Umbraco\Config\Lang\fr.xml" />

@@ -19,15 +19,29 @@
         }
     }
 
+    var isArabic = false;
+    if ("ar" == System.Threading.Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName)
+    {
+        isArabic = true;
+    }
+
+    if (isArabic)
+    {
+        Html.RequiresCss("assets/css/umbraco-rtl.css", "Umbraco");
+    }
+    else
+    {
+        Html.RequiresCss("assets/css/umbraco.css", "Umbraco");
+    }
+
     Html
-        .RequiresCss("assets/css/umbraco.css", "Umbraco")
-        .RequiresCss("lib/bootstrap-social/bootstrap-social.css", "Umbraco")
-        .RequiresCss("lib/font-awesome/css/font-awesome.min.css", "Umbraco");
+        .RequiresCss("lib/font-awesome/css/font-awesome.min.css", "Umbraco")
+        .RequiresCss("lib/bootstrap-social/bootstrap-social.css", "Umbraco");
 }
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en"  dir="@(isArabic ? "rtl" : "ltr")">
 <head>
     <base href="@Model.GlobalSettings.Path.EnsureEndsWith('/')" />
     <meta charset="utf-8">
@@ -76,9 +90,8 @@
 
         </div>
 
-        <umb-tour
-            ng-if="tour.show"
-            model="tour">
+        <umb-tour ng-if="tour.show"
+                  model="tour">
         </umb-tour>
 
         <!-- help dialog controller by the help button - this also forces the backoffice UI to shift 400px  -->
@@ -106,9 +119,8 @@
 
     <umb-editors ng-show="infiniteMode"></umb-editors>
 
-    <umb-login
-        ng-if="login.show"
-        on-login="hideLoginScreen()">
+    <umb-login ng-if="login.show"
+               on-login="hideLoginScreen()">
     </umb-login>
 
     @Html.BareMinimumServerVariablesScript(Url, Url.Action("ExternalLogin", "BackOffice", new { area = ViewData.GetUmbracoPath() }), Model.Features, Current.Configs.Global())

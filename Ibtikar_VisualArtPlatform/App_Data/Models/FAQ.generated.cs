@@ -57,5 +57,12 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		[ImplementPropertyType("question")]
 		public string Question => this.Value<string>("question");
+
+		///<summary>
+		/// Visible in Home
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("visibleInHome")]
+		public bool VisibleInHome => this.Value<bool>("visibleInHome");
 	}
 }
