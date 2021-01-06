@@ -2089,6 +2089,7 @@ Event Area Style
         position: relative;
         z-index: 1;
         width: 200px;
+        min-height: 120px;
         object-fit: cover;
         border-radius: 3px;
     }
@@ -6767,10 +6768,10 @@ product-view-one
 
 
 
-    ::-moz-selection {
-        color: white;
-        background: #c0403e;
-    }
+::-moz-selection {
+    color: white;
+    background: #c0403e;
+}
 
 ::selection {
     color: white;

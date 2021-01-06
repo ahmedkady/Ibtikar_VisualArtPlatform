@@ -13,109 +13,164 @@
     var announcements = announcementsContent.Children<ContentModels.Announce>();
 }
 
-<!-- Start Announcements Area -->
-<section class="news-area f5f6fa-bg-color pt-100 pb-70">
-    <div class="container text-center">
-        <div class="section-title">
-            <span>@announcementsContent.SmallTitle</span>
-            <h2>@announcementsContent.MainTitle</h2>
-        </div>
 
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="single-news">
-                    <a href="#">
-                        <img src="@(announcements.ElementAt(0)?.Image)" style="height: 385px; object-fit: cover; object-position: right;" alt="Image">
-                    </a>
-
-                    <div class="news-content">
-                        <span class="tag">@(announcements.ElementAt(0)?.Group)</span>
-
-                        <a href="#">
-                            <h3>@(announcements.ElementAt(0)?.Title)</h3>
+@if (Model.ContentType.Alias == "announcements")
+{
+    <div class="page-title-area bg-24">
+        <div class="container">
+            <div class="page-title-content">
+                <h2>@Umbraco.AssignedContentItem.Name</h2>
+                <ul>
+                    <li>
+                        <a href="@Umbraco.AssignedContentItem.Parent.Url()">
+                            @Umbraco.AssignedContentItem.Parent.Name
                         </a>
+                    </li>
+                    <li class="active">@Umbraco.AssignedContentItem.Name</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                        <ul class="lessons">
-                            <li class="">@(announcements.ElementAt(0)?.CreateDate.ToString("MMMM dd, yyyy"))</li>
-                        </ul>
-                    </div>
-                </div>
+    <section class="event-area-style pt-100 pb-70">
+        <div class="container">
+            <div class="section-title">
+                <span>@announcementsContent.SmallTitle</span>
+                <h2>@announcementsContent.MainTitle</h2>
             </div>
 
-            <div class="col-lg-6">
-                <div class="row mb-30">
-                    <div class="col-lg-4 col-sm-4 pr-0">
-                        <div class="news-img">
-                            <img style="height:165px;width:190px;object-fit:cover;object-position:right" src="@(announcements.ElementAt(1)?.Image)" alt="Image">
+            <!-- content to filter -->
+            <div data-jplist-group="data-group-1" class="row">
+                @foreach (var announce in announcements)
+                {
+                    <div class="col-lg-6 col-sm-6" data-jplist-item>
+                        <div class="single-event">
+                            <img src="@announce.Image" alt="Image">
+                            <div class="event-content">
+                                <ul>
+                                    <li>
+                                        <i class="bx bx-calendar"></i>
+                                        @announce.CreateDate.ToString("dddd, dd MMMM yyyy")
+                                    </li>
+
+                                </ul>
+                                <h3>@announce.Title</h3>
+                            </div>
                         </div>
                     </div>
+                }
+            </div>
 
-                    <div class="col-lg-8 col-sm-8 pl-0">
-                        <div class="news-listing-content">
-                            <span class="tag">@(announcements.ElementAt(1)?.Group)</span>
-
-                            <a href="#">
-                                <h3>@(announcements.ElementAt(1)?.Title)</h3>
+            <!-- pagination control -->
+            <div class="controls">
+                <div data-jplist-control="pagination"
+                     data-group="data-group-1"
+                     data-items-per-page="6"
+                     data-current-page="0"
+                     data-name="pagination1">
+                    <div class="row col-lg-12 col-md-12">
+                        <div class="pagination-area">
+                            <a data-type="prev" class="prev page-numbers">
+                                <i class="bx bx-chevron-left"></i>
                             </a>
-
-                            <ul class="lessons">
-                                <li class="">@(announcements.ElementAt(1)?.CreateDate.ToString("MMMM dd, yyyy"))</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mb-30">
-                    <div class="col-lg-4 col-sm-4 pr-0">
-                        <div class="news-img">
-                            <img style="height:165px;width:190px;object-fit:cover;" src="@(announcements.ElementAt(2)?.Image)" alt="Image">
-                        </div>
-                    </div>
-
-                    <div class="col-lg-8 col-sm-8 pl-0">
-                        <div class="news-listing-content">
-                            <span class="tag">@(announcements.ElementAt(2)?.Group)</span>
-
-                            <a href="#">
-                                <h3>@(announcements.ElementAt(2)?.Title)</h3>
+                            <div class="jplist-holder" data-type="pages">
+                                <a class="page-numbers" data-type="page">{pageNumber}</a>
+                            </div>
+                            <a data-type="next" class="next page-numbers">
+                                <i class="bx bx-chevron-right"></i>
                             </a>
-
-                            <ul class="lessons">
-                                <li class="">@(announcements.ElementAt(2)?.CreateDate.ToString("MMMM dd, yyyy"))</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row r-p-mb">
-                    <div class="col-lg-4 col-sm-4 pr-0">
-                        <div class="news-img">
-                            <img style="height:165px;width:190px;object-fit:cover;" src="@(announcements.ElementAt(3)?.Image)" alt="Image">
-                        </div>
-                    </div>
-
-                    <div class="col-lg-8 col-sm-8 pl-0">
-                        <div class="news-listing-content">
-                            <span class="tag">@(announcements.ElementAt(3)?.Group)</span>
-
-                            <a href="#">
-                                <h3>@(announcements.ElementAt(3)?.Title)</h3>
-                            </a>
-
-                            <ul class="lessons">
-                                <li class="">@(announcements.ElementAt(3)?.CreateDate.ToString("MMMM dd, yyyy"))</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        @if (Model.ContentType.Alias != "announcements")
-        {
+    </section>
+}
+else if (announcements.Count() >= 4)
+{
+    <section class="news-area f5f6fa-bg-color pt-100 pb-70">
+        <div class="container text-center">
+            <div class="section-title">
+                <span>@announcementsContent.SmallTitle</span>
+                <h2>@announcementsContent.MainTitle</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="single-news">
+                        <img src="@(announcements.ElementAt(0)?.Image)" style="height: 385px; object-fit: cover; object-position: right;" alt="Image">
+                        <div class="news-content">
+                            <span class="tag">@(announcements.ElementAt(0)?.Group)</span>
+                            <h3>@(announcements.ElementAt(0)?.Title)</h3>
+                            <ul class="lessons">
+                                <li class="">@(announcements.ElementAt(0)?.CreateDate.ToString("MMMM dd, yyyy"))</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="row mb-30">
+                        <div class="col-lg-4 col-sm-4 pr-0">
+                            <div class="news-img">
+                                <img style="height:165px;width:190px;object-fit:cover;object-position:right" src="@(announcements.ElementAt(1)?.Image)" alt="Image">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8 col-sm-8 pl-0">
+                            <div class="news-listing-content">
+                                <span class="tag">@(announcements.ElementAt(1)?.Group)</span>
+                                <h3>@(announcements.ElementAt(1)?.Title)</h3>
+                                <ul class="lessons">
+                                    <li class="">@(announcements.ElementAt(1)?.CreateDate.ToString("MMMM dd, yyyy"))</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-30">
+                        <div class="col-lg-4 col-sm-4 pr-0">
+                            <div class="news-img">
+                                <img style="height:165px;width:190px;object-fit:cover;" src="@(announcements.ElementAt(2)?.Image)" alt="Image">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8 col-sm-8 pl-0">
+                            <div class="news-listing-content">
+                                <span class="tag">@(announcements.ElementAt(2)?.Group)</span>
+                                <h3>@(announcements.ElementAt(2)?.Title)</h3>
+                                <ul class="lessons">
+                                    <li class="">@(announcements.ElementAt(2)?.CreateDate.ToString("MMMM dd, yyyy"))</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row r-p-mb">
+                        <div class="col-lg-4 col-sm-4 pr-0">
+                            <div class="news-img">
+                                <img style="height:165px;width:190px;object-fit:cover;" src="@(announcements.ElementAt(3)?.Image)" alt="Image">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8 col-sm-8 pl-0">
+                            <div class="news-listing-content">
+                                <span class="tag">@(announcements.ElementAt(3)?.Group)</span>
+                                <h3>@(announcements.ElementAt(3)?.Title)</h3>
+                                <ul class="lessons">
+                                    <li class="">@(announcements.ElementAt(3)?.CreateDate.ToString("MMMM dd, yyyy"))</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <a href="@(isEnglish ? "/en" : "/ar")/announcements" class="default-btn">
                 @Umbraco.GetDictionaryValue("ReadMore")
             </a>
-        }
-    </div>
-</section>
+        </div>
+    </section>
+}
+
+<!-- Start Announcements Area -->
 <!-- End Announcements Area -->
