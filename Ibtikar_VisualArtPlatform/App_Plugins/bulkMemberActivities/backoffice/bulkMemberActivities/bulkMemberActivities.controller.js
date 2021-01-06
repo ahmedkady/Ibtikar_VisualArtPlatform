@@ -52,32 +52,32 @@
     vm.allowSelectAll = true;
 
     function selectAll() {
-        console.log("selectAll()");
+        //console.log("selectAll()");
         listViewHelper.selectAllItemsToggle(vm.items, vm.selection);
     }
 
     function isSelectedAll() {
-        console.log("isSelectedAll()");
+        //console.log("isSelectedAll()");
         return listViewHelper.isSelectedAll(vm.items, vm.selection);
     }
 
     function clickItem(item) {
-        console.log(item);
+        //console.log(item);
         //listViewHelper.editItem(item);
     }
 
     function selectItem(item, $index, $event) {
-        console.log("selectItem", item, $index, $event);
+        //console.log("selectItem", item, $index, $event);
         listViewHelper.selectHandler(item, $index, vm.items, vm.selection, $event);
     }
 
     function isSortDirection(col, direction) {
-        console.log("isSortDirection", col, direction);
+        //console.log("isSortDirection", col, direction);
         return listViewHelper.setSortingDirection(col, direction, vm.options);
     }
 
     function sort(field, allow) {
-        console.log("sort", field, allow);
+        //console.log("sort", field, allow);
         if (allow) {
             listViewHelper.setSorting(field, allow, vm.options);
             //  $scope.getContent($scope.contentId);
