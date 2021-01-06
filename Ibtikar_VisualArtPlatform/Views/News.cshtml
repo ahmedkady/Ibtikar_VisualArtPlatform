@@ -18,54 +18,132 @@
     }
     string neewsFilters = string.Empty;
 }
-    <!-- Start Page Title Area -->
-    <div class="page-title-area bg-24">
-        <div class="container">
-            <div class="page-title-content">
-                <h2>@Umbraco.AssignedContentItem.Name</h2>
-                <ul>
-                    <li>
-                        <a href="@Umbraco.AssignedContentItem.Parent.Url()">
-                            @Umbraco.AssignedContentItem.Parent.Name
-                        </a>
-                    </li>
-                    <li class="active">@Umbraco.AssignedContentItem.Name</li>
-                </ul>
-            </div>
+<!-- Start Page Title Area -->
+<div class="page-title-area bg-24">
+    <div class="container">
+        <div class="page-title-content">
+            <h2>@Umbraco.AssignedContentItem.Name</h2>
+            <ul>
+                <li>
+                    <a href="@Umbraco.AssignedContentItem.Parent.Url()">
+                        @Umbraco.AssignedContentItem.Parent.Name
+                    </a>
+                </li>
+                <li class="active">@Umbraco.AssignedContentItem.Name</li>
+            </ul>
         </div>
     </div>
+</div>
 
-    <section class="event-area-style pt-100 pb-70">
-        <div class="container">
-            <div class="section-title">
-                <span>@Model.Title</span>
-                <h2>@Model.Subtitle</h2>
-            </div>
+<section class="event-area-style pt-100 pb-70">
+    <div class="container">
+        <div class="section-title">
+            <span>@Model.Title</span>
+            <h2>@Model.Subtitle</h2>
+        </div>
 
-            <!-- pagination control -->
-            @*<div class="controls">
+        <div class="buttons mb-5 text-center">
 
-                <div data-jplist-control="pagination"
-                     data-group="data-group-1"
-                     data-items-per-page="5"
-                     data-current-page="0"
-                     data-name="pagination1">
+            <button class="default-btn btn-outline" data-jplist-control="buttons-path-filter"
+                    data-path=""
+                    data-group="data-group-1"
+                    data-mode="radio"
+                    data-selected="true"
+                    name="name1">
+                All
+            </button>
 
-                    <div class="row mb-3">
+            <button class="default-btn btn-outline" data-jplist-control="buttons-path-filter"
+                    data-path=".week"
+                    data-group="data-group-1"
+                    data-mode="radio"
+                    name="name1">
+                This week's news'
+            </button>
 
-                        <button type="button" data-type="first">«</button>
-                        <button type="button" data-type="prev">‹</button>
+            <button class="default-btn btn-outline" data-jplist-control="buttons-path-filter"
+                    data-path=".month"
+                    data-group="data-group-1"
+                    data-mode="radio"
+                    name="name1">
+                this month's news
+            </button>
+            <button class="default-btn btn-outline" data-jplist-control="buttons-path-filter"
+                    data-path=".year"
+                    data-group="data-group-1"
+                    data-mode="radio"
+                    name="name1">
+                this year's news
+            </button>
+        </div>
 
-                        <div class="jplist-holder" data-type="pages">
-                            <button type="button" data-type="page">{pageNumber}</button>
+        <!-- content to filter -->
+        <div data-jplist-group="data-group-1" class="row">
+            @foreach (var Event in News.Where(x => x.IsActive))
+            {
+                neewsFilters = string.Empty;
+                if (DateInside(Event.CreateDate, PreviousSaturday))
+                {
+                    neewsFilters = neewsFilters + " " + "week";
+                }
+                if (Event.CreateDate.Month == DateTime.Now.Month)
+                {
+                    neewsFilters = neewsFilters + " " + "month";
+                }
+                if (Event.CreateDate.Year == DateTime.Now.Year)
+                {
+                    neewsFilters = neewsFilters + " " + "year";
+                }
+                <div class="col-lg-6 col-sm-6" data-jplist-item>
+                    <div class="single-event @neewsFilters">
+                        <a href="@Event.Url()">
+                            <img src="@Event.Thumbnail" alt="Image">
+                        </a>
+
+                        <div class="event-content">
+                            <ul>
+                                <li>
+                                    <i class="bx bx-calendar"></i>
+                                    @*Aug 13, 2020*@
+                                    @Event.CreateDate.ToString("dddd, dd MMMM yyyy")
+                                </li>
+
+                            </ul>
+                            <a href="@Event.Url()">
+                                <h3>@Event.Title</h3>
+                            </a>
                         </div>
-
-                        <button type="button" data-type="next">›</button>
-                        <button type="button" data-type="last">»</button>
-
                     </div>
+                </div>
 
-                    <div class="row">
+            }
+
+
+        </div>
+
+        <!-- pagination control -->
+        <div class="controls">
+
+            <div data-jplist-control="pagination"
+                 data-group="data-group-1"
+                 data-items-per-page="6"
+                 data-current-page="0"
+                 data-name="pagination1">
+
+                <div class="row col-lg-12 col-md-12">
+                    <div class="pagination-area">
+                        <a data-type="prev" class="prev page-numbers">
+                            <i class="bx bx-chevron-left"></i>
+                        </a>
+                        <div class="jplist-holder" data-type="pages">
+                            <a class="page-numbers" data-type="page">{pageNumber}</a>
+                        </div>
+                        <a data-type="next" class="next page-numbers">
+                            <i class="bx bx-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+                @*<div class="row">
 
                         <select data-type="items-per-page">
                             <option value="3"> 3 per page </option>
@@ -77,100 +155,9 @@
                         <span data-type="info">
                             Page {pageNumber} of {pagesNumber}
                         </span>
-                    </div>
-                </div>
-
-            </div>*@
-
-
-
-            @*<div class="buttons">
-
-                <button class="default-btn" data-jplist-control="buttons-path-filter"
-                        data-path=""
-                        data-group="data-group-1"
-                        data-mode="radio"
-                        data-selected="true"
-                        name="name1">
-                    All
-                </button>
-
-                <button class="default-btn" data-jplist-control="buttons-path-filter"
-                        data-path=".week"
-                        data-group="data-group-1"
-                        data-mode="radio"
-                        name="name1">
-                    This week's news'
-                </button>
-
-                <button class="default-btn" data-jplist-control="buttons-path-filter"
-                        data-path=".month"
-                        data-group="data-group-1"
-                        data-mode="radio"
-                        name="name1">
-                    this month's news
-                </button>
-                <button class="default-btn" data-jplist-control="buttons-path-filter"
-                        data-path=".year"
-                        data-group="data-group-1"
-                        data-mode="radio"
-                        name="name1">
-                    this year's news
-                </button>
-
-            </div>*@
-
-            <!-- content to filter -->
-
-
-
-
-            <div data-jplist-group="data-group-1" class="row">
-                @foreach (var Event in News.Where(x => x.IsActive))
-                {
-                    neewsFilters = string.Empty;
-                    if (DateInside(Event.CreateDate, PreviousSaturday))
-                    {
-                        neewsFilters = neewsFilters + " " + "week";
-                    }
-                    if (Event.CreateDate.Month == DateTime.Now.Month)
-                    {
-                        neewsFilters = neewsFilters + " " + "month";
-                    }
-                    if (Event.CreateDate.Year == DateTime.Now.Year)
-                    {
-                        neewsFilters = neewsFilters + " " + "year";
-                    }
-                    @*<div data-jplist-item>
-                        <div class="@neewsFilters">*@
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="single-event">
-                                    <a href="@Event.Url()">
-                                        <img src="@Event.Thumbnail" alt="Image">
-                                    </a>
-
-                                    <div class="event-content">
-                                        <ul>
-                                            <li>
-                                                <i class="bx bx-calendar"></i>
-                                                @*Aug 13, 2020*@
-                                                @Event.CreateDate.ToString("dddd, dd MMMM yyyy")
-                                            </li>
-                                  
-                                        </ul>
-                                        <a href="@Event.Url()">
-                                            <h3>@Event.Title</h3>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        @*</div>
                     </div>*@
-
-                }
-
-
             </div>
-
         </div>
-    </section>
+
+    </div>
+</section>

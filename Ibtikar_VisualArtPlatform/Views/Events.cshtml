@@ -5,6 +5,19 @@
     var homepage = Model.AncestorOrSelf<ContentModels.Home>();
     var EventsContent = homepage.Children<ContentModels.Events>().FirstOrDefault();
     var Events = EventsContent.Children<ContentModels.Event>();
+
+
+    bool DateInside(DateTime checkDate, DateTime fromDate, DateTime? lastDate = null)
+    {
+        DateTime toDate = lastDate != null ? lastDate.Value : fromDate.AddDays(6d);
+        return checkDate >= fromDate && checkDate <= toDate;
+    }
+    DateTime PreviousSaturday = DateTime.Now;
+    while (PreviousSaturday.DayOfWeek != DayOfWeek.Saturday)
+    {
+        PreviousSaturday = PreviousSaturday.AddDays(-1);
+    }
+    string neewsFilters = string.Empty;
 }
 <!-- Start Page Title Area -->
 <div class="page-title-area bg-24">
@@ -29,12 +42,60 @@
             <span>@Model.Title</span>
             <h2>@Model.Subtitle</h2>
         </div>
+        <div class="buttons mb-5 text-center">
 
-        <div class="row">
+            <button class="default-btn btn-outline" data-jplist-control="buttons-path-filter"
+                    data-path=""
+                    data-group="data-group-1"
+                    data-mode="radio"
+                    data-selected="true"
+                    name="name1">
+                All
+            </button>
+
+            <button class="default-btn btn-outline" data-jplist-control="buttons-path-filter"
+                    data-path=".week"
+                    data-group="data-group-1"
+                    data-mode="radio"
+                    name="name1">
+                This week's news'
+            </button>
+
+            <button class="default-btn btn-outline" data-jplist-control="buttons-path-filter"
+                    data-path=".month"
+                    data-group="data-group-1"
+                    data-mode="radio"
+                    name="name1">
+                this month's news
+            </button>
+            <button class="default-btn btn-outline" data-jplist-control="buttons-path-filter"
+                    data-path=".year"
+                    data-group="data-group-1"
+                    data-mode="radio"
+                    name="name1">
+                this year's news
+            </button>
+        </div>
+        <!-- content to filter -->
+
+        <div data-jplist-group="data-group-1" class="row">
             @foreach (var Event in Events)
             {
-                <div class="col-lg-6 col-sm-6">
-                    <div class="single-event">
+                neewsFilters = string.Empty;
+                if (DateInside(Event.EventDate, PreviousSaturday))
+                {
+                    neewsFilters = neewsFilters + " " + "week";
+                }
+                if (Event.EventDate.Month == DateTime.Now.Month)
+                {
+                    neewsFilters = neewsFilters + " " + "month";
+                }
+                if (Event.EventDate.Year == DateTime.Now.Year)
+                {
+                    neewsFilters = neewsFilters + " " + "year";
+                }
+                <div class="col-lg-6 col-sm-6" data-jplist-item>
+                    <div class="single-event @neewsFilters">
                         <a href="@Event.Url()">
                             <img src="@Event.Thumbnail" alt="Image">
                         </a>
@@ -44,7 +105,7 @@
                                 <li>
                                     <i class="bx bx-calendar"></i>
                                     @*Aug 13, 2020*@
-                                    @Event.EventDate.ToString("dddd, dd MMMM yyyy") 
+                                    @Event.EventDate.ToString("dddd, dd MMMM yyyy")
                                 </li>
                                 <li>
                                     <i class="bx bx-time"></i>
@@ -68,6 +129,43 @@
             }
 
 
+        </div>
+        <!-- pagination control -->
+        <div class="controls">
+
+            <div data-jplist-control="pagination"
+                 data-group="data-group-1"
+                 data-items-per-page="6"
+                 data-current-page="0"
+                 data-name="pagination1">
+
+                <div class="row col-lg-12 col-md-12">
+                    <div class="pagination-area">
+                        <a data-type="prev" class="prev page-numbers">
+                            <i class="bx bx-chevron-left"></i>
+                        </a>
+                        <div class="jplist-holder" data-type="pages">
+                            <a class="page-numbers" data-type="page">{pageNumber}</a>
+                        </div>
+                        <a data-type="next" class="next page-numbers">
+                            <i class="bx bx-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+                @*<div class="row">
+
+                    <select data-type="items-per-page">
+                        <option value="3"> 3 per page </option>
+                        <option value="5"> 5 per page </option>
+                        <option value="10"> 10 per page </option>
+                        <option value="0"> view all </option>
+                    </select>
+
+                    <span data-type="info">
+                        Page {pageNumber} of {pagesNumber}
+                    </span>
+                </div>*@
+            </div>
         </div>
     </div>
 </section>
