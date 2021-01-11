@@ -273,6 +273,7 @@
     <Content Include="apple-touch-icon.png" />
     <Content Include="App_Plugins\bulkMemberActivities\backoffice\bulkMemberActivities\bulkMemberActivities.controller.js" />
     <Content Include="App_Plugins\bulkMemberActivities\backoffice\bulkMemberActivities\bulkMemberActivities.service.js" />
+    <Content Include="App_Plugins\bulkMemberActivities\backoffice\bulkMemberActivities\dirPaginate.js" />
     <Content Include="App_Plugins\bulkMemberActivities\backoffice\bulkMemberActivities\overview.html" />
     <Content Include="assets\css\animate.css" />
     <Content Include="assets\css\bootstrap.min.css" />
@@ -2979,7 +2980,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trees\BulkMemberActivites.cs" />
     <Compile Include="ViewModels\ContactUsFormViewModel.cs" />
-    <Compile Include="ViewModels\ContactViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MemberViewModel.cs" />
     <Compile Include="ViewModels\RegistraionViewModel.cs" />

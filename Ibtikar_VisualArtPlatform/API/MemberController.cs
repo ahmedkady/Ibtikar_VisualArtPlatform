@@ -55,30 +55,26 @@ namespace Ibtikar_VisualArtPlatform.API
 
 
         [HttpGet]
-        public bool ActivateMembers(int[] ids)
+        public bool ActivateMembers(string ids)
         {
-
-            var members = memberService.GetAllMembers(ids);
+            var members = memberService.GetAllMembers(ids.Split(',').Select(int.Parse).ToArray());
             foreach (var member in members)
             {
                 member.IsApproved = true;
                 memberService.Save(member);
             }
-
             return true;
         }
 
         [HttpGet]
-        public bool DeactivateMembers(int[] ids)
+        public bool DeactivateMembers(string ids)
         {
-
-            var members = memberService.GetAllMembers(ids);
+            var members = memberService.GetAllMembers(ids.Split(',').Select(int.Parse).ToArray());
             foreach (var member in members)
             {
                 member.IsApproved = false;
                 memberService.Save(member);
             }
-
             return true;
         }
     }

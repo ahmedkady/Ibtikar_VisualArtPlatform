@@ -13,7 +13,7 @@
             <div class="row-fluid">
                 <div class="umb-editor-sub-header" ng-if="getSelectedCount() == 0">
                     <button type="button" class="btn btn-outline umb-outline">
-                        Any Action Button Here
+                        Actions
                     </button>
                     <ng-form class="umb-mini-search" novalidate="">
                         <i class="icon icon-search" aria-hidden="true"></i>
@@ -23,7 +23,7 @@
                 <div class="umb-editor-sub-header --state-selection" ng-if="getSelectedCount() > 0">
                     <div class="umb-editor-sub-header__content-left">
                         <div class="umb-editor-sub-header__section umb-button">
-                            <button class="btn umb-button__button btn-white umb-button-- umb-outline">
+                            <button class="btn umb-button__button btn-white umb-button-- umb-outline" ng-click="clearSelection()" ng-disabled="vm.isLoading">
                                 Clear selection
                             </button>
                         </div>
@@ -31,19 +31,31 @@
                             <strong>{{getSelectedCount()}} of {{vm.members.length}} selected</strong>
                         </div>
                     </div>
+                    <div class="umb-editor-sub-header__content-left" ng-show="vm.isLoading">
+                        <ul class="umb-load-indicator animated -half-second" style="filter: invert(1)">
+                            <li class="umb-load-indicator__bubble"></li>
+                            <li class="umb-load-indicator__bubble"></li>
+                            <li class="umb-load-indicator__bubble"></li>
+                        </ul>
+                    </div>
                     <div class="umb-editor-sub-header__content-right">
                         <div class="umb-editor-sub-header__section umb-button">
-                            <button class="btn umb-button__button btn-white umb-button-- umb-outline">
+                            <button class="btn umb-button__button btn-white umb-button-- umb-outline" ng-click="deactivateMembers()" ng-disabled="vm.isLoading">
                                 <i class="umb-table-body__icon umb-table-body__fileicon icon-block"></i>
                                 Deactivate
                             </button>
-                            <button class="btn umb-button__button btn-white umb-button-- umb-outline">
+                            <button class="btn umb-button__button btn-white umb-button-- umb-outline" ng-click="activateMembers()" ng-disabled="vm.isLoading">
                                 <i class="umb-table-body__icon umb-table-body__fileicon icon-check"></i>
                                 Activate
                             </button>
                         </div>
                     </div>
                 </div>
+                <ul class="umb-load-indicator animated -half-second" ng-show="vm.isLoading">
+                    <li class="umb-load-indicator__bubble"></li>
+                    <li class="umb-load-indicator__bubble"></li>
+                    <li class="umb-load-indicator__bubble"></li>
+                </ul>
                 <div class="umb-table">
                     <div class="umb-table-head">
                         <div class="umb-table-row">
@@ -61,9 +73,8 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="umb-table-body">
-                        <div class="umb-table-row -selectable" style="outline:none" ng-class="{'-selected' : member.isSelected}" ng-repeat="member in vm.members | filter: vm.filterText" ng-click="toggleSelection(member)">
+                        <div class="umb-table-row -selectable" style="outline:none" ng-class="{'-selected' : member.isSelected}" dir-paginate="member in vm.members | filter:vm.filterText | itemsPerPage: 10" current-page="vm.currentPage" ng-click="toggleSelection(member)">
                             <div class="umb-table-cell">
                                 <i class="umb-table-body__icon umb-table-body__fileicon icon-user" ng-if="!member.isSelected"></i>
                                 <i class="umb-table-body__icon umb-table-body__checkicon icon-check" ng-if="member.isSelected"></i>
@@ -75,6 +86,11 @@
                                 <span class="badge badge-warning" ng-if="!member.IsApproved">Not Activated</span>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="umb-pagination pagination">
+                        <dir-pagination-controls on-page-change="pageChangeHandler(newPageNumber)"></dir-pagination-controls>
                     </div>
                 </div>
             </div>
