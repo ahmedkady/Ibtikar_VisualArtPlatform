@@ -1,29 +1,84 @@
 ﻿<div ng-controller="Umbraco.Members.BulkMemberActivities as vm">
-    {{vm.testnew}}
-    <!--<umb-table items="vm.items"
-               item-properties="vm.options.includeProperties"
-               allow-select-all="true"
-               on-select="vm.selectItem"
-               on-click="vm.clickItem"
-               on-select-all="vm.selectAll"
-               on-selected-all="vm.isSelectedAll"
-               on-sorting-direction="vm.isSortDirection"
-               on-sort="vm.sort">
-    </umb-table>-->
 
+    <div class="umb-editor-header">
+        <div class="flex items-center" style="height:100%">
+            <h1 class="umb-panel-header-name">
+                Bulk Member Activities
+            </h1>
+        </div>
+    </div>
 
-    <umb-table items="vm.items"
-               item-properties="vm.options.includeProperties"
-               allow-select-all="vm.allowSelectAll"
-               on-select="vm.selectItem(item, $index, $event)"
-               on-click="vm.clickItem(item)"
-               on-select-all="vm.selectAll($event)"
-               on-selected-all="vm.isSelectedAll()"
-               on-sorting-direction="vm.isSortDirection(col, direction)"
-               on-sort="vm.sort(field, allow, isSystem)">
-    </umb-table>
+    <div class="umb-editor-container">
+        <div class="umb-pane">
+            <div class="row-fluid">
+                <div class="umb-editor-sub-header" ng-if="getSelectedCount() == 0">
+                    <button type="button" class="btn btn-outline umb-outline">
+                        Any Action Button Here
+                    </button>
+                    <ng-form class="umb-mini-search" novalidate="">
+                        <i class="icon icon-search" aria-hidden="true"></i>
+                        <input type="text" class="form-control search-input" label="Type to search..." placeholder="Type to search..." ng-model="vm.filterText" aria-invalid="false">
+                    </ng-form>
+                </div>
+                <div class="umb-editor-sub-header --state-selection" ng-if="getSelectedCount() > 0">
+                    <div class="umb-editor-sub-header__content-left">
+                        <div class="umb-editor-sub-header__section umb-button">
+                            <button class="btn umb-button__button btn-white umb-button-- umb-outline">
+                                Clear selection
+                            </button>
+                        </div>
+                        <div class="umb-editor-sub-header__section">
+                            <strong>{{getSelectedCount()}} of {{vm.members.length}} selected</strong>
+                        </div>
+                    </div>
+                    <div class="umb-editor-sub-header__content-right">
+                        <div class="umb-editor-sub-header__section umb-button">
+                            <button class="btn umb-button__button btn-white umb-button-- umb-outline">
+                                <i class="umb-table-body__icon umb-table-body__fileicon icon-block"></i>
+                                Deactivate
+                            </button>
+                            <button class="btn umb-button__button btn-white umb-button-- umb-outline">
+                                <i class="umb-table-body__icon umb-table-body__fileicon icon-check"></i>
+                                Activate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="umb-table">
+                    <div class="umb-table-head">
+                        <div class="umb-table-row">
+                            <div class="umb-table-cell">
+                                <button type="button" class="umb-table__action" ng-click="selectAll()"> <i class="icon-check umb-checkmark umb-checkmark--xs umb-outline" ng-class="{'umb-checkmark--checked': getSelectedCount() == vm.members.length}"></i> </button>
+                            </div>
+                            <div class="umb-table-cell umb-table__name">
+                                <span class="umb-table-head__link">Name</span>
+                            </div>
+                            <div class="umb-table-cell">
+                                <span class="umb-table-head__link">Email</span>
+                            </div>
+                            <div class="umb-table-cell">
+                                <span class="umb-table-head__link">Status</span>
+                            </div>
+                        </div>
+                    </div>
 
-     
-
+                    <div class="umb-table-body">
+                        <div class="umb-table-row -selectable" style="outline:none" ng-class="{'-selected' : member.isSelected}" ng-repeat="member in vm.members | filter: vm.filterText" ng-click="toggleSelection(member)">
+                            <div class="umb-table-cell">
+                                <i class="umb-table-body__icon umb-table-body__fileicon icon-user" ng-if="!member.isSelected"></i>
+                                <i class="umb-table-body__icon umb-table-body__checkicon icon-check" ng-if="member.isSelected"></i>
+                            </div>
+                            <div class="umb-table-cell umb-table__name"> <span>{{member.Name}}</span> </div>
+                            <div class="umb-table-cell"> <span>{{member.Email}}</span> </div>
+                            <div class="umb-table-cell">
+                                <span class="badge badge-inverse" ng-if="member.IsApproved">Activated</span>
+                                <span class="badge badge-warning" ng-if="!member.IsApproved">Not Activated</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
- 
+

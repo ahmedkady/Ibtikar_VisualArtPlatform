@@ -5,88 +5,88 @@
     <link>https://our.umbraco.com/documentation/Extending-Umbraco/Language-Files</link>
   </creator>
   <area alias="actions">
-    <key alias="assignDomain">Culture and Hostnames</key>
-    <key alias="auditTrail">Audit Trail</key>
-    <key alias="browse">Browse Node</key>
-    <key alias="changeDocType">Change Document Type</key>
-    <key alias="changeDataType">Change Data Type</key>
-    <key alias="copy">Copy</key>
-    <key alias="create">Create</key>
-    <key alias="export">Export</key>
-    <key alias="createPackage">Create Package</key>
-    <key alias="createGroup">Create group</key>
-    <key alias="delete">Delete</key>
-    <key alias="disable">Disable</key>
-    <key alias="editSettings">Edit settings</key>
-    <key alias="emptyRecycleBin">Empty recycle bin</key>
-    <key alias="enable">Enable</key>
-    <key alias="exportDocumentType">Export Document Type</key>
-    <key alias="importDocumentType">Import Document Type</key>
-    <key alias="importPackage">Import Package</key>
-    <key alias="liveEdit">Edit in Canvas</key>
-    <key alias="logout">Exit</key>
-    <key alias="move">Move</key>
-    <key alias="notify">Notifications</key>
-    <key alias="protect">Public access</key>
-    <key alias="publish">Publish</key>
-    <key alias="unpublish">Unpublish</key>
-    <key alias="refreshNode">Reload</key>
-    <key alias="republish">Republish entire site</key>
-    <key alias="remove">Remove</key>
-    <key alias="rename" version="7.3.0">Rename</key>
-    <key alias="restore" version="7.3.0">Restore</key>
-    <key alias="SetPermissionsForThePage">Set permissions for the page %0%</key>
-    <key alias="chooseWhereToCopy">Choose where to copy</key>
-    <key alias="chooseWhereToMove">Choose where to move</key>
-    <key alias="toInTheTreeStructureBelow">to in the tree structure below</key>
-    <key alias="infiniteEditorChooseWhereToCopy">Choose where to copy the selected item(s)</key>
-    <key alias="infiniteEditorChooseWhereToMove">Choose where to move the selected item(s)</key>
-    <key alias="wasMovedTo">was moved to</key>
-    <key alias="wasCopiedTo">was copied to</key>
-    <key alias="wasDeleted">was deleted</key>
-    <key alias="rights">Permissions</key>
-    <key alias="rollback">Rollback</key>
-    <key alias="sendtopublish">Send To Publish</key>
-    <key alias="sendToTranslate">Send To Translation</key>
-    <key alias="setGroup">Set group</key>
-    <key alias="sort">Sort</key>
-    <key alias="translate">Translate</key>
-    <key alias="update">Update</key>
-    <key alias="setPermissions">Set permissions</key>
-    <key alias="unlock">Unlock</key>
-    <key alias="createblueprint">Create Content Template</key>
-    <key alias="resendInvite">Resend Invitation</key>
+    <key alias = "assignDomain"> الثقافة وأسماء المضيف </key>
+    <key alias = "AuditTrail"> مسار التدقيق </key>
+    <key alias = "browse"> تصفح العقدة </key>
+    <key alias = "changeDocType"> تغيير نوع المستند </key>
+    <key alias = "changeDataType"> تغيير نوع البيانات </key>
+    <key alias = "copy"> نسخ </key>
+    <key alias = "create"> إنشاء </key>
+    <key alias = "export"> تصدير </key>
+    <key alias = "createPackage"> إنشاء حزمة </key>
+    <key alias = "createGroup"> إنشاء مجموعة </key>
+    <key alias = "delete"> Delete </key>
+    <key alias = "disable"> تعطيل </key>
+    <key alias = "editSettings"> تحرير الإعدادات </key>
+    <key alias = "blankRecycleBin"> إفراغ سلة المحذوفات </key>
+    <key alias = "enable"> تمكين </key>
+    <key alias = "exportDocumentType"> تصدير نوع المستند </key>
+    <key alias = "importDocumentType"> استيراد نوع المستند </key>
+    <key alias = "importPackage"> استيراد الحزمة </key>
+    <key alias = "liveEdit"> تحرير في Canvas </key>
+    <key alias = "logout"> خروج </key>
+    <key alias = "move"> نقل </key>
+    <key alias = "notify"> الإخطارات </key>
+    <key alias = "protect"> الوصول العام </key>
+    <key alias = "publish"> نشر </key>
+    <key alias = "unpublish"> إلغاء النشر </key>
+    <key alias = "RefreshNode"> إعادة تحميل </key>
+    <key alias = "republish"> إعادة نشر الموقع بالكامل </key>
+    <key alias = "remove"> إزالة </key>
+    <key alias = "rename" version = "7.3.0"> إعادة تسمية </key>
+    <key alias = "استعادة" الإصدار = "7.3.0"> استعادة </key>
+    <key alias = "SetPermissionsForThePage"> تعيين الأذونات للصفحة٪ 0٪ </key>
+    <key alias = "ChooseWhereToCopy"> اختر مكان النسخ </key>
+    <key alias = "ChooseWhereToMove"> اختر مكان الانتقال </key>
+    <key alias = "toInTheTreeStructureBelow"> في بنية الشجرة أدناه </key>
+    <key alias = "infiniteEditorChooseWhereToCopy"> اختر مكان نسخ العنصر (العناصر) المحددة </key>
+    <key alias = "infiniteEditorChooseWhereToMove"> اختر مكان نقل العنصر (العناصر) المحددة </key>
+    <key alias = "wasMovedTo">تم نقل إلى </key>
+    <key alias = "wasCopiedTo">تم نسخ إلى </key>
+    <key alias = "wasDeleted">تم حذف </key>
+    <key alias = "rights"> أذونات </key>
+    <key alias = "rollback"> العودة إلى الحالة السابقة </key>
+    <key alias = "sendtopublish"> أرسل للنشر </key>
+    <key alias = "sendToTranslate"> أرسل إلى الترجمة </key>
+    <key alias = "setGroup"> تعيين المجموعة </key>
+    <key alias = "sort"> فرز </key>
+    <key alias = "translate"> ترجمة </key>
+    <key alias = "update"> تحديث </key>
+    <key alias = "setPermissions"> تعيين الأذونات </key>
+    <key alias = "unlock"> Unlock </key>
+    <key alias = "createblueprint"> إنشاء قالب محتوى </key>
+    <key alias = "resendInvite"> إعادة إرسال الدعوة </key>
   </area>
   <area alias="actionCategories">
     <key alias="content">المحتوي</key>
-    <key alias="administration">Administration</key>
-    <key alias="structure">Structure</key>
-    <key alias="other">Other</key>
+    <key alias = "administration"> الإدارة </key>
+    <key alias = "structure"> هيكل </key>
+    <key alias = "other"> أخرى </key>
   </area>
   <area alias="actionDescriptions">
-    <key alias="assignDomain">Allow access to assign culture and hostnames</key>
-    <key alias="auditTrail">Allow access to view a node's history log</key>
-    <key alias="browse">Allow access to view a node</key>
-    <key alias="changeDocType">Allow access to change document type for a node</key>
-    <key alias="copy">Allow access to copy a node</key>
-    <key alias="create">Allow access to create nodes</key>
-    <key alias="delete">Allow access to delete nodes</key>
-    <key alias="move">Allow access to move a node</key>
-    <key alias="protect">Allow access to set and change public access for a node</key>
-    <key alias="publish">Allow access to publish a node</key>
-    <key alias="unpublish">Allow access to unpublish a node</key>
-    <key alias="rights">Allow access to change permissions for a node</key>
-    <key alias="rollback">Allow access to roll back a node to a previous state</key>
-    <key alias="sendtopublish">Allow access to send a node for approval before publishing</key>
-    <key alias="sendToTranslate">Allow access to send a node for translation</key>
-    <key alias="sort">Allow access to change the sort order for nodes</key>
-    <key alias="translate">Allow access to translate a node</key>
-    <key alias="update">Allow access to save a node</key>
-    <key alias="createblueprint">Allow access to create a Content Template</key>
+    <key alias = "assignDomain"> السماح بالوصول لتعيين الثقافة وأسماء المضيف </key>
+    <key alias = "AuditTrail"> السماح بالوصول لعرض سجل محفوظات العقدة </key>
+    <key alias = "browse"> السماح بالوصول لعرض العقدة </key>
+    <key alias = "changeDocType"> السماح بالوصول لتغيير نوع المستند للعقدة </key>
+    <key alias = "copy"> السماح بالوصول لنسخ عقدة </key>
+    <key alias = "create"> السماح بالوصول لإنشاء العقد </key>
+    <key alias = "delete"> السماح بالوصول لحذف العقد </key>
+    <key alias = "move"> السماح بالوصول لنقل عقدة </key>
+    <key alias = "protect"> السماح بالوصول لتعيين وتغيير الوصول العام للعقدة </key>
+    <key alias = "publish"> السماح بالوصول لنشر العقدة </key>
+    <key alias = "unpublish"> السماح بالوصول لإلغاء نشر عقدة </key>
+    <key alias = "rights"> السماح بالوصول لتغيير أذونات العقدة </key>
+    <key alias = "rollback"> السماح بالوصول لاستعادة عقدة إلى حالة سابقة </key>
+    <key alias = "sendtopublish"> السماح بالدخول لإرسال عقدة للموافقة عليها قبل النشر </key>
+    <key alias = "sendToTranslate"> السماح بالوصول لإرسال عقدة للترجمة </key>
+    <key alias = "sort"> السماح بالوصول لتغيير ترتيب الفرز للعقد </key>
+    <key alias = "translate"> السماح بالوصول لترجمة العقدة </key>
+    <key alias = "update"> السماح بالوصول لحفظ العقدة </key>
+    <key alias = "createblueprint"> السماح بالوصول لإنشاء قالب محتوى </key>
   </area>
   <area alias="apps">
     <key alias="umbContent">المحتوي</key>
-    <key alias="umbInfo">Info</key>
+    <key alias="umbInfo">معلومات</key>
   </area>
   <area alias="assignDomain">
     <key alias="permissionDenied">Permission denied.</key>
@@ -103,62 +103,65 @@
     <key alias="domainUpdated">Domain '%0%' has been updated</key>
     <key alias="orEdit">Edit Current Domains</key>
     <key alias="domainHelpWithVariants">
-    	<![CDATA[Valid domain names are: "example.com", "www.example.com", "example.com:8080", or "https://www.example.com/".
-     Furthermore also one-level paths in domains are supported, eg. "example.com/en" or "/en".]]></key>
+      <![CDATA[Valid domain names are: "example.com", "www.example.com", "example.com:8080", or "https://www.example.com/".
+     Furthermore also one-level paths in domains are supported, eg. "example.com/en" or "/en".]]>
+    </key>
     <key alias="inherit">Inherit</key>
     <key alias="setLanguage">Culture</key>
-    <key alias="setLanguageHelp"><![CDATA[Set the culture for nodes below the current node,<br /> or inherit culture from parent nodes. Will also apply<br />
-      to the current node, unless a domain below applies too.]]></key>
+    <key alias="setLanguageHelp">
+      <![CDATA[Set the culture for nodes below the current node,<br /> or inherit culture from parent nodes. Will also apply<br />
+      to the current node, unless a domain below applies too.]]>
+    </key>
     <key alias="setDomains">Domains</key>
   </area>
   <area alias="buttons">
-    <key alias="clearSelection">Clear selection</key>
-    <key alias="select">Select</key>
-    <key alias="somethingElse">Do something else</key>
-    <key alias="bold">Bold</key>
-    <key alias="deindent">Cancel Paragraph Indent</key>
-    <key alias="formFieldInsert">Insert form field</key>
-    <key alias="graphicHeadline">Insert graphic headline</key>
-    <key alias="htmlEdit">Edit Html</key>
-    <key alias="indent">Indent Paragraph</key>
-    <key alias="italic">Italic</key>
-    <key alias="justifyCenter">Center</key>
-    <key alias="justifyLeft">Justify Left</key>
-    <key alias="justifyRight">Justify Right</key>
-    <key alias="linkInsert">Insert Link</key>
-    <key alias="linkLocal">Insert local link (anchor)</key>
-    <key alias="listBullet">Bullet List</key>
-    <key alias="listNumeric">Numeric List</key>
-    <key alias="macroInsert">Insert macro</key>
-    <key alias="pictureInsert">Insert picture</key>
-    <key alias="publishAndClose">Publish and close</key>
-    <key alias="publishDescendants">Publish with descendants</key>
-    <key alias="relations">Edit relations</key>
-    <key alias="returnToList">Return to list</key>
-    <key alias="save">Save</key>
-    <key alias="saveAndClose">Save and close</key>
-    <key alias="saveAndPublish">Save and publish</key>
-    <key alias="saveAndSchedule">Save and schedule</key>
-    <key alias="saveToPublish">Send for approval</key>
-    <key alias="saveListView">Save list view</key>
-    <key alias="schedulePublish">Schedule</key>
-    <key alias="showPage">Preview</key>
-    <key alias="saveAndPreview">Save and preview</key>
-    <key alias="showPageDisabled">Preview is disabled because there's no template assigned</key>
-    <key alias="styleChoose">Choose style</key>
-    <key alias="styleShow">Show styles</key>
-    <key alias="tableInsert">Insert table</key>
-    <key alias="generateModelsAndClose">Generate models and close</key>
-    <key alias="saveAndGenerateModels">Save and generate models</key>
-    <key alias="undo">Undo</key>
-    <key alias="redo">Redo</key>
-    <key alias="rollback">Rollback</key>
-    <key alias="deleteTag">Delete tag</key>
-    <key alias="confirmActionCancel">Cancel</key>
-    <key alias="confirmActionConfirm">Confirm</key>
-	<key alias="morePublishingOptions">More publishing options</key>
-    <key alias="submitChanges">Submit</key>
-    <key alias="submitChangesAndClose">Submit and close</key>
+    <key alias = "clearSelection"> مسح التحديد </key>
+    <key alias = "select"> حدد </key>
+    <key alias = "somethingElse"> افعل شيئًا آخر </key>
+    <key alias = "bold"> غامق </key>
+    <key alias = "deindent"> إلغاء مسافة بادئة للفقرة </key>
+    <key alias = "formFieldInsert"> إدراج حقل النموذج </key>
+    <key alias = "GraphicHeadline"> إدراج عنوان رسومي </key>
+    <key alias = "htmlEdit"> تحرير Html </key>
+    <key alias = "indent"> مسافة بادئة للفقرة </key>
+    <key alias = "italic"> مائل </key>
+    <key alias = "justifyCenter"> المركز </key>
+    <key alias = "justifyLeft"> ضبط لليسار </key>
+    <key alias = "justifyRight"> ضبط لليمين </key>
+    <key alias = "linkInsert"> إدراج ارتباط </key>
+    <key alias = "linkLocal"> إدراج ارتباط محلي (مرساة) </key>
+    <key alias = "listBullet"> قائمة نقطية </key>
+    <key alias = "listNumeric"> قائمة رقمية </key>
+    <key alias = "macroInsert"> إدراج ماكرو </key>
+    <key alias = "pictureInsert"> إدراج صورة </key>
+    <key alias = "publishAndClose"> نشر وإغلاق </key>
+    <key alias = "publishDescendants"> النشر مع التوابع </key>
+    <key alias = "relations"> تحرير العلاقات </key>
+    <key alias = "returnToList"> العودة إلى القائمة </key>
+    <key alias = "save"> حفظ </key>
+    <key alias = "saveAndClose"> حفظ وإغلاق </key>
+    <key alias = "saveAndPublish"> حفظ ونشر </key>
+    <key alias = "saveAndSchedule"> حفظ وجدولة </key>
+    <key alias = "saveToPublish"> إرسال للموافقة </key>
+    <key alias = "saveListView"> حفظ عرض القائمة </key>
+    <key alias = "SchedulePublish"> جدولة </key>
+    <key alias = "showPage"> معاينة </key>
+    <key alias = "saveAndPreview"> حفظ ومعاينة </key>
+    <key alias = "showPageDisabled"> المعاينة معطلة لأنه لم يتم تعيين قالب </key>
+    <key alias = "styleChoose"> اختر النمط </key>
+    <key alias = "styleShow"> إظهار الأنماط </key>
+    <key alias = "tableInsert"> إدراج جدول </key>
+    <key alias = "createModelsAndClose"> إنشاء النماذج وإغلاقها </key>
+    <key alias = "saveAndGenerateModels"> حفظ النماذج وإنشاؤها </key>
+    <key alias = "undo"> تراجع </key>
+    <key alias = "redo"> إعادة </key>
+    <key alias = "rollback"> العودة إلى الحالة السابقة </key>
+    <key alias = "deleteTag"> حذف العلامة </key>
+    <key alias = "ConfirmActionCancel"> إلغاء </key>
+    <key alias = "ConfirmActionConfirm"> تأكيد </key>
+    <key alias = "morePublishingOptions"> المزيد من خيارات النشر </key>
+    <key alias = "submitChanges"> إرسال </key>
+    <key alias = "submitChangesAndClose"> إرسال وإغلاق </key>
   </area>
   <area alias="auditTrails">
     <key alias="atViewingFor">Viewing for</key>
@@ -219,118 +222,118 @@
     <key alias="deleteItemFailed">Failed to delete item: %0%</key>
   </area>
   <area alias="content">
-    <key alias="isPublished" version="7.2">Is Published</key>
-    <key alias="about">About this page</key>
-    <key alias="alias">Alias</key>
-    <key alias="alternativeTextHelp">(how would you describe the picture over the phone)</key>
-    <key alias="alternativeUrls">Alternative Links</key>
-    <key alias="clickToEdit">Click to edit this item</key>
-    <key alias="createBy">Created by</key>
-    <key alias="createByDesc" version="7.0">Original author</key>
-    <key alias="updatedBy" version="7.0">Updated by</key>
-    <key alias="createDate">Created</key>
-    <key alias="createDateDesc" version="7.0">Date/time this document was created</key>
-    <key alias="documentType">Document Type</key>
-    <key alias="editing">Editing</key>
-    <key alias="expireDate">Remove at</key>
-    <key alias="itemChanged">This item has been changed after publication</key>
-    <key alias="itemNotPublished">This item is not published</key>
-    <key alias="lastPublished">Last published</key>
-    <key alias="noItemsToShow">There are no items to show</key>
-    <key alias="listViewNoItems" version="7.1.5">There are no items to show in the list.</key>
-    <key alias="listViewNoContent">No child items have been added</key>
-    <key alias="listViewNoMembers">No members have been added</key>
-    <key alias="mediatype">Media Type</key>
-    <key alias="mediaLinks">Link to media item(s)</key>
-    <key alias="membergroup">Member Group</key>
-    <key alias="memberrole">Role</key>
-    <key alias="membertype">Member Type</key>
-    <key alias="noChanges">No changes have been made</key>
-    <key alias="noDate">No date chosen</key>
-    <key alias="nodeName">Page title</key>
-    <key alias="noMediaLink">This media item has no link</key>
-    <key alias="noProperties">No content can be added for this item</key>
-    <key alias="otherElements">Properties</key>
-    <key alias="parentNotPublished">This document is published but is not visible because the parent '%0%' is unpublished</key>
-    <key alias="parentCultureNotPublished">This culture is published but is not visible because it is unpublished on parent '%0%'</key>
-    <key alias="parentNotPublishedAnomaly">This document is published but is not in the cache</key>
-    <key alias="getUrlException">Could not get the url</key>
-    <key alias="routeError">This document is published but its url would collide with content %0%</key>
-    <key alias="routeErrorCannotRoute">This document is published but its url cannot be routed</key>
-    <key alias="publish">Publish</key>
-    <key alias="published">Published</key>
-    <key alias="publishedPendingChanges">Published (pending changes)</key>&gt;
-    <key alias="publishStatus">Publication Status</key>
-    <key alias="publishDescendantsHelp"><![CDATA[Publish <strong>%0%</strong> and all content items underneath and thereby making their content publicly available.]]></key>
-    <key alias="publishDescendantsWithVariantsHelp"><![CDATA[Publish variants and variants of same type underneath and thereby making their content publicly available.]]></key>
-    <key alias="releaseDate">Publish at</key>
-    <key alias="unpublishDate">Unpublish at</key>
-    <key alias="removeDate">Clear Date</key>
-    <key alias="setDate">Set date</key>
-    <key alias="sortDone">Sortorder is updated</key>
-    <key alias="sortHelp">To sort the nodes, simply drag the nodes or click one of the column headers. You can select multiple nodes by holding the "shift" or "control" key while selecting</key>
-    <key alias="statistics">Statistics</key>
-    <key alias="titleOptional">Title (optional)</key>
-    <key alias="altTextOptional">Alternative text (optional)</key>
-    <key alias="type">Type</key>
-    <key alias="unpublish">Unpublish</key>
-    <key alias="unpublished">Draft</key>
-    <key alias="notCreated">Not created</key>
-    <key alias="updateDate">Last edited</key>
-    <key alias="updateDateDesc" version="7.0">Date/time this document was edited</key>
-    <key alias="uploadClear">Remove file(s)</key>
-	<key alias="uploadClearImageContext">Click here to remove the image from the media item</key>
-    <key alias="uploadClearFileContext">Click here to remove the file from the media item</key>
-    <key alias="urls">Link to document</key>
-    <key alias="memberof">Member of group(s)</key>
-    <key alias="notmemberof">Not a member of group(s)</key>
-    <key alias="childItems" version="7.0">Child items</key>
-    <key alias="target" version="7.0">Target</key>
-    <key alias="scheduledPublishServerTime">This translates to the following time on the server:</key>
-    <key alias="scheduledPublishDocumentation"><![CDATA[<a href="https://our.umbraco.com/documentation/Getting-Started/Data/Scheduled-Publishing/#timezones" target="_blank">What does this mean?</a>]]></key>
-    <key alias="nestedContentDeleteItem">Are you sure you want to delete this item?</key>
-    <key alias="nestedContentDeleteAllItems">Are you sure you want to delete all items?</key>
-    <key alias="nestedContentEditorNotSupported">Property %0% uses editor %1% which is not supported by Nested Content.</key>
-    <key alias="nestedContentNoContentTypes">No content types are configured for this property.</key>
-    <key alias="nestedContentAddElementType">Add element type</key>
-    <key alias="nestedContentSelectElementTypeModalTitle">Select element type</key>
-    <key alias="nestedContentGroupHelpText">Select the group whose properties should be displayed. If left blank, the first group on the element type will be used.</key>
-    <key alias="nestedContentTemplateHelpTextPart1">Enter an angular expression to evaluate against each item for its name. Use</key>
-    <key alias="nestedContentTemplateHelpTextPart2">to display the item index</key>
-    <key alias="addTextBox">Add another text box</key>
-    <key alias="removeTextBox">Remove this text box</key>
-    <key alias="contentRoot">Content root</key>
-    <key alias="includeUnpublished">Include unpublished content items.</key>
-    <key alias="isSensitiveValue">This value is hidden. If you need access to view this value please contact your website administrator.</key>
-    <key alias="isSensitiveValue_short">This value is hidden.</key>
-    <key alias="languagesToPublishForFirstTime">What languages would you like to publish? All languages with content are saved!</key>
-    <key alias="languagesToPublish">What languages would you like to publish?</key>
-    <key alias="languagesToSave">What languages would you like to save?</key>
-    <key alias="languagesToSaveForFirstTime">All languages with content are saved on creation!</key>
-    <key alias="languagesToSendForApproval">What languages would you like to send for approval?</key>
-    <key alias="languagesToSchedule">What languages would you like to schedule?</key>
-    <key alias="languagesToUnpublish">Select the languages to unpublish. Unpublishing a mandatory language will unpublish all languages.</key>
-    <key alias="publishedLanguages">Published Languages</key>
-    <key alias="unpublishedLanguages">Unpublished Languages</key>
-    <key alias="unmodifiedLanguages">Unmodified Languages</key>
-    <key alias="untouchedLanguagesForFirstTime">These languages haven't been created</key>
+    <key alias = "isPublished" version = "7.2"> تم نشره </key>
+    <key alias = "about"> حول هذه الصفحة </key>
+    <key alias = "alias"> الاسم المستعار </key>
+    <key alias = "replaceTextHelp"> (كيف تصف الصورة عبر الهاتف) </key>
+    <key alias = "replaceUrls"> روابط بديلة </key>
+    <key alias = "clickToEdit"> انقر لتعديل هذا العنصر </key>
+    <key alias = "createBy"> تم الإنشاء بواسطة </key>
+    <key alias = "createByDesc" version = "7.0"> المؤلف الأصلي </key>
+    <key alias = "updatedBy" version = "7.0"> تم التحديث بواسطة </key>
+    <key alias = "createDate"> تاريخ الإنشاء </key>
+    <key alias = "createDateDesc" version = "7.0"> تاريخ / وقت إنشاء هذا المستند </key>
+    <key alias = "documentType"> نوع المستند </key>
+    <key alias = "edit"> تحرير </key>
+    <key alias = "expireDate"> إزالة في </key>
+    <key alias = "itemChanged"> تم تغيير هذا العنصر بعد النشر </key>
+    <key alias = "itemNotPublished"> لم يتم نشر هذا العنصر </key>
+    <key alias = "lastPublished"> آخر نشر </key>
+    <key alias = "noItemsToShow"> لا توجد عناصر لإظهارها </key>
+    <key alias = "listViewNoItems" version = "7.1.5"> لا توجد عناصر لإظهارها في القائمة. </key>
+    <key alias = "listViewNoContent"> لم تتم إضافة عناصر فرعية </key>
+    <key alias = "listViewNoMembers"> لم تتم إضافة أي أعضاء </key>
+    <key alias = "mediatype"> نوع الوسائط </key>
+    <key alias = "mediaLinks"> ارتباط بعنصر (عناصر) الوسائط </key>
+    <key alias = "membergroup"> مجموعة الأعضاء </key>
+    <key alias = "memberrole"> الدور </key>
+    <key alias = "membertype"> نوع العضو </key>
+    <key alias = "noChanges"> لم يتم إجراء أية تغييرات </key>
+    <key alias = "noDate"> لم يتم اختيار التاريخ </key>
+    <key alias = "nodeName"> عنوان الصفحة </key>
+    <key alias = "noMediaLink"> عنصر الوسائط هذا ليس له ارتباط </key>
+    <key alias = "noProperties"> لا يمكن إضافة أي محتوى لهذا العنصر </key>
+    <key alias = "otherElements"> خصائص </key>
+    <key alias = "parentNotPublished"> تم نشر هذا المستند ولكنه غير مرئي لأن الأصل '٪ 0٪' غير منشور </key>
+    <key alias = "parentCultureNotPublished"> تم نشر هذه الثقافة ولكنها غير مرئية لأنها غير منشورة على الأصل '٪ 0٪' </key>
+    <key alias = "parentNotPublishedAnomaly"> تم نشر هذا المستند ولكنه ليس في ذاكرة التخزين المؤقت </key>
+    <key alias = "getUrlException"> تعذر الحصول على عنوان url </key>
+    <key alias = "routeError"> تم نشر هذا المستند ولكن عنوان url الخاص به سيتعارض مع المحتوى٪ 0٪ </key>
+    <key alias = "routeErrorCannotRoute"> تم نشر هذا المستند ولكن لا يمكن توجيه عنوان url الخاص به </key>
+    <key alias = "publish"> نشر </key>
+    <key alias = "publish"> منشور </key>
+    <key alias = "publishPendingChanges"> منشورة (تغييرات معلقة) </key> &gt;
+    <key alias = "publishStatus"> حالة النشر </key>
+    <key alias = "publishDescendantsHelp"> <![CDATA[Publish <strong>%0%</strong> and all content items underneath and thereby making their content publicly available.]]> </key>
+    <key alias = "publishDescendantsWithVariantsHelp"> <![CDATA[Publish variants and variants of same type underneath and thereby making their content publicly available.]]> </key>
+    <key alias = "releaseDate"> انشر في </key>
+    <key alias = "unpublishDate"> إلغاء النشر في </key>
+    <key alias = "removeDate"> مسح التاريخ </key>
+    <key alias = "setDate"> تعيين التاريخ </key>
+    <key alias = "sortDone"> تم تحديث الترتيب </key>
+    <key alias = "sortHelp"> لفرز العقد ، ما عليك سوى سحب العقد أو النقر فوق أحد رؤوس الأعمدة. يمكنك تحديد عدة عقد بالضغط على مفتاح "shift" أو "control" أثناء التحديد </key>
+    <key alias = "Statistics"> الإحصائيات </key>
+    <key alias = "titleOptional"> العنوان (اختياري) </key>
+    <key alias = "altTextOptional"> نص بديل (اختياري) </key>
+    <key alias = "type"> اكتب </key>
+    <key alias = "unpublish"> إلغاء النشر </key>
+    <key alias = "unpublished"> مسودة </key>
+    <key alias = "notCreated"> لم يتم إنشاؤه </key>
+    <key alias = "updateDate"> آخر تعديل </key>
+    <key alias = "updateDateDesc" version = "7.0"> تاريخ / وقت تحرير هذا المستند </key>
+    <key alias = "uploadClear"> إزالة الملف (الملفات) </key>
+    <key alias = "uploadClearImageContext"> انقر هنا لإزالة الصورة من عنصر الوسائط </key>
+    <key alias = "uploadClearFileContext"> انقر هنا لإزالة الملف من عنصر الوسائط </key>
+    <key alias = "urls"> ارتباط بالمستند </key>
+    <key alias = "memberof"> عضو في المجموعة (المجموعات) </key>
+    <key alias = "notmemberof"> ليس عضوًا في مجموعة (مجموعات) </key>
+    <key alias = "childItems" version = "7.0"> العناصر الفرعية </key>
+    <key alias = "target" version = "7.0"> الهدف </key>
+    <key alias = "SchedulePublishServerTime"> يترجم هذا إلى الوقت التالي على الخادم: </key>
+    <key alias = "SchedulePublishDocumentation"> <![CDATA[<a href="https://our.umbraco.com/documentation/Getting-Started/Data/Scheduled-Publishing/#timezones" target="_blank">What does this mean?</a>]]> </key>
+    <key alias = "nestedContentDeleteItem"> هل تريد بالتأكيد حذف هذا العنصر؟ </key>
+    <key alias = "nestedContentDeleteAllItems"> هل تريد بالتأكيد حذف كافة العناصر؟ </key>
+    <key alias = "nestedContentEditorNotSupported"> الخاصية٪ 0٪يستخدم محرر٪ 1٪ وهو غير مدعوم بواسطة المحتوى المتداخل. </key>
+    <key alias = "nestedContentNoContentTypes"> لم يتم تكوين أنواع محتويات لهذه الخاصية. </key>
+    <key alias = "nestedContentAddElementType"> إضافة نوع عنصر </key>
+    <key alias = "nestedContentSelectElementTypeModalTitle"> تحديد نوع العنصر </key>
+    <key alias = "nestedContentGroupHelpText"> حدد المجموعة التي يجب عرض خصائصها. إذا تُركت فارغة ، فسيتم استخدام المجموعة الأولى في نوع العنصر. </key>
+    <key alias = "nestedContentTemplateHelpTextPart1"> أدخل تعبيرًا زاوية للتقييم مقابل كل عنصر لاسمه. استخدم </key>
+    <key alias = "nestedContentTemplateHelpTextPart2"> لعرض فهرس العنصر </key>
+    <key alias = "addTextBox"> إضافة مربع نص آخر </key>
+    <key alias = "removeTextBox"> إزالة مربع النص هذا </key>
+    <key alias = "contentRoot"> جذر المحتوى </key>
+    <key alias = "includeUnpublished"> تضمين عناصر المحتوى غير المنشورة. </key>
+    <key alias = "isSensitiveValue"> هذه القيمة مخفية. إذا كنت بحاجة إلى الوصول لعرض هذه القيمة ، فيرجى الاتصال بمسؤول موقع الويب الخاص بك. </key>
+    <key alias = "isSensitiveValue_short"> هذه القيمة مخفية. </key>
+    <key alias = "languagesToPublishForFirstTime"> ما هي اللغات التي تريد نشرها؟ يتم حفظ جميع اللغات التي بها محتوى! </key>
+    <key alias = "languagesToPublish"> ما هي اللغات التي تريد نشرها؟ </key>
+    <key alias = "languagesToSave"> ما هي اللغات التي تريد حفظها؟ </key>
+    <key alias = "languagesToSaveForFirstTime"> يتم حفظ جميع اللغات التي بها محتوى عند الإنشاء! </key>
+    <key alias = "languagesToSendForApproval"> ما هي اللغات التي تريد إرسالها للموافقة؟ </key>
+    <key alias = "languagesToSchedule"> ما هي اللغات التي تريد جدولتها؟ </key>
+    <key alias = "languagesToUnpublish"> حدد اللغات المراد إلغاء نشرها. سيؤدي إلغاء نشر لغة إلزامية إلى إلغاء نشر جميع اللغات. </key>
+    <key alias = "publishLanguages"> اللغات المنشورة </key>
+    <key alias = "unpublishedLanguages"> لغات غير منشورة </key>
+    <key alias = "unmodifiedLanguages"> لغات غير معدلة </key>
+    <key alias = "untouchedLanguagesForFirstTime"> لم يتم إنشاء هذه اللغات </key>
 
-    <key alias="variantsWillBeSaved">All new variants will be saved.</key>
-    <key alias="variantsToPublish">Which variants you would like to publish?</key>
-    <key alias="variantsToSave">Choose which variants to be saved.</key>
-    <key alias="variantsToSendForApproval">Pick variants to send for approval.</key>
-    <key alias="variantsToSchedule">Set scheduled publishing...</key>
-    <key alias="variantsToUnpublish">Select the variants to unpublish. Unpublishing a mandatory language will unpublish all variants.</key>
-    <key alias="publishRequiresVariants">The following variants is required for publishing to take place:</key>
+    <key alias = "variantsWillBeSaved"> سيتم حفظ جميع المتغيرات الجديدة. </key>
+    <key alias = "variantsToPublish"> ما هي المتغيرات التي ترغب في نشرها؟ </key>
+    <key alias = "variantsToSave"> اختر المتغيرات المراد حفظها. </key>
+    <key alias = "variantsToSendForApproval"> اختر المتغيرات لإرسالها للموافقة. </key>
+    <key alias = "variantsToSchedule"> تعيين النشر المجدول ... </key>
+    <key alias = "variantsToUnpublish"> حدد المتغيرات المراد إلغاء نشرها. سيؤدي إلغاء نشر لغة إلزامية إلى إلغاء نشر جميع المتغيرات. </key>
+    <key alias = "publishRequiresVariants"> الصيغ التالية مطلوبة للنشر: </key>
 
-    <key alias="notReadyToPublish">We are not ready to Publish</key>
-    <key alias="readyToPublish">Ready to publish?</key>
-    <key alias="readyToSave">Ready to Save?</key>
-    <key alias="sendForApproval">Send for approval</key>
-    <key alias="schedulePublishHelp">Select the date and time to publish and/or unpublish the content item.</key>
-    <key alias="createEmpty">Create new</key>
-    <key alias="createFromClipboard">Paste from clipboard</key>
-    <key alias="nodeIsInTrash">This item is in the Recycle Bin</key>
+    <key alias = "notReadyToPublish"> لسنا مستعدين للنشر </key>
+    <key alias = "readyToPublish"> جاهز للنشر؟ </key>
+    <key alias = "readyToSave"> هل أنت جاهز للحفظ؟ </key>
+    <key alias = "sendForApproval"> أرسل للموافقة </key>
+    <key alias = "SchedulePublishHelp"> حدد التاريخ والوقت لنشر و / أو إلغاء نشر عنصر المحتوى. </key>
+    <key alias = "createEmpty"> إنشاء جديد </key>
+    <key alias = "createFromClipboard"> لصق من الحافظة </key>
+    <key alias = "nodeIsInTrash"> هذا العنصر موجود في سلة المحذوفات </key>
   </area>
   <area alias="blueprints">
     <key alias="createBlueprintFrom">Create a new Content Template from '%0%'</key>
@@ -344,7 +347,7 @@
   <area alias="media">
     <key alias="clickToUpload">Click to upload</key>
     <key alias="orClickHereToUpload">or click here to choose files</key>
-        <key alias="dragFilesHereToUpload">You can drag files here to upload.</key>
+    <key alias="dragFilesHereToUpload">You can drag files here to upload.</key>
     <key alias="disallowedFileType">Cannot upload this file, it does not have an approved file type</key>
     <key alias="maxFileSize">Max file size is</key>
     <key alias="mediaRoot">Media root</key>
@@ -461,7 +464,7 @@
     <key alias="linkinternal">Internal link:</key>
     <key alias="linklocaltip">When using local links, insert "#" in front of link</key>
     <key alias="linknewwindow">Open in new window?</key>
-	<key alias="macroContainerSettings">Macro Settings</key>
+    <key alias="macroContainerSettings">Macro Settings</key>
     <key alias="macroDoesNotHaveProperties">This macro does not contain any properties you can edit</key>
     <key alias="paste">Paste</key>
     <key alias="permissionsEdit">Edit permissions for</key>
@@ -528,13 +531,17 @@
     <key alias="noItems">There are no dictionary items.</key>
   </area>
   <area alias="dictionaryItem">
-    <key alias="description"><![CDATA[
+    <key alias="description">
+      <![CDATA[
       Edit the different language versions for the dictionary item '<em>%0%</em>' below
-   ]]></key>
+   ]]>
+    </key>
     <key alias="displayName">Culture Name</key>
-    <key alias="changeKeyError"><![CDATA[
+    <key alias="changeKeyError">
+      <![CDATA[
       The key '%0%' already exists.
-   ]]></key>
+   ]]>
+    </key>
     <key alias="overviewTitle">Dictionary overview</key>
   </area>
   <area alias="examineManagement">
@@ -549,7 +556,8 @@
     <key alias="manageIndexes">Manage Examine's indexes</key>
     <key alias="manageIndexesDescription">Allows you to view the details of each index and provides some tools for managing the indexes</key>
     <key alias="rebuildIndex">Rebuild index</key>
-    <key alias="rebuildIndexWarning"><![CDATA[
+    <key alias="rebuildIndexWarning">
+      <![CDATA[
       This will cause the index to be rebuilt.<br />
       Depending on how much content there is in your site this could take a while.<br />
       It is not recommended to rebuild an index during times of high website traffic or when editors are editing content.
@@ -849,28 +857,38 @@
     <key alias="databaseErrorWebConfig">Could not save the web.config file. Please modify the connection string manually.</key>
     <key alias="databaseFound">Your database has been found and is identified as</key>
     <key alias="databaseHeader">Database configuration</key>
-    <key alias="databaseInstall"><![CDATA[
+    <key alias="databaseInstall">
+      <![CDATA[
       Press the <strong>install</strong> button to install the Umbraco %0% database
-    ]]></key>
+    ]]>
+    </key>
     <key alias="databaseInstallDone"><![CDATA[Umbraco %0% has now been copied to your database. Press <strong>Next</strong> to proceed.]]></key>
-    <key alias="databaseNotFound"><![CDATA[<p>Database not found! Please check that the information in the "connection string" of the "web.config" file is correct.</p>
+    <key alias="databaseNotFound">
+      <![CDATA[<p>Database not found! Please check that the information in the "connection string" of the "web.config" file is correct.</p>
               <p>To proceed, please edit the "web.config" file (using Visual Studio or your favourite text editor), scroll to the bottom, add the connection string for your database in the key named "UmbracoDbDSN" and save the file. </p>
               <p>
               Click the <strong>retry</strong> button when
               done.<br /><a href="https://our.umbraco.com/documentation/Using-Umbraco/Config-files/webconfig7" target="_blank">
-			              More information on editing web.config here.</a></p>]]></key>
-    <key alias="databaseText"><![CDATA[To complete this step, you must know some information regarding your database server ("connection string").<br />
+			              More information on editing web.config here.</a></p>]]>
+    </key>
+    <key alias="databaseText">
+      <![CDATA[To complete this step, you must know some information regarding your database server ("connection string").<br />
         Please contact your ISP if necessary.
-        If you're installing on a local machine or server you might need information from your system administrator.]]></key>
-    <key alias="databaseUpgrade"><![CDATA[
+        If you're installing on a local machine or server you might need information from your system administrator.]]>
+    </key>
+    <key alias="databaseUpgrade">
+      <![CDATA[
       <p>
       Press the <strong>upgrade</strong> button to upgrade your database to Umbraco %0%</p>
       <p>
       Don't worry - no content will be deleted and everything will continue working afterwards!
       </p>
-      ]]></key>
-    <key alias="databaseUpgradeDone"><![CDATA[Your database has been upgraded to the final version %0%.<br/>Press <strong>Next</strong> to
-      proceed. ]]></key>
+      ]]>
+    </key>
+    <key alias="databaseUpgradeDone">
+      <![CDATA[Your database has been upgraded to the final version %0%.<br/>Press <strong>Next</strong> to
+      proceed. ]]>
+    </key>
     <key alias="databaseUpToDate"><![CDATA[Your current database is up-to-date!. Click <strong>next</strong> to continue the configuration wizard]]></key>
     <key alias="defaultUserChangePass"><![CDATA[<strong>The Default users' password needs to be changed!</strong>]]></key>
     <key alias="defaultUserDisabled"><![CDATA[<strong>The Default user has been disabled or has no access to Umbraco!</strong></p><p>No further actions needs to be taken. Click <b>Next</b> to proceed.]]></key>
@@ -882,41 +900,56 @@
     <key alias="permissionsAffectedFolders">Affected files and folders</key>
     <key alias="permissionsAffectedFoldersMoreInfo">More information on setting up permissions for Umbraco here</key>
     <key alias="permissionsAffectedFoldersText">You need to grant ASP.NET modify permissions to the following files/folders</key>
-    <key alias="permissionsAlmostPerfect"><![CDATA[<strong>Your permission settings are almost perfect!</strong><br /><br />
-        You can run Umbraco without problems, but you will not be able to install packages which are recommended to take full advantage of Umbraco.]]></key>
+    <key alias="permissionsAlmostPerfect">
+      <![CDATA[<strong>Your permission settings are almost perfect!</strong><br /><br />
+        You can run Umbraco without problems, but you will not be able to install packages which are recommended to take full advantage of Umbraco.]]>
+    </key>
     <key alias="permissionsHowtoResolve">How to Resolve</key>
     <key alias="permissionsHowtoResolveLink">Click here to read the text version</key>
     <key alias="permissionsHowtoResolveText"><![CDATA[Watch our <strong>video tutorial</strong> on setting up folder permissions for Umbraco or read the text version.]]></key>
-    <key alias="permissionsMaybeAnIssue"><![CDATA[<strong>Your permission settings might be an issue!</strong>
+    <key alias="permissionsMaybeAnIssue">
+      <![CDATA[<strong>Your permission settings might be an issue!</strong>
       <br/><br />
-      You can run Umbraco without problems, but you will not be able to create folders or install packages which are recommended to take full advantage of Umbraco.]]></key>
-    <key alias="permissionsNotReady"><![CDATA[<strong>Your permission settings are not ready for Umbraco!</strong>
+      You can run Umbraco without problems, but you will not be able to create folders or install packages which are recommended to take full advantage of Umbraco.]]>
+    </key>
+    <key alias="permissionsNotReady">
+      <![CDATA[<strong>Your permission settings are not ready for Umbraco!</strong>
           <br /><br />
-          In order to run Umbraco, you'll need to update your permission settings.]]></key>
-    <key alias="permissionsPerfect"><![CDATA[<strong>Your permission settings are perfect!</strong><br /><br />
-              You are ready to run Umbraco and install packages!]]></key>
+          In order to run Umbraco, you'll need to update your permission settings.]]>
+    </key>
+    <key alias="permissionsPerfect">
+      <![CDATA[<strong>Your permission settings are perfect!</strong><br /><br />
+              You are ready to run Umbraco and install packages!]]>
+    </key>
     <key alias="permissionsResolveFolderIssues">Resolving folder issue</key>
     <key alias="permissionsResolveFolderIssuesLink">Follow this link for more information on problems with ASP.NET and creating folders</key>
     <key alias="permissionsSettingUpPermissions">Setting up folder permissions</key>
-    <key alias="permissionsText"><![CDATA[
+    <key alias="permissionsText">
+      <![CDATA[
       Umbraco needs write/modify access to certain directories in order to store files like pictures and PDF's.
       It also stores temporary data (aka: cache) for enhancing the performance of your website.
-    ]]></key>
+    ]]>
+    </key>
     <key alias="runwayFromScratch">I want to start from scratch</key>
-    <key alias="runwayFromScratchText"><![CDATA[
+    <key alias="runwayFromScratchText">
+      <![CDATA[
         Your website is completely empty at the moment, so that's perfect if you want to start from scratch and create your own document types and templates.
         (<a href="http://Umbraco.tv/documentation/videos/for-site-builders/foundation/document-types">learn how</a>)
         You can still choose to install Runway later on. Please go to the Developer section and choose Packages.
-      ]]></key>
+      ]]>
+    </key>
     <key alias="runwayHeader">You've just set up a clean Umbraco platform. What do you want to do next?</key>
     <key alias="runwayInstalled">Runway is installed</key>
-    <key alias="runwayInstalledText"><![CDATA[
+    <key alias="runwayInstalledText">
+      <![CDATA[
       You have the foundation in place. Select what modules you wish to install on top of it.<br />
       This is our list of recommended modules, check off the ones you would like to install, or view the <a href="#" onclick="toggleModules(); return false;" id="toggleModuleList">full list of modules</a>
-      ]]></key>
+      ]]>
+    </key>
     <key alias="runwayOnlyProUsers">Only recommended for experienced users</key>
     <key alias="runwaySimpleSite">I want to start with a simple website</key>
-    <key alias="runwaySimpleSiteText"><![CDATA[
+    <key alias="runwaySimpleSiteText">
+      <![CDATA[
       <p>
       "Runway" is a simple website providing some basic document types and templates. The installer can set up Runway for you automatically,
         but you can easily edit, extend or remove it. It's not necessary and you can perfectly use Umbraco without it. However,
@@ -927,7 +960,8 @@
         <em>Included with Runway:</em> Home page, Getting Started page, Installing Modules page.<br />
         <em>Optional Modules:</em> Top Navigation, Sitemap, Contact, Gallery.
         </small>
-      ]]></key>
+      ]]>
+    </key>
     <key alias="runwayWhatIsRunway">What is Runway</key>
     <key alias="step1">Step 1/5 Accept license</key>
     <key alias="step2">Step 2/5: Database configuration</key>
@@ -935,24 +969,36 @@
     <key alias="step4">Step 4/5: Check Umbraco security</key>
     <key alias="step5">Step 5/5: Umbraco is ready to get you started</key>
     <key alias="thankYou">Thank you for choosing Umbraco</key>
-    <key alias="theEndBrowseSite"><![CDATA[<h3>Browse your new site</h3>
-You installed Runway, so why not see how your new website looks.]]></key>
-    <key alias="theEndFurtherHelp"><![CDATA[<h3>Further help and information</h3>
-Get help from our award winning community, browse the documentation or watch some free videos on how to build a simple site, how to use packages and a quick guide to the Umbraco terminology]]></key>
+    <key alias="theEndBrowseSite">
+      <![CDATA[<h3>Browse your new site</h3>
+You installed Runway, so why not see how your new website looks.]]>
+    </key>
+    <key alias="theEndFurtherHelp">
+      <![CDATA[<h3>Further help and information</h3>
+Get help from our award winning community, browse the documentation or watch some free videos on how to build a simple site, how to use packages and a quick guide to the Umbraco terminology]]>
+    </key>
     <key alias="theEndHeader">Umbraco %0% is installed and ready for use</key>
-    <key alias="theEndInstallFailed"><![CDATA[To finish the installation, you'll need to
-        manually edit the <strong>/web.config file</strong> and update the AppSetting key <strong>UmbracoConfigurationStatus</strong> in the bottom to the value of <strong>'%0%'</strong>.]]></key>
-    <key alias="theEndInstallSuccess"><![CDATA[You can get <strong>started instantly</strong> by clicking the "Launch Umbraco" button below. <br />If you are <strong>new to Umbraco</strong>,
-you can find plenty of resources on our getting started pages.]]></key>
-    <key alias="theEndOpenUmbraco"><![CDATA[<h3>Launch Umbraco</h3>
-To manage your website, simply open the Umbraco back office and start adding content, updating the templates and stylesheets or add new functionality]]></key>
+    <key alias="theEndInstallFailed">
+      <![CDATA[To finish the installation, you'll need to
+        manually edit the <strong>/web.config file</strong> and update the AppSetting key <strong>UmbracoConfigurationStatus</strong> in the bottom to the value of <strong>'%0%'</strong>.]]>
+    </key>
+    <key alias="theEndInstallSuccess">
+      <![CDATA[You can get <strong>started instantly</strong> by clicking the "Launch Umbraco" button below. <br />If you are <strong>new to Umbraco</strong>,
+you can find plenty of resources on our getting started pages.]]>
+    </key>
+    <key alias="theEndOpenUmbraco">
+      <![CDATA[<h3>Launch Umbraco</h3>
+To manage your website, simply open the Umbraco back office and start adding content, updating the templates and stylesheets or add new functionality]]>
+    </key>
     <key alias="Unavailable">Connection to database failed.</key>
     <key alias="Version3">Umbraco Version 3</key>
     <key alias="Version4">Umbraco Version 4</key>
     <key alias="watch">Watch</key>
-    <key alias="welcomeIntro"><![CDATA[This wizard will guide you through the process of configuring <strong>Umbraco %0%</strong> for a fresh install or upgrading from version 3.0.
+    <key alias="welcomeIntro">
+      <![CDATA[This wizard will guide you through the process of configuring <strong>Umbraco %0%</strong> for a fresh install or upgrading from version 3.0.
                                 <br /><br />
-                                Press <strong>"next"</strong> to start the wizard.]]></key>
+                                Press <strong>"next"</strong> to start the wizard.]]>
+    </key>
   </area>
   <area alias="language">
     <key alias="cultureCode">Culture Code</key>
@@ -984,7 +1030,8 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="setPasswordConfirmation">Your Password has been updated</key>
     <key alias="resetCodeExpired">The link you have clicked on is invalid or has expired</key>
     <key alias="resetPasswordEmailCopySubject">Umbraco: Reset Password</key>
-    <key alias="resetPasswordEmailCopyFormat"><![CDATA[
+    <key alias="resetPasswordEmailCopyFormat">
+      <![CDATA[
         <html>
 			<head>
 				<meta name='viewport' content='width=device-width'>
@@ -1064,7 +1111,8 @@ To manage your website, simply open the Umbraco back office and start adding con
 				</table>
 			</body>
 		</html>
-	]]></key>
+	]]>
+    </key>
   </area>
   <area alias="main">
     <key alias="dashboard">Dashboard</key>
@@ -1088,7 +1136,8 @@ To manage your website, simply open the Umbraco back office and start adding con
   <area alias="notifications">
     <key alias="editNotifications"><![CDATA[Select your notification for <strong>%0%</strong>]]></key>
     <key alias="notificationsSavedFor">Notification settings saved for</key>
-    <key alias="mailBody"><![CDATA[
+    <key alias="mailBody">
+      <![CDATA[
       Hi %0%
 
       This is an automated mail to inform you that the task '%1%'
@@ -1102,9 +1151,11 @@ To manage your website, simply open the Umbraco back office and start adding con
       Have a nice day!
 
       Cheers from the Umbraco robot
-    ]]></key>
+    ]]>
+    </key>
     <key alias="mailBodyVariantSummary">The following languages have been modified %0%</key>
-    <key alias="mailBodyHtml"><![CDATA[
+    <key alias="mailBodyHtml">
+      <![CDATA[
         <html>
 			<head>
 				<meta name='viewport' content='width=device-width'>
@@ -1179,10 +1230,13 @@ To manage your website, simply open the Umbraco back office and start adding con
 				</table>
 			</body>
 		</html>
-	]]></key>
-    <key alias="mailBodyVariantHtmlSummary"><![CDATA[<p>The following languages have been modified:</p>
+	]]>
+    </key>
+    <key alias="mailBodyVariantHtmlSummary">
+      <![CDATA[<p>The following languages have been modified:</p>
         %0%
-    ]]></key>
+    ]]>
+    </key>
     <key alias="mailSubject">[%0%] Notification about %1% performed on %2%</key>
     <key alias="notifications">Notifications</key>
   </area>
@@ -1190,10 +1244,12 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="actions">Actions</key>
     <key alias="created">Created</key>
     <key alias="createPackage">Create package</key>
-    <key alias="chooseLocalPackageText"><![CDATA[
+    <key alias="chooseLocalPackageText">
+      <![CDATA[
       Choose Package from your machine, by clicking the Browse<br />
          button and locating the package. Umbraco packages usually have a ".umb" or ".zip" extension.
-      ]]></key>
+      ]]>
+    </key>
     <key alias="deletewarning">This will delete the package</key>
     <key alias="dropHere">Drop to upload</key>
     <key alias="includeAllChildNodes">Include all child nodes</key>
@@ -1247,8 +1303,10 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="packageMetaData">Package meta data</key>
     <key alias="packageName">Package name</key>
     <key alias="packageNoItemsHeader">Package doesn't contain any items</key>
-    <key alias="packageNoItemsText"><![CDATA[This package file doesn't contain any items to uninstall.<br/><br/>
-      You can safely remove this from the system by clicking "uninstall package" below.]]></key>
+    <key alias="packageNoItemsText">
+      <![CDATA[This package file doesn't contain any items to uninstall.<br/><br/>
+      You can safely remove this from the system by clicking "uninstall package" below.]]>
+    </key>
     <key alias="packageOptions">Package options</key>
     <key alias="packageReadme">Package readme</key>
     <key alias="packageRepository">Package repository</key>
@@ -1256,9 +1314,11 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="packageUninstalledHeader">Package was uninstalled</key>
     <key alias="packageUninstalledText">The package was successfully uninstalled</key>
     <key alias="packageUninstallHeader">Uninstall package</key>
-    <key alias="packageUninstallText"><![CDATA[You can unselect items you do not wish to remove, at this time, below. When you click "confirm uninstall" all checked-off items will be removed.<br />
+    <key alias="packageUninstallText">
+      <![CDATA[You can unselect items you do not wish to remove, at this time, below. When you click "confirm uninstall" all checked-off items will be removed.<br />
       <span style="color: Red; font-weight: bold;">Notice:</span> any documents, media etc depending on the items you remove, will stop working, and could lead to system instability,
-      so uninstall with caution. If in doubt, contact the package author.]]></key>
+      so uninstall with caution. If in doubt, contact the package author.]]>
+    </key>
     <key alias="packageVersion">Package version</key>
     <key alias="packageVersionUpgrade">Upgrading from version</key>
     <key alias="packageAlreadyInstalled">Package already installed</key>
@@ -1299,24 +1359,36 @@ To manage your website, simply open the Umbraco back office and start adding con
   </area>
   <area alias="publish">
     <key alias="invalidPublishBranchPermissions">Insufficient user permissions to publish all descendant documents</key>
-    <key alias="contentPublishedFailedIsTrashed"><![CDATA[
+    <key alias="contentPublishedFailedIsTrashed">
+      <![CDATA[
       %0% could not be published because the item is in the recycle bin.
-    ]]></key>
-    <key alias="contentPublishedFailedAwaitingRelease"><![CDATA[
+    ]]>
+    </key>
+    <key alias="contentPublishedFailedAwaitingRelease">
+      <![CDATA[
       %0% could not be published because the item is scheduled for release.
-    ]]></key>
-    <key alias="contentPublishedFailedExpired"><![CDATA[
+    ]]>
+    </key>
+    <key alias="contentPublishedFailedExpired">
+      <![CDATA[
       %0% could not be published because the item has expired.
-    ]]></key>
-    <key alias="contentPublishedFailedInvalid"><![CDATA[
+    ]]>
+    </key>
+    <key alias="contentPublishedFailedInvalid">
+      <![CDATA[
       %0% could not be published because some properties did not pass validation rules.
-    ]]></key>
-    <key alias="contentPublishedFailedByEvent"><![CDATA[
+    ]]>
+    </key>
+    <key alias="contentPublishedFailedByEvent">
+      <![CDATA[
       %0% could not be published, a 3rd party add-in cancelled the action.
-    ]]></key>
-    <key alias="contentPublishedFailedByParent"><![CDATA[
+    ]]>
+    </key>
+    <key alias="contentPublishedFailedByParent">
+      <![CDATA[
       %0% can not be published, because a parent page is not published.
-    ]]></key>
+    ]]>
+    </key>
     <key alias="contentPublishedFailedByMissingName"><![CDATA[%0% can not be published, because its missing a name.]]></key>
     <key alias="contentPublishedFailedReqCultureValidationError">Validation failed for required language '%0%'. This language was saved but not published.</key>
     <key alias="inProgress">Publishing in progress - please wait...</key>
@@ -1324,9 +1396,11 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="nodePublish">%0% has been published</key>
     <key alias="nodePublishAll">%0% and subpages have been published</key>
     <key alias="publishAll">Publish %0% and all its subpages</key>
-    <key alias="publishHelp"><![CDATA[Click <em>Publish</em> to publish <strong>%0%</strong> and thereby making its content publicly available.<br/><br />
+    <key alias="publishHelp">
+      <![CDATA[Click <em>Publish</em> to publish <strong>%0%</strong> and thereby making its content publicly available.<br/><br />
       You can publish this page and all its subpages by checking <em>Include unpublished subpages</em> below.
-      ]]></key>
+      ]]>
+    </key>
   </area>
   <area alias="colorpicker">
     <key alias="noColors">You have not configured any approved colors</key>
@@ -1376,14 +1450,14 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="editscript">Edit script file</key>
   </area>
   <area alias="sections">
-    <key alias="content">المحتوي</key>
-    <key alias="forms">Forms</key>
-    <key alias="media">Media</key>
-    <key alias="member">Members</key>
-    <key alias="packages">Packages</key>
-    <key alias="settings">Settings</key>
-    <key alias="translation">Translation</key>
-    <key alias="users">Users</key>
+    <key alias = "content"> المحتوي </key>
+    <key alias = "Forms"> Forms </key>
+    <key alias = "media"> الوسائط </key>
+    <key alias = "member"> الأعضاء </key>
+    <key alias = "packs "> الحزم </key>
+    <key alias = "settings"> الإعدادات </key>
+    <key alias = "translation"> الترجمة </key>
+    <key alias = "users"> المستخدمون </key>
   </area>
   <area alias="help">
     <key alias="tours">Tours</key>
@@ -1536,40 +1610,46 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="insertDictionaryItemDesc">A dictionary item is a placeholder for a translatable piece of text, which makes it easy to create designs for multilingual websites.</key>
     <key alias="insertMacro">Macro</key>
     <key alias="insertMacroDesc">
-            A Macro is a configurable component which is great for
-            reusable parts of your design, where you need the option to provide parameters,
-            such as galleries, forms and lists.
-        </key>
+      A Macro is a configurable component which is great for
+      reusable parts of your design, where you need the option to provide parameters,
+      such as galleries, forms and lists.
+    </key>
     <key alias="insertPageField">Value</key>
     <key alias="insertPageFieldDesc">Displays the value of a named field from the current page, with options to modify the value or fallback to alternative values.</key>
     <key alias="insertPartialView">Partial view</key>
     <key alias="insertPartialViewDesc">
-            A partial view is a separate template file which can be rendered inside another
-            template, it's great for reusing markup or for separating complex templates into separate files.
-        </key>
+      A partial view is a separate template file which can be rendered inside another
+      template, it's great for reusing markup or for separating complex templates into separate files.
+    </key>
     <key alias="mastertemplate">Master template</key>
     <key alias="noMaster">No master</key>
     <key alias="renderBody">Render child template</key>
-    <key alias="renderBodyDesc"><![CDATA[
+    <key alias="renderBodyDesc">
+      <![CDATA[
      Renders the contents of a child template, by inserting a
      <code>@RenderBody()</code> placeholder.
-      ]]></key>
+      ]]>
+    </key>
     <key alias="defineSection">Define a named section</key>
-    <key alias="defineSectionDesc"><![CDATA[
+    <key alias="defineSectionDesc">
+      <![CDATA[
          Defines a part of your template as a named section by wrapping it in
           <code>@section { ... }</code>. This can be rendered in a
           specific area of the parent of this template, by using <code>@RenderSection</code>.
-      ]]></key>
+      ]]>
+    </key>
     <key alias="renderSection">Render a named section</key>
-    <key alias="renderSectionDesc"><![CDATA[
+    <key alias="renderSectionDesc">
+      <![CDATA[
       Renders a named area of a child template, by inserting a <code>@RenderSection(name)</code> placeholder.
       This renders an area of a child template which is wrapped in a corresponding <code>@section [name]{ ... }</code> definition.
-      ]]></key>
+      ]]>
+    </key>
     <key alias="sectionName">Section Name</key>
     <key alias="sectionMandatory">Section is mandatory</key>
     <key alias="sectionMandatoryDesc">
-            If mandatory, the child template must contain a <code>@section</code> definition, otherwise an error is shown.
-        </key>
+      If mandatory, the child template must contain a <code>@section</code> definition, otherwise an error is shown.
+    </key>
     <key alias="queryBuilder">Query builder</key>
     <key alias="itemsReturned">items returned, in</key>
     <key alias="copyToClipboard">copy to clipboard</key>
@@ -1642,11 +1722,11 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="chooseExtra">Choose extra</key>
     <key alias="chooseDefault">Choose default</key>
     <key alias="areAdded">are added</key>
-        <key alias="warning">Warning</key>
-        <key alias="youAreDeleting">You are deleting the row configuration</key>
-        <key alias="deletingARow">
-            Deleting a row configuration name will result in loss of data for any existing content that is based on this configuration.
-        </key>
+    <key alias="warning">Warning</key>
+    <key alias="youAreDeleting">You are deleting the row configuration</key>
+    <key alias="deletingARow">
+      Deleting a row configuration name will result in loss of data for any existing content that is based on this configuration.
+    </key>
   </area>
   <area alias="contentTypeEditor">
     <key alias="compositions">Compositions</key>
@@ -1788,7 +1868,8 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="DownloadXmlDTD">Download XML DTD</key>
     <key alias="fields">Fields</key>
     <key alias="includeSubpages">Include subpages</key>
-    <key alias="mailBody"><![CDATA[
+    <key alias="mailBody">
+      <![CDATA[
       Hi %0%
 
       This is an automated mail to inform you that the document '%1%'
@@ -1802,7 +1883,8 @@ To manage your website, simply open the Umbraco back office and start adding con
       Have a nice day!
 
       Cheers from the Umbraco robot
-    ]]></key>
+    ]]>
+    </key>
     <key alias="noTranslators">No translator users found. Please create a translator user before you start sending content to translation</key>
     <key alias="pageHasBeenSendToTranslation">The page '%0%' has been send to translation</key>
     <key alias="sendToTranslate">Send the page '%0%' to translation</key>
@@ -1951,7 +2033,8 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="sendInvite">Send invite</key>
     <key alias="backToUsers">Back to users</key>
     <key alias="inviteEmailCopySubject">Umbraco: Invitation</key>
-    <key alias="inviteEmailCopyFormat"><![CDATA[
+    <key alias="inviteEmailCopyFormat">
+      <![CDATA[
         <html>
 			<head>
 				<meta name='viewport' content='width=device-width'>
@@ -2041,7 +2124,8 @@ To manage your website, simply open the Umbraco back office and start adding con
 					</tr>
 				</table>
 			</body>
-    </html>]]></key>
+    </html>]]>
+    </key>
     <key alias="invite">Invite</key>
     <key alias="defaultInvitationMessage">Resending invitation...</key>
     <key alias="deleteUser">Delete User</key>
@@ -2191,7 +2275,7 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="checkAllGroups">Check All Groups</key>
     <key alias="checkGroup">Check group</key>
     <key alias="helpText">
-        <![CDATA[
+      <![CDATA[
         <p>The health checker evaluates various areas of your site for best practice settings, configuration, potential problems, etc. You can easily fix problems by pressing a button.
         You can add your own health checks, have a look at <a href="https://our.umbraco.com/documentation/Extending/Healthcheck/" target="_blank" class="btn-link -underline">the documentation for more information</a> about custom health checks.</p>
         ]]>
@@ -2296,9 +2380,9 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="name">Name</key>
     <key alias="addNewRow">Add new row</key>
     <key alias="tabExpand">View more options</key>
-      <key alias="hasTranslation">Has translation</key>
-      <key alias="noTranslation">Missing translation</key>
-      <key alias="dictionaryListCaption">Dictionary items</key>
+    <key alias="hasTranslation">Has translation</key>
+    <key alias="noTranslation">Missing translation</key>
+    <key alias="dictionaryListCaption">Dictionary items</key>
   </area>
   <area alias="references">
     <key alias="tabName">References</key>
@@ -2315,36 +2399,36 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="labelUsedByMedia">Used in Media</key>
   </area>
   <area alias="logViewer">
-      <key alias="deleteSavedSearch">Delete Saved Search</key>
-      <key alias="logLevels">Log Levels</key>
-      <key alias="savedSearches">Saved Searches</key>
-      <key alias="saveSearch">Save Search</key>
-      <key alias="saveSearchDescription">Enter a friendly name for your search query</key>
-      <key alias="filterSearch">Filter Search</key>
-      <key alias="totalItems">Total Items</key>
-      <key alias="timestamp">Timestamp</key>
-      <key alias="level">Level</key>
-      <key alias="machine">Machine</key>
-      <key alias="message">Message</key>
-      <key alias="exception">Exception</key>
-      <key alias="properties">Properties</key>
-      <key alias="searchWithGoogle">Search With Google</key>
-      <key alias="searchThisMessageWithGoogle">Search this message with Google</key>
-      <key alias="searchWithBing">Search With Bing</key>
-      <key alias="searchThisMessageWithBing">Search this message with Bing</key>
-      <key alias="searchOurUmbraco">Search Our Umbraco</key>
-      <key alias="searchThisMessageOnOurUmbracoForumsAndDocs">Search this message on Our Umbraco forums and docs</key>
-      <key alias="searchOurUmbracoWithGoogle">Search Our Umbraco with Google</key>
-      <key alias="searchOurUmbracoForumsUsingGoogle">Search Our Umbraco forums using Google</key>
-      <key alias="searchUmbracoSource">Search Umbraco Source</key>
-      <key alias="searchWithinUmbracoSourceCodeOnGithub">Search within Umbraco source code on Github</key>
-      <key alias="searchUmbracoIssues">Search Umbraco Issues</key>
-      <key alias="searchUmbracoIssuesOnGithub">Search Umbraco Issues on Github</key>
-      <key alias="deleteThisSearch">Delete this search</key>
-      <key alias="findLogsWithRequestId">Find Logs with Request ID</key>
-      <key alias="findLogsWithNamespace">Find Logs with Namespace</key>
-      <key alias="findLogsWithMachineName">Find Logs with Machine Name</key>
-      <key alias="open">Open</key>
+    <key alias="deleteSavedSearch">Delete Saved Search</key>
+    <key alias="logLevels">Log Levels</key>
+    <key alias="savedSearches">Saved Searches</key>
+    <key alias="saveSearch">Save Search</key>
+    <key alias="saveSearchDescription">Enter a friendly name for your search query</key>
+    <key alias="filterSearch">Filter Search</key>
+    <key alias="totalItems">Total Items</key>
+    <key alias="timestamp">Timestamp</key>
+    <key alias="level">Level</key>
+    <key alias="machine">Machine</key>
+    <key alias="message">Message</key>
+    <key alias="exception">Exception</key>
+    <key alias="properties">Properties</key>
+    <key alias="searchWithGoogle">Search With Google</key>
+    <key alias="searchThisMessageWithGoogle">Search this message with Google</key>
+    <key alias="searchWithBing">Search With Bing</key>
+    <key alias="searchThisMessageWithBing">Search this message with Bing</key>
+    <key alias="searchOurUmbraco">Search Our Umbraco</key>
+    <key alias="searchThisMessageOnOurUmbracoForumsAndDocs">Search this message on Our Umbraco forums and docs</key>
+    <key alias="searchOurUmbracoWithGoogle">Search Our Umbraco with Google</key>
+    <key alias="searchOurUmbracoForumsUsingGoogle">Search Our Umbraco forums using Google</key>
+    <key alias="searchUmbracoSource">Search Umbraco Source</key>
+    <key alias="searchWithinUmbracoSourceCodeOnGithub">Search within Umbraco source code on Github</key>
+    <key alias="searchUmbracoIssues">Search Umbraco Issues</key>
+    <key alias="searchUmbracoIssuesOnGithub">Search Umbraco Issues on Github</key>
+    <key alias="deleteThisSearch">Delete this search</key>
+    <key alias="findLogsWithRequestId">Find Logs with Request ID</key>
+    <key alias="findLogsWithNamespace">Find Logs with Namespace</key>
+    <key alias="findLogsWithMachineName">Find Logs with Machine Name</key>
+    <key alias="open">Open</key>
   </area>
   <area alias="clipboard">
     <key alias="labelForCopyAllEntries">Copy %0%</key>
@@ -2361,7 +2445,7 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="refreshStatus">Refresh status</key>
     <key alias="memoryCache">Memory Cache</key>
     <key alias="memoryCacheDescription">
-        <![CDATA[
+      <![CDATA[
             This button lets you reload the in-memory cache, by entirely reloading it from the database
     cache (but it does not rebuild that database cache). This is relatively fast.
     Use it when you think that the memory cache has not been properly refreshed, after some events
@@ -2372,7 +2456,7 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="reload">Reload</key>
     <key alias="databaseCache">Database Cache</key>
     <key alias="databaseCacheDescription">
-        <![CDATA[
+      <![CDATA[
     This button lets you rebuild the database cache, ie the content of the cmsContentNu table.
     <strong>Rebuilding can be expensive.</strong>
     Use it when reloading is not enough, and you think that the database cache has not been
@@ -2382,7 +2466,7 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="rebuild">Rebuild</key>
     <key alias="internals">Internals</key>
     <key alias="internalsDescription">
-        <![CDATA[
+      <![CDATA[
     This button lets you trigger a NuCache snapshots collection (after running a fullCLR GC).
     Unless you know what that means, you probably do <em>not</em> need to use it.
     ]]>
@@ -2394,7 +2478,7 @@ To manage your website, simply open the Umbraco back office and start adding con
   <area alias="profiling">
     <key alias="performanceProfiling">Performance profiling</key>
     <key alias="performanceProfilingDescription">
-        <![CDATA[
+      <![CDATA[
                 <p>
                     Umbraco currently runs in debug mode. This means you can use the built-in performance profiler to assess the performance when rendering pages.
                 </p>
@@ -2411,14 +2495,14 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="activateByDefault">Activate the profiler by default</key>
     <key alias="reminder">Friendly reminder</key>
     <key alias="reminderDescription">
-        <![CDATA[
+      <![CDATA[
             <p>
                 You should never let a production site run in debug mode. Debug mode is turned off by setting <b>debug="false"</b> on the <b>&lt;compilation /&gt;</b> element in web.config.
             </p>
         ]]>
     </key>
     <key alias="profilerEnabledDescription">
-        <![CDATA[
+      <![CDATA[
             <p>
                 Umbraco currently does not run in debug mode, so you can't use the built-in profiler. This is how it should be for a production site.
             </p>
@@ -2431,7 +2515,7 @@ To manage your website, simply open the Umbraco back office and start adding con
   <area alias="settingsDashboardVideos">
     <key alias="trainingHeadline">Hours of Umbraco training videos are only a click away</key>
     <key alias="trainingDescription">
-        <![CDATA[
+      <![CDATA[
         <p>Want to master Umbraco? Spend a couple of minutes learning some best practices by watching one of these videos about using Umbraco. And visit <a href="http://umbraco.tv" target="_blank">umbraco.tv</a> for even more Umbraco videos</p>
     ]]>
     </key>
@@ -2442,27 +2526,27 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="startDescription">This section contains the building blocks for your Umbraco site. Follow the below links to find out more about working with the items in the Settings section</key>
     <key alias="more">Find out more</key>
     <key alias="bulletPointOne">
-        <![CDATA[
+      <![CDATA[
             Read more about working with the items in Settings <a class="btn-link -underline" href="https://our.umbraco.com/documentation/Getting-Started/Backoffice/Sections/" target="_blank">in the Documentation section</a> of Our Umbraco
         ]]>
     </key>
     <key alias="bulletPointTwo">
-        <![CDATA[
+      <![CDATA[
             Ask a question in the <a class="btn-link -underline" href="https://our.umbraco.com/forum" target="_blank">Community Forum</a>
         ]]>
     </key>
     <key alias="bulletPointThree">
-        <![CDATA[
+      <![CDATA[
             Watch our <a class="btn-link -underline" href="https://umbraco.tv" target="_blank">tutorial videos</a> (some are free, some require a subscription)
         ]]>
     </key>
     <key alias="bulletPointFour">
-        <![CDATA[
+      <![CDATA[
             Find out about our <a class="btn-link -underline" href="https://umbraco.com/products/" target="_blank">productivity boosting tools and commercial support</a>
         ]]>
     </key>
     <key alias="bulletPointFive">
-        <![CDATA[
+      <![CDATA[
             Find out about real-life <a class="btn-link -underline" href="https://umbraco.com/training/" target="_blank">training and certification</a> opportunities
         ]]>
     </key>
@@ -2519,7 +2603,7 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="whatDescription">Content Templates are pre-defined content that can be selected when creating a new content node.</key>
     <key alias="createHeadline">How do I create a Content Template?</key>
     <key alias="createDescription">
-        <![CDATA[
+      <![CDATA[
             <p>There are two ways to create a Content Template:</p>
             <ul>
                 <li>Right-click a content node and select "Create Content Template" to create a new Content Template.</li>
