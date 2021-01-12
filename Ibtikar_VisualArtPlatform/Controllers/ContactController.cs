@@ -27,6 +27,12 @@ namespace Ibtikar_VisualArtPlatform.Controllers
         public ActionResult SubmitContactForm(ContactUsFormViewModel form)
         {
             string Content = string.Empty;
+            if (!ModelState.IsValid)
+            {
+                TempData["ResultMessage"] = Umbraco.GetDictionaryValue("EnterAllRequiredFields");
+                return CurrentUmbracoPage();
+
+            }
             if (this.SendEmail(form))
             {
                 Content = Umbraco.Content(1055).Value<string>("successMessage");

@@ -5,6 +5,7 @@
     var homepage = Model.AncestorOrSelf<ContentModels.Home>();
     var NewsContent = homepage.Children<ContentModels.News>().FirstOrDefault();
     var News = NewsContent.Children<ContentModels.SingleNews>();
+    var isEnglish = UmbracoContext.VariationContextAccessor?.VariationContext?.Culture == "en-US";
 
     bool DateInside(DateTime checkDate, DateTime fromDate, DateTime? lastDate = null)
     {
@@ -50,7 +51,7 @@
                     data-mode="radio"
                     data-selected="true"
                     name="name1">
-                All
+                @Umbraco.GetDictionaryValue("ShowAll")
             </button>
 
             <button class="default-btn btn-outline" data-jplist-control="buttons-path-filter"
@@ -58,7 +59,7 @@
                     data-group="data-group-1"
                     data-mode="radio"
                     name="name1">
-                This week's news'
+                @Umbraco.GetDictionaryValue("Weeklynews")
             </button>
 
             <button class="default-btn btn-outline" data-jplist-control="buttons-path-filter"
@@ -66,14 +67,14 @@
                     data-group="data-group-1"
                     data-mode="radio"
                     name="name1">
-                this month's news
+                @Umbraco.GetDictionaryValue("MonthlyNews")
             </button>
             <button class="default-btn btn-outline" data-jplist-control="buttons-path-filter"
                     data-path=".year"
                     data-group="data-group-1"
                     data-mode="radio"
                     name="name1">
-                this year's news
+                @Umbraco.GetDictionaryValue("YearlyNews")
             </button>
         </div>
 
@@ -132,15 +133,31 @@
 
                 <div class="row col-lg-12 col-md-12">
                     <div class="pagination-area">
-                        <a data-type="prev" class="prev page-numbers">
-                            <i class="bx bx-chevron-left"></i>
-                        </a>
-                        <div class="jplist-holder" data-type="pages">
-                            <a class="page-numbers" data-type="page">{pageNumber}</a>
-                        </div>
-                        <a data-type="next" class="next page-numbers">
-                            <i class="bx bx-chevron-right"></i>
-                        </a>
+                        @if (isEnglish)
+                        {
+                            <a data-type="prev" class="prev page-numbers">
+                                <i class="bx bx-chevron-left"></i>
+                            </a>
+                            <div class="jplist-holder" data-type="pages">
+                                <a class="page-numbers" data-type="page">{pageNumber}</a>
+                            </div>
+                            <a data-type="next" class="next page-numbers">
+                                <i class="bx bx-chevron-right"></i>
+                            </a>
+                        }
+                        else
+                        {
+                            <a data-type="prev" class="next page-numbers">
+                                <i class="bx bx-chevron-right"></i>
+                            </a>
+                            <div class="jplist-holder" data-type="pages">
+                                <a class="page-numbers" data-type="page">{pageNumber}</a>
+                            </div>
+                            <a data-type="next" class="prev page-numbers">
+                                <i class="bx bx-chevron-left"></i>
+                            </a>
+                        }
+
                     </div>
                 </div>
                 @*<div class="row">
