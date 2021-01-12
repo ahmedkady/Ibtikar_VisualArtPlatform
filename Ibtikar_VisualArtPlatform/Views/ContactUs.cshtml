@@ -68,47 +68,50 @@
                             <p>@contactus.SubTitle</p>
 
                         </div>
-
+                        @if (TempData["ResultMessage"] != null)
+                        {
+                            <h4 style="color : red;">@TempData["ResultMessage"]</h4>
+                        }
                         <div id="form-outer">
 
-            @using (Html.BeginUmbracoForm("SubmitContactForm", "Contact", System.Web.Mvc.FormMethod.Post, new { id = "contactusForm" }))
-            {
-                <div class="row">
-                    @Html.AntiForgeryToken()
-                    <div class="col-lg-6 col-sm-6">
-                        <div class="form-group">
-                            <label>@Umbraco.GetDictionaryValue("YourName")</label>
-                            <input type="text" name="Name" id="name" class="form-control" required data-error="">
-                            <div class="help-block with-errors"></div>
-                        </div>
-                    </div>
+                            @using (Html.BeginUmbracoForm("SubmitContactForm", "Contact", System.Web.Mvc.FormMethod.Post, new { id = "contactusForm" }))
+                            {
+                                <div class="row">
+                                    @Html.AntiForgeryToken()
+                                    <div class="col-lg-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label>@Umbraco.GetDictionaryValue("YourName")</label>
+                                            <input type="text" name="Name" id="name" class="form-control" required data-error="">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
 
-                    <div class="col-lg-6 col-sm-6">
-                        <div class="form-group">
-                            <label>@Umbraco.GetDictionaryValue("YourEmail")</label>
-                            <input type="email" name="Email" id="email" class="form-control" required data-error="">
-                            <div class="help-block with-errors"></div>
-                        </div>
-                    </div>
+                                    <div class="col-lg-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label>@Umbraco.GetDictionaryValue("YourEmail")</label>
+                                            <input type="email" name="Email" id="email" class="form-control" required data-error="">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
 
-                    <div class="col-12">
-                        <div class="form-group">
-                            <label>@Umbraco.GetDictionaryValue("YourQuestion")</label>
-                            <textarea name="Message" class="form-control" id="message" cols="30" rows="10" required data-error=""></textarea>
-                            <div class="help-block with-errors"></div>
-                        </div>
-                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label>@Umbraco.GetDictionaryValue("YourQuestion")</label>
+                                            <textarea name="Message" class="form-control" id="message" cols="30" rows="10" required data-error=""></textarea>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
 
-                    <div class="col-lg-12 col-md-12">
-                        <button type="submit" class="default-btn btn-two">
-                            @Umbraco.GetDictionaryValue("Submit")
-                        </button>
-                        <div id="" class="h3 text-center hidden"></div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-            }
-        </div>
+                                    <div class="col-lg-12 col-md-12">
+                                        <button type="submit" class="default-btn btn-two">
+                                            @Umbraco.GetDictionaryValue("Submit")
+                                        </button>
+                                        <div id="" class="h3 text-center hidden"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
 
                     </div>
                 </div>

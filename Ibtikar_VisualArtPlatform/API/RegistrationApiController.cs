@@ -17,7 +17,6 @@ namespace Ibtikar_VisualArtPlatform.API
         public RegistrationApiController()
         {
             _memberService = Services.MemberService;
-
         }
  
         [System.Web.Http.HttpGet]
@@ -27,10 +26,11 @@ namespace Ibtikar_VisualArtPlatform.API
             {
                 return new HttpNotFoundResult();
             }
+            int ContentPageId = int.Parse(System.Web.Configuration.WebConfigurationManager.AppSettings["ContentPage:Login"]);
             var Member = _memberService.GetMembersByPropertyValue("activationCode", activationCode).FirstOrDefault();
             Member.IsApproved = true;
             _memberService.Save(Member);
-            return new RedirectToUmbracoPageResult(1065);
+            return new RedirectToUmbracoPageResult(ContentPageId);
         }
     }
 

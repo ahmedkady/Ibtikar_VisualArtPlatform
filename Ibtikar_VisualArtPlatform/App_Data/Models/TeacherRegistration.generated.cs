@@ -21,7 +21,7 @@ namespace Umbraco.Web.PublishedModels
 {
 	/// <summary>Teacher Registration</summary>
 	[PublishedModel("teacherRegistration")]
-	public partial class TeacherRegistration : PublishedContentModel, IBasicRegistrationControls, IHeaderControls
+	public partial class TeacherRegistration : PublishedContentModel, IBasicRegistrationControls, IHeaderControls, INotificationControls
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -155,5 +155,26 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
 		[ImplementPropertyType("umbracoNaviHide")]
 		public bool UmbracoNaviHide => global::Umbraco.Web.PublishedModels.HeaderControls.GetUmbracoNaviHide(this);
+
+		///<summary>
+		/// Email Exists
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("emailExists")]
+		public string EmailExists => global::Umbraco.Web.PublishedModels.NotificationControls.GetEmailExists(this);
+
+		///<summary>
+		/// Error Message
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("errorMessage")]
+		public string ErrorMessage => global::Umbraco.Web.PublishedModels.NotificationControls.GetErrorMessage(this);
+
+		///<summary>
+		/// Success Message
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.9.1")]
+		[ImplementPropertyType("successMessage")]
+		public string SuccessMessage => global::Umbraco.Web.PublishedModels.NotificationControls.GetSuccessMessage(this);
 	}
 }

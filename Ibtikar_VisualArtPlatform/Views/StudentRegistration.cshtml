@@ -18,9 +18,9 @@
             <div class="contact-form-action">
                 @using (Html.BeginUmbracoForm("RegisterStudent", "Registraion"))
                 {
-                    if (TempData["InvalidModelState"] != null)
+                    if (TempData["ResultContent"] != null)
                     {
-                        <label style="color:red;">Please make sure to enter al required fields</label>
+                        <label style="color:red;">@TempData["ResultContent"]</label>
                     }
                     <div class="row">
                         <div class="col-12">
@@ -57,11 +57,11 @@
                             </div>
                         </div>
                         @*<div class="col-12">
-                            <div class="form-group">
-                                <label>@Model.School</label>
-                                <input class="form-control" type="text" name="School" value="@RegistraionVM.School">
-                            </div>
-                        </div>*@
+                    <div class="form-group">
+                        <label>@Model.School</label>
+                        <input class="form-control" type="text" name="School" value="@RegistraionVM.School">
+                    </div>
+                </div>*@
                         @Html.Partial("Nationalities", Model)
                         <div class="col-12">
                             <div class="form-group">
@@ -107,8 +107,8 @@
                         </div>
 
                         @*<div class="col-12">
-                                <p>Have an account? <a href="log-in.html">Login Now!</a></p>
-                            </div>*@
+                    <p>Have an account? <a href="log-in.html">Login Now!</a></p>
+                </div>*@
                     </div>
                 }
             </div>

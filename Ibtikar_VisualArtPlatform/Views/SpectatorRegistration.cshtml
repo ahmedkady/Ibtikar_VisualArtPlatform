@@ -19,77 +19,77 @@
             <div class="contact-form-action">
                 @using (Html.BeginUmbracoForm("RegisterSpectator", "Registraion"))
                 {
-                    if (TempData["InvalidModelState"] != null)
+                    if (TempData["ResultContent"] != null)
                     {
-                        <label style="color:red;">Please make sure to enter al required fields</label>
+                        <label style="color:red;">@TempData["ResultContent"]</label>
                     }
-            <div class="row">
-                <div class="col-12">
-                    <div class="form-group">
-                        <label>@Model.FullName</label>
-                        <input class="form-control" type="text" name="Name" value="@RegistraionVM.Name">
-                    </div>
-                </div>
-
-                <div class="col-12">
-                    <div class="form-group">
-                        <label>@Model.Email</label>
-                        <input class="form-control" type="email" name="Email" value="@RegistraionVM.Email">
-                    </div>
-                </div>
-
-                <div class="col-12">
-                    <div class="form-group">
-                        <label>@Model.Password</label>
-                        <input class="form-control" type="password" name="Password" value="@RegistraionVM.Password">
-                    </div>
-                </div>
-
-                <div class="col-12">
-                    <div class="form-group">
-                        <label>@Model.Age</label>
-                        <input class="form-control" type="text" name="Age" value="@RegistraionVM.Age">
-                    </div>
-                </div>
-                @Html.Partial("Nationalities", Model)
-                <div class="col-12">
-                    <div class="form-group">
-                        <label>@Model.Gender</label>
-                        <select name="Gender" class="form-control" id="">
-                            @if (Culture.ToLower().Contains("ar"))
-                            {
-                                <option value="Male">ذكر</option>
-                                <option value="Female">أنثى</option>
-                            }
-                            else
-                            {
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                            }
-                        </select>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="form-group">
-                        <label>@Model.Education</label>
-                        @Html.Partial("~/Views/Qualifications.cshtml")
-                    </div>
-                </div>
-
-                <div class="col-12">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <button class="default-btn register" type="submit">
-                                @Model.RegisterButton
-                            </button>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>@Model.FullName</label>
+                                <input class="form-control" type="text" name="Name" value="@RegistraionVM.Name">
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                @*<div class="col-12">
-            <p>Have an account? <a href="log-in.html">Login Now!</a></p>
-        </div>*@
-            </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>@Model.Email</label>
+                                <input class="form-control" type="email" name="Email" value="@RegistraionVM.Email">
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>@Model.Password</label>
+                                <input class="form-control" type="password" name="Password" value="@RegistraionVM.Password">
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>@Model.Age</label>
+                                <input class="form-control" type="text" name="Age" value="@RegistraionVM.Age">
+                            </div>
+                        </div>
+                        @Html.Partial("Nationalities", Model)
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>@Model.Gender</label>
+                                <select name="Gender" class="form-control" id="">
+                                    @if (Culture.ToLower().Contains("ar"))
+                                    {
+                                        <option value="Male">ذكر</option>
+                                        <option value="Female">أنثى</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>@Model.Education</label>
+                                @Html.Partial("~/Views/Qualifications.cshtml")
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6">
+                                    <button class="default-btn register" type="submit">
+                                        @Model.RegisterButton
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        @*<div class="col-12">
+                    <p>Have an account? <a href="log-in.html">Login Now!</a></p>
+                </div>*@
+                    </div>
                 }
             </div>
         </div>

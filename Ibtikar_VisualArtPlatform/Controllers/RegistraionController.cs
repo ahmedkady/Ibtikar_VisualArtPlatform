@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Ibtikar_VisualArtPlatform.ViewModels;
 using Umbraco.Core;
+using Umbraco.Web;
 using Umbraco.Core.Models;
 using Umbraco.Core.Services;
 using Umbraco.Core.Logging;
@@ -41,10 +42,20 @@ namespace Ibtikar_VisualArtPlatform.Controllers
         [HttpPost]
         public ActionResult RegisterTeacher(TeacherRegistrationViewModel command)
         {
+            int ContentPageId = int.Parse(System.Web.Configuration.WebConfigurationManager.AppSettings["ContentPage:TeacherRegister"]);
+            string ResultContent = string.Empty;
             string ResumePath = string.Empty;
             if (!ModelState.IsValid)
             {
-                TempData["InvalidModelState"] = "Invalid";
+                ResultContent = Umbraco.Content(ContentPageId).Value<string>("errorMessage");
+                TempData["ResultContent"] = ResultContent;
+                return RedirectToCurrentUmbracoPage();
+            }
+            var ExistMember = _memberService.GetByEmail(command.Email);
+            if (ExistMember != null)
+            {
+                ResultContent = Umbraco.Content(ContentPageId).Value<string>("emailExists");
+                TempData["ResultContent"] = ResultContent;
                 return RedirectToCurrentUmbracoPage();
             }
             if (Request.Files.Count > 0)
@@ -76,16 +87,34 @@ namespace Ibtikar_VisualArtPlatform.Controllers
             }
             _memberService.Save(newMember);
             _memberService.SavePassword(newMember, command.Password);
-            this.SendActivationMail(ActivationCode, newMember.Email);
+            if (this.SendActivationMail(ActivationCode, newMember.Email))
+            {
+                ResultContent = Umbraco.Content(ContentPageId).Value<string>("successMessage");
+            }
+            else
+            {
+                //1100
+                ResultContent = Umbraco.Content(ContentPageId).Value<string>("errorMessage");
+            }
+            TempData["ResultContent"] = ResultContent;
             return RedirectToCurrentUmbracoPage();
         }
         [HttpPost]
         public ActionResult RegisterStudent(StudentRegistrationViewModel command)
         {
-
+            int ContentPageId = int.Parse(System.Web.Configuration.WebConfigurationManager.AppSettings["ContentPage:StudentRegister"]);
+            string ResultContent = string.Empty;
             if (!ModelState.IsValid)
             {
-                TempData["InvalidModelState"] = "Invalid";
+                ResultContent = Umbraco.Content(ContentPageId).Value<string>("errorMessage");
+                TempData["ResultContent"] = ResultContent;
+                return RedirectToCurrentUmbracoPage();
+            }
+            var ExistMember = _memberService.GetByEmail(command.Email);
+            if (ExistMember != null)
+            {
+                ResultContent = Umbraco.Content(ContentPageId).Value<string>("emailExists");
+                TempData["ResultContent"] = ResultContent;
                 return RedirectToCurrentUmbracoPage();
             }
             var newMember = _memberService.CreateMemberWithIdentity(command.Email, command.Email, command.Name, "Student");
@@ -109,16 +138,36 @@ namespace Ibtikar_VisualArtPlatform.Controllers
             }
             _memberService.Save(newMember);
             _memberService.SavePassword(newMember, command.Password);
+            if (this.SendActivationMail(ActivationCode,newMember.Email))
+            {
+                ResultContent = Umbraco.Content(ContentPageId).Value<string>("successMessage");
+            }
+            else
+            {
+                ResultContent = Umbraco.Content(ContentPageId).Value<string>("errorMessage");
+            }
+            TempData["ResultContent"] = ResultContent;
             return RedirectToCurrentUmbracoPage();
         }
         [HttpPost]
         public ActionResult RegisterSpectator(RegistraionViewModel command)
         {
+            int ContentPageId = int.Parse(System.Web.Configuration.WebConfigurationManager.AppSettings["ContentPage:SpectatorRegister"]);
+            string ResultContent = string.Empty;
             if (!ModelState.IsValid)
             {
-                TempData["InvalidModelState"] = "Invalid";
+                ResultContent = Umbraco.Content(ContentPageId).Value<string>("errorMessage");
+                TempData["ResultContent"] = ResultContent;
                 return RedirectToCurrentUmbracoPage();
             }
+            var ExistMember = _memberService.GetByEmail(command.Email);
+            if (ExistMember != null)
+            {
+                ResultContent = Umbraco.Content(ContentPageId).Value<string>("emailExists");
+                TempData["ResultContent"] = ResultContent;
+                return RedirectToCurrentUmbracoPage();
+            }
+            ResultContent = Umbraco.Content(1100).Value<string>("successMessage");
             var newMember = _memberService.CreateMemberWithIdentity(command.Email, command.Email, command.Name, "Spectator");
             newMember.IsApproved = true;
             newMember.SetValue("Gender", command.Gender);
@@ -134,7 +183,7 @@ namespace Ibtikar_VisualArtPlatform.Controllers
             }
             _memberService.Save(newMember);
             _memberService.SavePassword(newMember, command.Password);
-
+            TempData["ResultContent"] = ResultContent;
             return RedirectToCurrentUmbracoPage();
         }
         public bool SendActivationMail(string ActivationCode, string MemberEmail)

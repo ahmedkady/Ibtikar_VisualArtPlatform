@@ -22,7 +22,7 @@ namespace Ibtikar_VisualArtPlatform.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult SubmitLogin(LoginViewModel model, string returnUrl)
         {
-           
+         
             if (ModelState.IsValid)
             {
                 if (Membership.ValidateUser(model.Username, model.Password))

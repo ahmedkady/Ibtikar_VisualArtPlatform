@@ -18,9 +18,9 @@
             <div class="contact-form-action">
                 @using (Html.BeginUmbracoForm("RegisterTeacher", "Registraion"))
                 {
-                    if (TempData["InvalidModelState"] != null)
+                    if (TempData["ResultContent"] != null)
                     {
-                        <label style="color:red;">Please make sure to enter al required fields</label>
+                        <label style="color:red;">@TempData["ResultContent"]</label>
                     }
             <div class="row">
                 <div class="col-12">

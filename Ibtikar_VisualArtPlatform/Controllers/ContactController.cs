@@ -26,7 +26,17 @@ namespace Ibtikar_VisualArtPlatform.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult SubmitContactForm(ContactUsFormViewModel form)
         {
-            this.SendEmail(form);
+            string Content = string.Empty;
+            if (this.SendEmail(form))
+            {
+                Content = Umbraco.Content(1055).Value<string>("successMessage");
+            }
+            else
+            {
+                Content = Umbraco.Content(2220).Value<string>("errorMessage");
+            }
+            TempData["ResultMessage"] = Content;
+
             return CurrentUmbracoPage();
         }
         public bool SendEmail(ContactUsFormViewModel model)
