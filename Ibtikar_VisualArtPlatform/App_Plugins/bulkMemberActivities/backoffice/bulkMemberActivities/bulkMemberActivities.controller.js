@@ -1,88 +1,72 @@
-﻿angular.module("umbraco").controller("Umbraco.Members.BulkMemberActivities", function ($scope, bulkMemberActivitiesService, listViewHelper ) {
+﻿var app = angular.module("umbraco");
+app.requires.push('angularUtils.directives.dirPagination');
+app.controller("Umbraco.Members.BulkMemberActivities", function ($scope, bulkMemberActivitiesService, notificationsService) {
     vm = this;
-    vm.testnew = "TEst";
-    console.log("enterned");
-    vm.content = { name: "Test 2" };
-    bulkMemberActivitiesService.getMembers()
-        .then(function (data) {
+    vm.members = [];
+    vm.filterText = "";
+    vm.isLoading = true;
+    vm.currentPage = 1;
 
-            vm.members = data;
-            console.log(vm.members);
+    // on init methods
+    loadMembers();
+
+    // methods
+    function loadMembers() {
+        bulkMemberActivitiesService.getMembers()
+            .then(function (data) {
+                vm.members = data;
+                vm.isLoading = false;
+            });
+    }
+
+    $scope.selectAll = function () {
+        if (vm.members.filter((m) => m.isSelected).length < vm.members.length) {
+            angular.forEach(vm.members, function (value, key) {
+                value.isSelected = true;
+            });
+        } else {
+            angular.forEach(vm.members, function (value, key) {
+                value.isSelected = false;
+            });
+        }
+    }
+
+    $scope.clearSelection = function () {
+        angular.forEach(vm.members, function (value, key) {
+            value.isSelected = false;
         });
-    vm.items = [
-        {
-            "icon": "icon-document",
-            "name": "My node 2",
-            "published": true,
-            "description": "A short description of my node",
-            "author": "Author 1"
-        },
-        {
-            "icon": "icon-document",
-            "name": "My node 1",
-            "published": true,
-            "description": "A short description of my node",
-            "author": "Author 2"
-        }
-    ];
-        
+    }
 
-    vm.options = {
-        filter: '',
-        orderBy: "name",
-        orderDirection: "asc",
-        includeProperties: [
-            { alias: "author", header: "Author" },
-            { alias: "description", header: "description" },
-            { alias: "name", header: "name" },
-            { alias: "published", header: "published" }
-        ],
-        bulkActionsAllowed: true
+    $scope.toggleSelection = function (member) {
+        member.isSelected = !member.isSelected;
+    }
+
+    $scope.getSelectedCount = function () {
+        return vm.members.filter((m) => m.isSelected).length;
+    }
+
+    $scope.activateMembers = function () {
+        vm.isLoading = true;
+        bulkMemberActivitiesService.activateMembers(vm.members.filter((m) => m.isSelected).map(m => m.Id))
+            .then(function () {
+                loadMembers();
+                notificationsService.success("Members Activated Successfully", "Success!");
+                vm.isLoading = false;
+            });
+    }
+
+    $scope.deactivateMembers = function () {
+        vm.isLoading = true;
+        bulkMemberActivitiesService.deactivateMembers(vm.members.filter((m) => m.isSelected).map(m => m.Id))
+            .then(function () {
+                loadMembers();
+                notificationsService.success("Members Deactivated Successfully", "Success!");
+                vm.isLoading = false;
+            });
+    }
+
+    $scope.pageChangeHandler = function (num) {
+        vm.currentPage = num;
+        //console.log('meals page changed to ' + num);
     };
-
-
-    vm.selection = [];
-
-    vm.selectItem = selectItem;
-    vm.clickItem = clickItem;
-    vm.selectAll = selectAll;
-    vm.isSelectedAll = isSelectedAll;
-    vm.isSortDirection = isSortDirection;
-    vm.sort = sort;
-    vm.allowSelectAll = true;
-
-    function selectAll() {
-        //console.log("selectAll()");
-        listViewHelper.selectAllItemsToggle(vm.items, vm.selection);
-    }
-
-    function isSelectedAll() {
-        //console.log("isSelectedAll()");
-        return listViewHelper.isSelectedAll(vm.items, vm.selection);
-    }
-
-    function clickItem(item) {
-        //console.log(item);
-        //listViewHelper.editItem(item);
-    }
-
-    function selectItem(item, $index, $event) {
-        //console.log("selectItem", item, $index, $event);
-        listViewHelper.selectHandler(item, $index, vm.items, vm.selection, $event);
-    }
-
-    function isSortDirection(col, direction) {
-        //console.log("isSortDirection", col, direction);
-        return listViewHelper.setSortingDirection(col, direction, vm.options);
-    }
-
-    function sort(field, allow) {
-        //console.log("sort", field, allow);
-        if (allow) {
-            listViewHelper.setSorting(field, allow, vm.options);
-            //  $scope.getContent($scope.contentId);
-        }
-    }
-
-
 });
