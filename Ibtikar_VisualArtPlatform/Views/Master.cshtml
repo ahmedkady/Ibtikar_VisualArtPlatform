@@ -381,11 +381,11 @@
 
     <script src="~/Scripts/registration.js"></script>
     <script src="~/assets/JPList/JPList.min.js"></script>
-    <script>
+    <script type="text/javascript">
         $(document).ready(function () {
+            debugger;
             jplist.init();
         });
-
     </script>
     @if (!isEnglish)
     {
@@ -393,6 +393,7 @@
             var replaceDigits = function () {
                 var map = ["&\#1776;", "&\#1777;", "&\#1778;", "&\#1779;", "&\#1780;", "&\#1781;", "&\#1782;", "&\#1783;", "&\#1784;", "&\#1785;"]
                 document.body.innerHTML = document.body.innerHTML.replace(/\d(?=[^<>]*(<|$))/g, function ($0) { return map[$0] });
+                jplist.init();  // to re initialize the JPlist
             }
             window.onload = replaceDigits;
         </script>
